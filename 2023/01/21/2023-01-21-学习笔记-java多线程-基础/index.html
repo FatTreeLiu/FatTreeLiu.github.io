@@ -18,22 +18,22 @@
   
     <meta name="description" content="前言java多线程基础相关面试题目整理 题目线程和进程的概念？守护线程是干什么的？常见的守护线程有哪些？线程和进程的概念进程是程序的运行实例，是程序向操作系统申请资源的基本单位，线程是进程的一条执行路径。Java的线程分为两种：用户线程和守护线程。守护线程作用是为其他线程提供服务，如果所有的用户线程死亡，后台线程都会死亡。 常见的守护线程有哪些守护线程最典型代表就是GC线程。 参考:Java 守护">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八股文-java多线程-基础">
-<meta property="og:url" content="http://example.com/2023/01/21/2023-01-21-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:title" content="学习笔记-java多线程-基础">
+<meta property="og:url" content="http://example.com/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言java多线程基础相关面试题目整理 题目线程和进程的概念？守护线程是干什么的？常见的守护线程有哪些？线程和进程的概念进程是程序的运行实例，是程序向操作系统申请资源的基本单位，线程是进程的一条执行路径。Java的线程分为两种：用户线程和守护线程。守护线程作用是为其他线程提供服务，如果所有的用户线程死亡，后台线程都会死亡。 常见的守护线程有哪些守护线程最典型代表就是GC线程。 参考:Java 守护">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/01/21/2023-01-21-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
+<meta property="og:image" content="http://example.com/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
 <meta property="article:published_time" content="2023-01-21T13:41:42.000Z">
-<meta property="article:modified_time" content="2023-10-22T02:19:56.763Z">
+<meta property="article:modified_time" content="2023-12-24T15:04:48.946Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/01/21/2023-01-21-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
+<meta name="twitter:image" content="http://example.com/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
   
   
   
-  <title>八股文-java多线程-基础 - Hexo</title>
+  <title>学习笔记-java多线程-基础 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="八股文-java多线程-基础"></span>
+            <span id="subtitle" data-typed-text="学习笔记-java多线程-基础"></span>
           
         </div>
 
@@ -270,7 +270,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">八股文-java多线程-基础</h1>
+            <h1 id="seo-header">学习笔记-java多线程-基础</h1>
             
             
               <div class="markdown-body">
@@ -311,7 +311,7 @@
 <p>可以将native方法比作Java程序同Ｃ程序的接口，其实现步骤：<br>　　１、在Java中声明native()方法，然后编译；<br>　　２、用javac -h产生一个.h文件；<br>　　３、写一个.cpp文件实现native导出方法，其中需要包含第二步产生的.h文件（注意其中又包含了JDK带的jni.h文件）；<br>　　４、将第三步的.cpp文件编译成动态链接库文件；<br>　　５、在Java中用System.loadLibrary()方法加载第四步产生的动态链接库文件，这个native()方法就可以在Java中被访问了。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/KingIceMou/p/7239668.html">Java中Native关键字的作用</a></p>
 <h2 id="线程的状态有哪些，是怎么转换的？Jvm怎么查看线程的运行状态？"><a href="#线程的状态有哪些，是怎么转换的？Jvm怎么查看线程的运行状态？" class="headerlink" title="线程的状态有哪些，是怎么转换的？Jvm怎么查看线程的运行状态？"></a>线程的状态有哪些，是怎么转换的？Jvm怎么查看线程的运行状态？</h2><h3 id="线程的状态有哪些，是怎么转换的"><a href="#线程的状态有哪些，是怎么转换的" class="headerlink" title="线程的状态有哪些，是怎么转换的"></a>线程的状态有哪些，是怎么转换的</h3><p>Java线程的状态可以使用监控工具查看，也可以通过Thread.getState()调用来获取。Thread.getState()的返回值类型Thread.State是一个枚举类型（Enum）。Thread.State所定义的线程状态包括以下几种。<br>NEW：一个已创建而未启动的线程处于该状态。由于一个线程实例只能够被启动一次，因此一个线程只可能有一次处于该状态。<br>RUNNABLE：该状态可以被看成一个复合状态。它包括两个子状态：READY和RUNNING。前者表示处于该状态的线程可以被线程调度器（Scheduler）进行调度而使之处于RUNNING状态。后者表示处于该状态的线程正在运行，即相应线程对象的run方法所对应的指令正在由处理器执行。执行Thread.yield()的线程，其状态可能会由RUNNING转换为READY。处于READY子状态的线程也被称为活跃线程。<br>BLOCKED：一个线程发起一个阻塞式I&#x2F;O（BlockingI&#x2F;O）操作后，或者申请一个由其他线程持有的独占资源（比如锁）时，相应的线程会处于该状态。处于BLOCKED状态的线程并不会占用处理器资源。当阻塞式I&#x2F;O操作完成后，或者线程获得了其申请的资源，该线程的状态又可以转换为RUNNABLE。<br>WAITING：一个线程执行了某些特定方法之后就会处于这种等待其他线程执行另外一些特定操作的状态。能够使其执行线程变更为WAITING状态的方法包括：Object.wait()、Thread.join()和LockSupport.park(Object)。能够使相应线程从WAITING变更为RUNNABLE的相应方法包括：Object.notify()&#x2F;notifyAll()和LockSupport.unpark(Object))。<br>TIMED_WAITING：该状态和WAITING类似，差别在于处于该状态的线程并非无限制地等待其他线程执行特定操作，而是处于带有时间限制的等待状态。当其他线程没有在指定时间内执行该线程所期望的特定操作时，该线程的状态自动转换为RUNNABLE。<br>TERMINATED：已经执行结束的线程处于该状态。由于一个线程实例只能够被启动一次，因此一个线程也只可能有一次处于该状态。Thread.run()正常返回或者由于抛出异常而提前终止都会导致相应线程处于该状态。一个线程在其整个生命周期中，只可能有一次处于NEW状态和TERMINATED状态。</p>
-<p><img src="/2023/01/21/2023-01-21-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png" srcset="/img/loading.gif" lazyload></p>
+<p><img src="/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png" srcset="/img/loading.gif" lazyload></p>
 <h3 id="Jvm怎么查看线程的运行状态"><a href="#Jvm怎么查看线程的运行状态" class="headerlink" title="Jvm怎么查看线程的运行状态"></a>Jvm怎么查看线程的运行状态</h3><p>对线程进行监视的主要途径是获取并查看程序的线程转储（ThreadDump）。一个程序的线程转储包含了获取这个线程转储的那一刻该程序的线程信息。这些信息包括程序中有哪些线程以及这些线程的具体信息。常用线程转储的方法如下：</p>
 <ul>
 <li>jstack</li>
@@ -396,8 +396,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>八股文-java多线程-基础</div>
-      <div>http://example.com/2023/01/21/2023-01-21-八股文-java多线程-基础/</div>
+      <div>学习笔记-java多线程-基础</div>
+      <div>http://example.com/2023/01/21/2023-01-21-学习笔记-java多线程-基础/</div>
     </div>
     <div class="license-meta">
       
@@ -463,8 +463,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/01/14/2023-01-14-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%9F%BA%E7%A1%80/" title="八股文--java基础">
-                        <span class="hidden-mobile">八股文--java基础</span>
+                      <a href="/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/" title="学习笔记--java基础">
+                        <span class="hidden-mobile">学习笔记--java基础</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

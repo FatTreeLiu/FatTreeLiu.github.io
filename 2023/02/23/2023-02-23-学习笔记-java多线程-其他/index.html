@@ -18,24 +18,24 @@
   
     <meta name="description" content="前言java多线程的线程安全、线程管理、线程活性等相关面试题目整理，面经尽量用简短的语句说明问题，详细的信息可以参考每个面经下的参考链接。面经不保证完全正确，欢迎大家邮件联系作者进行相应的修改和交流。 题目Threadlocal使用场景？原理？如何保证内存不泄露？ThreadLocal使用场景不加锁的情况下，多线程安全访问共享变量，每个线程保留共享变量的副本（线程特有对象），每个线程往这个Thre">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八股文-java多线程-其他">
-<meta property="og:url" content="http://example.com/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/index.html">
+<meta property="og:title" content="学习笔记-java多线程-其他">
+<meta property="og:url" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言java多线程的线程安全、线程管理、线程活性等相关面试题目整理，面经尽量用简短的语句说明问题，详细的信息可以参考每个面经下的参考链接。面经不保证完全正确，欢迎大家邮件联系作者进行相应的修改和交流。 题目Threadlocal使用场景？原理？如何保证内存不泄露？ThreadLocal使用场景不加锁的情况下，多线程安全访问共享变量，每个线程保留共享变量的副本（线程特有对象），每个线程往这个Thre">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
-<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97%E7%9A%84%E6%96%B9%E6%B3%95.png">
-<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E5%B8%B8%E8%A7%81%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97.png">
+<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97%E7%9A%84%E6%96%B9%E6%B3%95.png">
+<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E5%B8%B8%E8%A7%81%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97.png">
 <meta property="article:published_time" content="2023-02-23T14:13:45.000Z">
-<meta property="article:modified_time" content="2023-10-22T02:20:02.320Z">
+<meta property="article:modified_time" content="2023-12-24T15:04:48.945Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
+<meta name="twitter:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
   
   
   
-  <title>八股文-java多线程-其他 - Hexo</title>
+  <title>学习笔记-java多线程-其他 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -201,7 +201,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="八股文-java多线程-其他"></span>
+            <span id="subtitle" data-typed-text="学习笔记-java多线程-其他"></span>
           
         </div>
 
@@ -272,7 +272,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">八股文-java多线程-其他</h1>
+            <h1 id="seo-header">学习笔记-java多线程-其他</h1>
             
             
               <div class="markdown-body">
@@ -287,7 +287,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 重新分配表大小的阈值，默认为0</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">private</span> <span class="hljs-type">int</span> threshold; <br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * Entry表，大小必须为2的幂</span><br><span class="hljs-comment"> */</span><br><span class="hljs-keyword">private</span> Entry[] table;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 设置resize阈值以维持最坏2/3的装载因子</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-type">void</span> <span class="hljs-title">setThreshold</span><span class="hljs-params">(<span class="hljs-type">int</span> len)</span> </span>&#123;<br>    threshold = len * <span class="hljs-number">2</span> / <span class="hljs-number">3</span>;<br>&#125;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 环形意义的下一个索引</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-type">static</span> <span class="hljs-type">int</span> <span class="hljs-title">nextIndex</span><span class="hljs-params">(<span class="hljs-type">int</span> i, <span class="hljs-type">int</span> len)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> ((i + <span class="hljs-number">1</span> &lt; len) ? i + <span class="hljs-number">1</span> : <span class="hljs-number">0</span>);<br>&#125;<br><br><span class="hljs-comment">/**</span><br><span class="hljs-comment"> * 环形意义的上一个索引</span><br><span class="hljs-comment"> */</span><br><span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-type">static</span> <span class="hljs-type">int</span> <span class="hljs-title">prevIndex</span><span class="hljs-params">(<span class="hljs-type">int</span> i, <span class="hljs-type">int</span> len)</span> </span>&#123;<br>    <span class="hljs-keyword">return</span> ((i - <span class="hljs-number">1</span> &gt;= <span class="hljs-number">0</span>) ? i - <span class="hljs-number">1</span> : len - <span class="hljs-number">1</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>ThreadLocal需要维持一个最坏2&#x2F;3的负载因子，ThreadLocal有两个方法用于得到上一个&#x2F;下一个索引，注意这里实际上是环形意义下的上一个与下一个。由于ThreadLocalMap使用线性探测法来解决散列冲突，所以实际上Entry[]数组在程序逻辑上是作为一个环形存在的。hreadLocalMap维护了Entry环形数组，数组中元素Entry的逻辑上的key为指向该ThreadLocal对象的弱引用，value为代码中该线程往该ThreadLoacl变量实际塞入的值。</p>
-<p><img src="/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png" srcset="/img/loading.gif" lazyload alt="threadlocal环形列表"></p>
+<p><img src="/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png" srcset="/img/loading.gif" lazyload alt="threadlocal环形列表"></p>
 <p>执行ThreadLocalMap的get\set方法和扩容时，当发现有entry的弱引用为null时（因为entry是ThreadLocal的弱引用，所以如果没有其他强引用使用时就会被清理），会将无效的entry去掉，顺便做一些启发式的清理，所以大部分失效的entry一般都是可以清理的。但是这样清理终究是有漏网之鱼的，所以需要使用remove方法来避免这种情况的发生，remove方法直接在table中找key，如果找到了，把弱引用断掉并做一次段清理，这样可以避免无效entry的残留。</p>
 <h3 id="关于内存泄漏"><a href="#关于内存泄漏" class="headerlink" title="关于内存泄漏"></a>关于内存泄漏</h3><p>之所以有关于内存泄露的讨论是因为在有线程复用如线程池的场景中，一个线程的寿命很长，大对象长期不被回收影响系统运行效率与安全。如果线程不会复用，用完即销毁了也不会有ThreadLocal引发内存泄露的问题。<br>只有在get的时候才会第一次创建初始值，所以用完后使用remove，可以将这个entry去掉，下次get还会重新加载，这样避免了内存泄漏。<br>Get和set方法执行时，偶尔发现无效entry后做段清理，可能清理不完全，导致可能存在大对象滞留。<br>如果在使用的ThreadLocal的过程中，显式地进行remove是个很好的编码习惯，这样是不会引起内存泄漏。</p>
 <h3 id="为什么Entry数组大小必须为2的幂"><a href="#为什么Entry数组大小必须为2的幂" class="headerlink" title="为什么Entry数组大小必须为2的幂?"></a>为什么Entry数组大小必须为2的幂?</h3><p>这和hash函数相关，基于ThreadLocal特有的hash函数，可以使entry在Entry数组上均匀分布，减少hash冲突。</p>
@@ -305,7 +305,7 @@
 <p>锁粗法，用一个粗粒度的锁代替原来多个细粒度的锁，这样每个线程只申请一个锁，避免了死锁。但是这个方法会导致资源浪费。避免了“循环等待资源”的必要条件。<br>锁排序法，相关线程使用全局统一的顺序申请锁，消除“循环等待资源”的必要条件，比如一个对象方法要申请两个锁，先申请hashcode值小的那个锁，然后再申请hashcode值大的那个锁。“循环等待资源”实际为每个对象使用局部顺序去申请锁，如果依赖全局统一的顺序，即可消除“循环等待资源”的必要条件。<br>ReentrantLock.tryLock(long, TimeUnit)，为申请锁这个操作指定一个超时时间，避免了“占用并等待资源”的必要条件。<br>不用锁。</p>
 <p>参考:<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/lllliuxiaoxia/p/15689367.html">死锁问题整理</a><br>《Java多线程编程实战指南》黄文海</p>
 <h2 id="Java安全的阻塞队列有哪些？分别提供了什么功能？"><a href="#Java安全的阻塞队列有哪些？分别提供了什么功能？" class="headerlink" title="Java安全的阻塞队列有哪些？分别提供了什么功能？"></a>Java安全的阻塞队列有哪些？分别提供了什么功能？</h2><h3 id="什么是阻塞队列"><a href="#什么是阻塞队列" class="headerlink" title="什么是阻塞队列"></a>什么是阻塞队列</h3><p>多线程环境中，通过队列可以很容易实现数据共享，比如经典的“生产者”和“消费者”模型中，通过队列可以很便利地实现两者之间的数据共享。假设我们有若干生产者线程，另外又有若干个消费者线程。如果生产者线程需要把准备好的数据共享给消费者线程，利用队列的方式来传递数据，就可以很方便地解决他们之间的数据共享问题。但如果生产者和消费者在某个时间段内，万一发生数据处理速度不匹配的情况呢？理想情况下，如果生产者产出数据的速度大于消费者消费的速度，并且当生产出来的数据累积到一定程度的时候，那么生产者必须暂停等待一下（阻塞生产者线程），以便等待消费者线程把累积的数据处理完毕，反之亦然。然而，在concurrent包发布以前，在多线程环境下，我们每个程序员都必须去自己控制这些细节，尤其还要兼顾效率和线程安全，而这会给我们的程序带来不小的复杂度。好在此时concurrent包出现了，而他也给我们带来了强大的BlockingQueue。</p>
-<h3 id="阻塞队列的方法"><a href="#阻塞队列的方法" class="headerlink" title="阻塞队列的方法"></a>阻塞队列的方法</h3><p><img src="/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97%E7%9A%84%E6%96%B9%E6%B3%95.png" srcset="/img/loading.gif" lazyload alt="阻塞队列的方法"></p>
+<h3 id="阻塞队列的方法"><a href="#阻塞队列的方法" class="headerlink" title="阻塞队列的方法"></a>阻塞队列的方法</h3><p><img src="/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97%E7%9A%84%E6%96%B9%E6%B3%95.png" srcset="/img/loading.gif" lazyload alt="阻塞队列的方法"></p>
 <p>核心方法如下：</p>
 <ul>
 <li>放入数据</li>
@@ -315,7 +315,7 @@
 <li>获取数据</li>
 </ul>
 <p>（1）poll(time):取走BlockingQueue里排在首位的对象,若不能立即取出,则可以等time参数规定的时间,取不到时返回null;<br>（2）poll(long timeout, TimeUnit unit)：从BlockingQueue取出一个队首的对象，如果在指定时间内，队列一旦有数据可取，则立即返回队列中的数据。否则知道时间超时还没有数据可取，返回失败。<br>（3）take():取走BlockingQueue里排在首位的对象,若BlockingQueue为空,阻断进入等待状态直到BlockingQueue有新的数据被加入;<br>（4）drainTo():一次性从BlockingQueue获取所有可用的数据对象（还可以指定获取数据的个数），通过该方法，可以提升获取数据效率；不需要多次分批加锁或释放锁。</p>
-<h3 id="常见阻塞队列"><a href="#常见阻塞队列" class="headerlink" title="常见阻塞队列"></a>常见阻塞队列</h3><p><img src="/2023/02/23/2023-02-23-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E5%B8%B8%E8%A7%81%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97.png" srcset="/img/loading.gif" lazyload alt="常见阻塞队列"></p>
+<h3 id="常见阻塞队列"><a href="#常见阻塞队列" class="headerlink" title="常见阻塞队列"></a>常见阻塞队列</h3><p><img src="/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E5%B8%B8%E8%A7%81%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97.png" srcset="/img/loading.gif" lazyload alt="常见阻塞队列"></p>
 <ul>
 <li>ArrayBlockingQueue</li>
 </ul>
@@ -449,8 +449,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>八股文-java多线程-其他</div>
-      <div>http://example.com/2023/02/23/2023-02-23-八股文-java多线程-其他/</div>
+      <div>学习笔记-java多线程-其他</div>
+      <div>http://example.com/2023/02/23/2023-02-23-学习笔记-java多线程-其他/</div>
     </div>
     <div class="license-meta">
       
@@ -516,8 +516,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/02/14/2023-02-14-%E5%85%AB%E8%82%A1%E6%96%87-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%90%8C%E6%AD%A5%E5%8D%8F%E4%BD%9C/" title="八股文-java多线程-同步协作">
-                        <span class="hidden-mobile">八股文-java多线程-同步协作</span>
+                      <a href="/2023/02/14/2023-02-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%90%8C%E6%AD%A5%E5%8D%8F%E4%BD%9C/" title="学习笔记-java多线程-同步协作">
+                        <span class="hidden-mobile">学习笔记-java多线程-同步协作</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

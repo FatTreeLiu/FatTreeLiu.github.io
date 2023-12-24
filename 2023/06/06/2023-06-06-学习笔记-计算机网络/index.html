@@ -18,45 +18,45 @@
   
     <meta name="description" content="前言整理计算机网络的相关面试题，计算机网络在我看来挺复杂的，想要完全精通应该是不可能的，毕竟后端开发的知识点那么多，不过掌握面试的常考知识点是由必要的。建议系统学习计算机网络课本再进行知识点的整理记忆。 题目IOS七层协议有了解么？Ip协议是哪层协议？计算机网络体系结构目前的计算机网络分层结构主流分为三种：OSI协议体系结构、TCP&#x2F;IP协议体系结构、原理体系结构。OSI协议体系结构是国">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八股文-计算机网络">
-<meta property="og:url" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:title" content="学习笔记-计算机网络">
+<meta property="og:url" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言整理计算机网络的相关面试题，计算机网络在我看来挺复杂的，想要完全精通应该是不可能的，毕竟后端开发的知识点那么多，不过掌握面试的常考知识点是由必要的。建议系统学习计算机网络课本再进行知识点的整理记忆。 题目IOS七层协议有了解么？Ip协议是哪层协议？计算机网络体系结构目前的计算机网络分层结构主流分为三种：OSI协议体系结构、TCP&#x2F;IP协议体系结构、原理体系结构。OSI协议体系结构是国">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%8A%A5%E6%96%87%E6%AE%B5.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/session%E8%BF%87%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%B5%81%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%98%BB%E5%A1%9EIO.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E9%98%BB%E5%A1%9EIO.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BC%82%E6%AD%A5IO.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%8D%95%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%A4%9Ar%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E7%BB%9Fio.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/nio.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/selector.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%8A%A5%E6%96%87%E6%AE%B5.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/session%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%98%BB%E5%A1%9EIO.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E9%98%BB%E5%A1%9EIO.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BC%82%E6%AD%A5IO.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%8D%95%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%A4%9Ar%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E7%BB%9Fio.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/nio.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
+<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/selector.png">
 <meta property="article:published_time" content="2023-06-06T14:15:48.000Z">
-<meta property="article:modified_time" content="2023-10-22T02:20:06.575Z">
+<meta property="article:modified_time" content="2023-12-24T15:04:48.944Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta name="twitter:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
   
   
   
-  <title>八股文-计算机网络 - Hexo</title>
+  <title>学习笔记-计算机网络 - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -222,7 +222,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="八股文-计算机网络"></span>
+            <span id="subtitle" data-typed-text="学习笔记-计算机网络"></span>
           
         </div>
 
@@ -293,14 +293,14 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">八股文-计算机网络</h1>
+            <h1 id="seo-header">学习笔记-计算机网络</h1>
             
             
               <div class="markdown-body">
                 
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>整理计算机网络的相关面试题，计算机网络在我看来挺复杂的，想要完全精通应该是不可能的，毕竟后端开发的知识点那么多，不过掌握面试的常考知识点是由必要的。建议系统学习计算机网络课本再进行知识点的整理记忆。</p>
 <h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="IOS七层协议有了解么？Ip协议是哪层协议？"><a href="#IOS七层协议有了解么？Ip协议是哪层协议？" class="headerlink" title="IOS七层协议有了解么？Ip协议是哪层协议？"></a>IOS七层协议有了解么？Ip协议是哪层协议？</h2><h3 id="计算机网络体系结构"><a href="#计算机网络体系结构" class="headerlink" title="计算机网络体系结构"></a>计算机网络体系结构</h3><p>目前的计算机网络分层结构主流分为三种：OSI协议体系结构、TCP&#x2F;IP协议体系结构、原理体系结构。OSI协议体系结构是国际标准化组织（ISO）制定的协议体系，但实际较为复杂，缺少商业驱动；TCP&#x2F;IP是推广最广的标准，是事实国际标准；原理体系结合了OSI和TCP&#x2F;IP的优势，将网络分成了5层。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="计网体系结构"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png" srcset="/img/loading.gif" lazyload alt="计网体系结构"></p>
 <h3 id="原理体系分层"><a href="#原理体系分层" class="headerlink" title="原理体系分层"></a>原理体系分层</h3><ul>
 <li>物理层：物理层考虑的是怎样才能在连接各种计算机的传输媒体上传输数据比特流;</li>
 <li>数据链路层：数据链路层考虑同一个局域网中的点对点传输（PPP协议）和局域网内的广播传输（以太网、wifi等）；</li>
@@ -308,7 +308,7 @@
 <li>运输层：如何为运行在不同主机上的应用进程提供直接的通信服务是运输层的任务，运输层协议又称为端到端协议。它属于面向通信部分的最高层，同时也是用户功能中的最低层。根据应用需求的不同，因特网的运输层为应用层提供了两种不同的运输协议，即面向连接的TCP和无连接的UDP。</li>
 <li>应用层：定义运行在不同端系统上的应用进程间为实现特定应用而互相通信的规则。</li>
 </ul>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE.png" srcset="/img/loading.gif" lazyload alt="应用层协议"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE.png" srcset="/img/loading.gif" lazyload alt="应用层协议"></p>
 <h3 id="IP协议是哪层协议"><a href="#IP协议是哪层协议" class="headerlink" title="IP协议是哪层协议"></a>IP协议是哪层协议</h3><p>网络层</p>
 <p>参考：<br>《计算机网络教程》 谢钧，谢希仁 人民邮电出版社</p>
 <h2 id="TCP和UDP的区别"><a href="#TCP和UDP的区别" class="headerlink" title="TCP和UDP的区别"></a>TCP和UDP的区别</h2><p>因特网的运输层为应用层提供了两种不同的运输协议，即面向连接的TCP和无连接的UDP。</p>
@@ -324,13 +324,13 @@
 <p>TCP提供全双工通信。TCP允许通信双方的应用进程在任何时候都能发送数据。TCP连接的两端都设有发送缓存和接收缓存，用来临时存放双向通信的数据。在发送时，应用程序在把数据传送给TCP的缓存后，就可以做自己的事，而TCP在合适的时候把数据发送出去。在接收时，TCP把收到的数据放入缓存，上层的应用进程在合适的时候读取缓存中的数据。</p>
 <p>参考：<br>《计算机网络教程》 谢钧，谢希仁 人民邮电出版社</p>
 <h2 id="TCP三次握手、四次挥手"><a href="#TCP三次握手、四次挥手" class="headerlink" title="TCP三次握手、四次挥手"></a>TCP三次握手、四次挥手</h2><h3 id="三次握手"><a href="#三次握手" class="headerlink" title="三次握手"></a>三次握手</h3><p>设主机B中运行TCP的服务器进程，它先发出一个被动打开（passiveopen）命令，准备接受客户进程的连接请求。然后服务器进程就处于“听”（listen）的状态，不断检测是否有客户进程要发起连接请求。如有，即做出响应。设客户进程运行在主机A中。它先向其TCP发出主动打开（activeopen）命令，表明要向某个IP地址的某个端口建立运输层连接。主机A的TCP向主机B的TCP发出连接请求报文段，其首部中的同步位SYN应置1，同时选择一个序号seq&#x3D;x，这表明下一个报文段的第一个数据字节的序号是x+1。主机B的TCP收到连接请求报文段后，如同意，则发回连接请求确认。在确认报文段中应把SYN位和ACK位都置1，确认号是ack&#x3D;x+1，同时也为自己选择一个序号seq&#x3D;y。主机A的TCP收到B接受连接请求的确认后，还要向B给出确认，其ACK置1，确认号ack&#x3D;y+1，而自己的序号seq&#x3D;x+1。TCP的标准规定，SYN&#x3D;1的报文段（例如，A发送的第一个报文段）不能携带数据，但要消耗掉一个序号。因此A发送的第二个报文段的序号应当是第一个报文段的序号加1（虽然在第一个报文段中并没有数据）。注意，A发送的第二个报文段中SYN是0而不是1，ACK位必须为1。该报文段是对B的同步报文段的确认，但是一个普通报文段，可携带数据。若该报文段不携带数据，则按照TCP的规定，确认报文段不消耗序号。运行客户进程的主机A的TCP通知上层应用进程，连接已经建立。当运行服务器进程的主机B的TCP收到主机A的确认后，会通知其上层应用进程，连接已经建立。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" srcset="/img/loading.gif" lazyload alt="三次握手"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png" srcset="/img/loading.gif" lazyload alt="三次握手"></p>
 <h3 id="为何要三次握手"><a href="#为何要三次握手" class="headerlink" title="为何要三次握手"></a>为何要三次握手</h3><p>这主要是为了防止已失效的连接请求报文段突然又传送到了主机B，因而产生错误。</p>
 <p>所谓“已失效的连接请求报文段”是这样产生的。考虑这样一种情况。主机A发出连接请求，但因连接请求报文丢失而未收到确认。主机A于是再重传一次。后来收到了确认，建立了连接。数据传输完毕后，就释放了连接。主机A共发送了两个连接请求报文段，其中的第二个到达了主机B。现</p>
 <p>假定出现另一种情况，即主机A发出的第一个连接请求报文段并没有丢失，而是在某些网络结点滞留的时间太长，以致延误到在这次的连接释放以后才传送到主机B。本来这是一个已经失效的报文段。但主机B收到此失效的连接请求报文段后，就误认为是主机A又发出一次新的连接请求。于是就向主机A发出确认报文段，同意建立连接。主机A由于并没有要求建立连接，因此不会理睬主机B的确认，也不会向主机B发送数据。但主机B却以为运输连接就这样建立了，并一直等待主机A发来数据。主机B的许多资源就这样白白浪费了。</p>
 <p>采用三次握手的办法可以防止上述现象的发生。例如，在刚才的情况下，主机A不会向主机B的确认发出确认。主机B收不到确认，连接就建立不起来。</p>
 <h3 id="四次挥手"><a href="#四次挥手" class="headerlink" title="四次挥手"></a>四次挥手</h3><p>主机A的应用进程先向其TCP发出连接释放请求，并且不再发送数据。TCP通知对方要释放从A到B这个方向的连接，把发往主机B的报文段首部的FIN置1，其序号seq&#x3D;u。由于FIN报文段要消耗一个序号，因此序号u等于A前面已传送过的数据的最后一个字节的序号加1。主机B的TCP收到释放连接通知后即发出确认，确认号是ack&#x3D;u+1，而这个报文段自己的序号假定为v（v等于B前面已传送过的数据的最后一个字节的序号加1）。主机B的TCP这时应通知高层应用进程。这样，从A到B的连接就释放了，连接处于半关闭（half-close）状态，相当于主机A向主机B说：“我已经没有数据要发送了。但你如果还发送数据，我仍可以接收。”此后，主机B不再接收主机A发来的数据。但若主机B还有一些数据要发往主机A，则可以继续发送（这种情况很少）。主机A只要正确收到数据，仍应向主机B发送确认。若主机B不再向主机A发送数据，其应用进程就通知TCP释放连接。主机B发出的连接释放报文段必须使FIN&#x3D;1，并使其序号仍为v（因为前面发送的确认报文段不消耗序号），还必须重复上次已发送过的确认号ack&#x3D;u+1。主机A必须对此发出确认，把ACK置1，确认号ack&#x3D;v+1，而自己的序号是seq&#x3D;u+1（因为根据TCP标准，前面发送过的FIN报文段要消耗一个序号）。这样才把从B到A的反方向连接释放掉。但此时，主机A的TCP并不能马上释放整个连接，还要再等待一个超时时间才能将整个连接释放。因为主机A的确认有可能丢失，这时B会重传FIN报文段。在这段超时时间内，若A又收到B重传的FIN报文段，A需要再次进行确认。收到A的最后确认，B才能最终将整个连接释放。若等待的这段超时时间内没有收到B的FIN报文段，主机A的TCP则向其应用进程报告，整个连接已经全部释放。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png" srcset="/img/loading.gif" lazyload alt="四次挥手"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png" srcset="/img/loading.gif" lazyload alt="四次挥手"></p>
 <h3 id="为何要四次挥手"><a href="#为何要四次挥手" class="headerlink" title="为何要四次挥手"></a>为何要四次挥手</h3><p>因为服务端的LISTEN状态下的SOCKET当收到SYN报文的建连请求后，它可以把ACK和SYN（ACK起应答作用，而SYN起同步作用）放在一个报文里来发送。但关闭连接时，当收到对方的FIN报文通知时，它仅仅表示对方没有数据发送给你了；但未必你所有的数据都全部发送给对方了，所以你可以未必会马上会关闭SOCKET,也即你可能还需要发送一些数据给对方之后，再发送FIN报文给对方来表示你同意现在可以关闭连接了，所以它这里的ACK报文和FIN报文多数情况下都是分开发送的。</p>
 <p>参考：<br>《计算机网络教程》 谢钧，谢希仁 人民邮电出版社<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/softidea/p/5741192.html">TCP连接状态详解及TIME_WAIT过多的解决方法</a></p>
 <h2 id="为什么会有time-wait，close-wait？出现大量的time-wait是什么原因？要怎么解决呢？"><a href="#为什么会有time-wait，close-wait？出现大量的time-wait是什么原因？要怎么解决呢？" class="headerlink" title="为什么会有time-wait，close-wait？出现大量的time-wait是什么原因？要怎么解决呢？"></a>为什么会有time-wait，close-wait？出现大量的time-wait是什么原因？要怎么解决呢？</h2><h3 id="为什么有close-wait"><a href="#为什么有close-wait" class="headerlink" title="为什么有close-wait"></a>为什么有close-wait</h3><p>四次挥手主动关闭方已经关闭了主动发送的单向链接，但是被动关闭方可能还需要继续发送一些数据，等这些数据发送完之后才能关闭从被动关闭方向主动关闭方的单向链接，因此从主动关闭方关闭完成到被动关闭方开始关闭之前的这段时间，被动关闭方的状态都是close-wait。一般都是代码异常，问题应该比time-out更严重。</p>
@@ -338,7 +338,7 @@
 <ol>
 <li>防止前一个连接【五元组，这里继续以 110.122.144.166:45678, tcp, 110.88.92.104:80 为例】上延迟的数据包或者丢失重传的数据包，被后面复用的连接【前一个连接关闭后，此时你再次访问百度，新的连接可能还是由110.122.144.166:45678, tcp, 110.88.92.104:80 这个五元组来表示，也就是源端口凑巧还是45678】错误的接收（异常：数据丢了，或者传输太慢了），参见下图：</li>
 </ol>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png" srcset="/img/loading.gif" lazyload alt="time-wiat缺失导致错误接受"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png" srcset="/img/loading.gif" lazyload alt="time-wiat缺失导致错误接受"></p>
 <ul>
 <li>SEQ&#x3D;3的数据包丢失，重传第一次，没有得到ACK确认</li>
 <li>如果没有TIME_WAIT，或者TIME_WAIT时间非常端，那么关闭的连接【110.122.144.166:45678, tcp, 110.88.92.104:80 的状态变为了CLOSED，源端口可被再次利用】，马上被重用【对110.88.92.104:80新建的连接，复用了之前的随机端口45678】，并连续发送SEQ&#x3D;1,2 的数据包; </li>
@@ -347,7 +347,7 @@
 <ol start="2">
 <li>确保连接方能在时间范围内，关闭自己的连接。其实，也是因为丢包造成的，参见下图：</li>
 </ol>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png" srcset="/img/loading.gif" lazyload alt="time-wait未正确关闭"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png" srcset="/img/loading.gif" lazyload alt="time-wait未正确关闭"></p>
 <ul>
 <li>主动关闭方关闭了连接，发送了FIN；</li>
 <li>被动关闭方回复ACK同时也执行关闭动作，发送FIN包；此时，被动关闭的一方进入LAST_ACK状态; </li>
@@ -378,7 +378,7 @@
 然后执行 &#x2F;sbin&#x2F;sysctl -p 让参数生效。<br>简单来说，就是打开系统的TIMEWAIT重用和快速回收。<br>其中tcp_tw_reuse主要用于客户端，即客户端主动发起请求和主动断开请求的情况，可以复用TIME_WAIT状态的连接；tcp_tw_recycle主要用于服务端，即客户端连入，服务端主动关闭的情况，可以快速退出TIME_WAIT状态（在一个RTO时间内），但是如果客户端处于NAT的网络(多个客户端，同一个IP出口的网络环境)，如果配置了tcp_tw_recycle，就可能在一个RTO的时间内，只能有一个客户端和自己连接成功(不同的客户端发包的时间不一致，服务器进入TIME_WAIT状态后，会把后到的数据包丢弃掉)，所以对于客户端在NAT(NAT含义参见<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/340698491">什么是NAT？</a>)网络的场景，服务端不适用tcp_tw_recycle；<br>有时一个服务器既可以作为上游的服务端，也作为下游的客户端，可能会同时配置tcp_tw_recycle和tcp_tw_reuse，需要根据实际情况（客户端、服务端、谁先断开、客户端所处网络）进行配置。</li>
 </ol>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/kevingrace/p/9988354.html">TCP连接的TIME_WAIT和CLOSE_WAIT 状态解说</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42104231/article/details/83656208">正确理解tcp_fin_timeout到底起什么作用?</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/rexcheny/p/11143128.html">解读TIME_WAIT–你在网上看到的大多数帖子可能都是错误的</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/340698491">什么是NAT？</a></p>
-<h2 id="Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？"><a href="#Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？" class="headerlink" title="Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？"></a>Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？</h2><h3 id="TCP报文头"><a href="#TCP报文头" class="headerlink" title="TCP报文头"></a>TCP报文头</h3><p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%8A%A5%E6%96%87%E6%AE%B5.png" srcset="/img/loading.gif" lazyload alt="tcp报文段"></p>
+<h2 id="Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？"><a href="#Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？" class="headerlink" title="Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？"></a>Tcp的报文头有了解过？Tcp是怎么保证消息的可靠传输的？网络的拥塞控制和流量控制分别是指什么？</h2><h3 id="TCP报文头"><a href="#TCP报文头" class="headerlink" title="TCP报文头"></a>TCP报文头</h3><p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%8A%A5%E6%96%87%E6%AE%B5.png" srcset="/img/loading.gif" lazyload alt="tcp报文段"></p>
 <ul>
 <li><p>序号<br>序号字段的值指的是本报文段所发送的数据的第一个字节的序号。</p>
 </li>
@@ -407,7 +407,7 @@
 <ul>
 <li><p>数据编号与确认<br>TCP协议是面向字节的。TCP把应用层交下来的长报文（这可能要划分为许多较短的报文段）看成是一个个字节组成的数据流，并使每一个字节对应于一个序号。TCP使用的是累积确认，即确认是对所有按序接收到的数据的确认。但请注意，接收方返回的确认号是已按序收到的数据的最高序号加1。也就是说，确认号表示接收方期望下次收到的数据中的第一个数据字节序号。例如，已经收到了1～700号、801～1000号和1201～1500号，而701～800号及1001～1200号的数据还没有收到，那么这时发送的确认序号应填入701。<br>当TCP发送一报文段时，它同时也在自己的重传队列中存放这个报文段的一个副本。若收到确认，则删除此副本。若在规定时间内没有收到确认，则重传此报文段的副本。</p>
 </li>
-<li><p>滑动窗口、流量控制、拥塞控制<br>为了提高报文段的传输效率，TCP采用滑动窗口协议。TCP发送方已发送的未被确认的字节数不能超过发送窗口的大小。<br><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png" srcset="/img/loading.gif" lazyload alt="tcp滑动窗口"><br>发送窗口的初始值在连接建立时由双方商定，但在通信的过程中，TCP的流量控制和拥塞控制会根据情况动态地调整发送窗口上限值（可增大或减小），从而控制发送数据的平均速率。<br>流量控制是基于接收方的接收缓存剩余情况限制TCP协议头的窗口字段，限制发送方的发送速率.<br>拥塞控制的任务是防止过多的数据注入到网络中，使网络能够承受现有的网络负载。拥塞控制基于闭环拥塞控制算法分析网络的各节点的网络负载，同流量控制一起限制TCP协议头的窗口字段，限制发送方的发送速率。</p>
+<li><p>滑动窗口、流量控制、拥塞控制<br>为了提高报文段的传输效率，TCP采用滑动窗口协议。TCP发送方已发送的未被确认的字节数不能超过发送窗口的大小。<br><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png" srcset="/img/loading.gif" lazyload alt="tcp滑动窗口"><br>发送窗口的初始值在连接建立时由双方商定，但在通信的过程中，TCP的流量控制和拥塞控制会根据情况动态地调整发送窗口上限值（可增大或减小），从而控制发送数据的平均速率。<br>流量控制是基于接收方的接收缓存剩余情况限制TCP协议头的窗口字段，限制发送方的发送速率.<br>拥塞控制的任务是防止过多的数据注入到网络中，使网络能够承受现有的网络负载。拥塞控制基于闭环拥塞控制算法分析网络的各节点的网络负载，同流量控制一起限制TCP协议头的窗口字段，限制发送方的发送速率。</p>
 </li>
 <li><p>超时重传</p>
 </li>
@@ -480,7 +480,7 @@
 <p>一个 session 可以理解为一种数据结构，多数情况是「映射」（键值对），存储在服务器上。session 就可以配合 cookie 解决这一问题，比如说一个 cookie 存储这样一个变量 sessionID&#x3D;xxxx，仅仅把这一个 cookie 传给服务器，然后服务器通过这个 ID 找到对应的 session，这个 session 是一个数据结构，里面存储着该用户的购物车等详细信息，服务器可以通过这些信息返回该用户的定制化网页，有效解决了追踪用户的问题。</p>
 <p>session 是一个数据结构，由网站的开发者设计，所以可以承载各种数据，只要客户端的 cookie 传来一个唯一的 session ID，服务器就可以找到对应的 session，认出这个客户。当然，由于 session 存储在服务器中，肯定会消耗服务器的资源，所以 session 一般都会有一个过期时间，服务器一般会定期检查并删除过期的 session，如果后来该用户再次访问服务器，可能就会面临重新登录等等措施，然后服务器新建一个 session，将 session ID 通过 cookie 的形式传送给客户端。</p>
 <h4 id="session处理过程"><a href="#session处理过程" class="headerlink" title="session处理过程"></a>session处理过程</h4><p>session 的原理不难，但是具体实现它可是很有技巧的，一般需要三个组件配合完成，它们分别是 Manager、Provider 和 Session 三个类（接口）。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/session%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="session过程"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/session%E8%BF%87%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="session过程"></p>
 <p>1、浏览器通过 HTTP 协议向服务器请求路径 &#x2F;content 的网页资源，对应路径上有一个 Handler 函数接收请求，解析 HTTP header 中的 cookie，得到其中存储的 sessionID，然后把这个 ID 发给 Manager。</p>
 <p>2、Manager 充当一个 session 管理器的角色，主要存储一些配置信息，比如 session 的存活时间，cookie 的名字等等。而所有的 session 存在 Manager 内部的一个 Provider 中。所以 Manager 会把 sid（sessionID）传递给 Provider，让它去找这个 ID 对应的具体是哪个 session。</p>
 <p>3、Provider 就是一个容器，最常见的应该就是一个散列表，将每个 sid 和对应的 session 一一映射起来。收到 Manager 传递的 sid 之后，它就找到 sid 对应的 session 结构，也就是 Session 结构，然后返回它。</p>
@@ -532,7 +532,7 @@
 <h3 id="TCP长连接设计时需要考虑的问题"><a href="#TCP长连接设计时需要考虑的问题" class="headerlink" title="TCP长连接设计时需要考虑的问题"></a>TCP长连接设计时需要考虑的问题</h3><p>默认的keep-alive时间比较长，一般的业务可能不需要这么久的时间</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/6923887573861564423">HTTP长连接实现原理</a><br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/gotodsp/p/6366163.html">HTTP长连接、短连接究竟是什么？</a></p>
 <h2 id="浏览器上点击链接后的处理流程？"><a href="#浏览器上点击链接后的处理流程？" class="headerlink" title="浏览器上点击链接后的处理流程？"></a>浏览器上点击链接后的处理流程？</h2><p>鼠标点击“清华大学院系设置”的页面，其URL是<a target="_blank" rel="noopener" href="http://www.tsinghua.edu.cn/chn/yxsz/index.htm%E3%80%82%E4%B8%8B%E9%9D%A2%E8%AF%B4%E6%98%8E%E5%9C%A8%E7%94%A8%E6%88%B7%E5%8D%95%E5%87%BB%E9%BC%A0%E6%A0%87%E5%90%8E%E6%89%80%E5%8F%91%E7%94%9F%E7%9A%84%E5%87%A0%E4%B8%AA%E4%BA%8B%E4%BB%B6%EF%BC%9A%EF%BC%881%EF%BC%89%E6%B5%8F%E8%A7%88%E5%99%A8%E5%88%86%E6%9E%90%E9%93%BE%E6%8E%A5%E6%8C%87%E5%90%91%E9%A1%B5%E9%9D%A2%E7%9A%84URL%EF%BC%9B%EF%BC%882%EF%BC%89%E6%B5%8F%E8%A7%88%E5%99%A8%E5%90%91DNS%E8%AF%B7%E6%B1%82%E8%A7%A3%E6%9E%90www.tsinghua.edu.cn%E7%9A%84IP%E5%9C%B0%E5%9D%80%EF%BC%9B%EF%BC%883%EF%BC%89%E5%9F%9F%E5%90%8D%E7%B3%BB%E7%BB%9FDNS%E8%A7%A3%E6%9E%90%E5%87%BA%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84IP%E5%9C%B0%E5%9D%80%E4%B8%BA166.111.4.100%EF%BC%9B%EF%BC%884%EF%BC%89%E6%B5%8F%E8%A7%88%E5%99%A8%E4%B8%8E%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%BB%BA%E7%AB%8BTCP%E8%BF%9E%E6%8E%A5%EF%BC%88%E5%9C%A8%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AFIP%E5%9C%B0%E5%9D%80%E6%98%AF166.111.4.100%EF%BC%8C%E7%AB%AF%E5%8F%A3%E6%98%AF80%EF%BC%89%EF%BC%9B%EF%BC%885%EF%BC%89%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%91%E5%87%BA%E5%8F%96%E6%96%87%E4%BB%B6%E5%91%BD%E4%BB%A4%EF%BC%9AGET/chn/yxsz/index.htm%EF%BC%9B%EF%BC%886%EF%BC%89%E6%9C%8D%E5%8A%A1%E5%99%A8www.tsinghua.edu.cn%E7%BB%99%E5%87%BA%E5%93%8D%E5%BA%94%EF%BC%8C%E6%8A%8A%E6%96%87%E4%BB%B6index.htm%E5%8F%91%E9%80%81%E7%BB%99%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%9B%EF%BC%887%EF%BC%89%E9%87%8A%E6%94%BETCP%E8%BF%9E%E6%8E%A5%EF%BC%9B%EF%BC%888%EF%BC%89%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%BE%E7%A4%BA%E2%80%9C%E6%B8%85%E5%8D%8E%E5%A4%A7%E5%AD%A6%E9%99%A2%E7%B3%BB%E8%AE%BE%E7%BD%AE%E2%80%9D%E6%96%87%E4%BB%B6index.htm%E4%B8%AD%E7%9A%84%E5%86%85%E5%AE%B9%E3%80%82">http://www.tsinghua.edu.cn/chn/yxsz/index.htm。下面说明在用户单击鼠标后所发生的几个事件：（1）浏览器分析链接指向页面的URL；（2）浏览器向DNS请求解析www.tsinghua.edu.cn的IP地址；（3）域名系统DNS解析出清华大学服务器的IP地址为166.111.4.100；（4）浏览器与服务器建立TCP连接（在服务器端IP地址是166.111.4.100，端口是80）；（5）浏览器发出取文件命令：GET/chn/yxsz/index.htm；（6）服务器www.tsinghua.edu.cn给出响应，把文件index.htm发送给浏览器；（7）释放TCP连接；（8）浏览器显示“清华大学院系设置”文件index.htm中的内容。</a></p>
-<h2 id="DNS解析流程？"><a href="#DNS解析流程？" class="headerlink" title="DNS解析流程？"></a>DNS解析流程？</h2><h3 id="域名服务器层级"><a href="#域名服务器层级" class="headerlink" title="域名服务器层级"></a>域名服务器层级</h3><p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8.png" srcset="/img/loading.gif" lazyload alt="域名服务器"></p>
+<h2 id="DNS解析流程？"><a href="#DNS解析流程？" class="headerlink" title="DNS解析流程？"></a>DNS解析流程？</h2><h3 id="域名服务器层级"><a href="#域名服务器层级" class="headerlink" title="域名服务器层级"></a>域名服务器层级</h3><p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8.png" srcset="/img/loading.gif" lazyload alt="域名服务器"></p>
 <p>域名服务器可划分为以下4种不同类型:</p>
 <ul>
 <li>根域名服务器<br>这是最高层次的域名服务器。根域名服务器并不直接管辖某个区的域名信息，但每个根域名服务器都知道所有的顶级域名服务器的域名及其IP地址。在因特网上共有13个不同IP地址的根域名服务器。尽管我们将这13个根域名服务器中的每一个都视为单个的服务器，但每台“服务器”实际上是由许多分布在世界各地的计算机构成的服务器群集。根域名服务器通常并不直接对域名进行解析，而是返回该域名所属顶级域名的顶级域名服务器的IP地址。</li>
@@ -540,14 +540,14 @@
 <li>权威域名服务器<br>负责管理某个区的域名服务器。每一个主机的域名都必须在某个权威域名服务器处注册登记。因此权威域名服务器知道其管辖的域名与IP地址的映射关系。另外，权威域名服务器还知道其下级域名服务器的地址。</li>
 <li>本地域名服务器<br>本地域名服务器不属于上图的域名服务器的等级结构。当一个主机发出DNS查询报文时，这个查询报文就首先被送往该主机的本地域名服务器。本地域名服务器起着DNS代理的作用，会将该查询报文转发到域名服务器的等级结构中。每一个因特网服务提供者ISP，一个大学，甚至一个大学里的系，都可以拥有一个本地域名服务器，它有时也称为默认域名服务器。本地域名服务器离用户较近，一般不超过几个路由器的距离，有可能就在同一个局域网中。本地域名服务器的IP地址需要直接配置在需要域名解析的主机中。例如，在WindowsXP网络连接属性中设置的DNS地址就是该主机本地域名服务器的IP地址。</li>
 </ul>
-<h3 id="域名解析流程"><a href="#域名解析流程" class="headerlink" title="域名解析流程"></a>域名解析流程</h3><p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" srcset="/img/loading.gif" lazyload alt="域名解析"></p>
+<h3 id="域名解析流程"><a href="#域名解析流程" class="headerlink" title="域名解析流程"></a>域名解析流程</h3><p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png" srcset="/img/loading.gif" lazyload alt="域名解析"></p>
 <p>主机向本地域名服务器的查询一般都是采用递归查询（recursivequery）。所谓递归查询就是如果本地域名服务器不知道被查询域名的IP地址时，那么本地域名服务器就以DNS客户的身份向某个根域名服务器继续发出查询请求报文（即替该主机继续查询），而不是让该主机自己进行下一步的查询。</p>
 <p>本地域名服务器向根域名服务器查询时，是优先采用迭代查询（iterativequery）。所谓迭代查询就是由本地域名服务器进行循环查询。当根域名服务器收到查询请求报文但并不知道被查询域名的IP地址时，这个根域名服务器就把自己知道的顶级域名服务器的IP地址告诉本地域名服务器，让本地域名服务器再向顶级域名服务器查询。顶级域名服务器在收到本地域名服务器的查询请求后，就告诉本地域名服务器下一步应当向哪一个权威域名服务器进行查询。这样查询下去，主机就知道了所要解析的域名的IP地址。</p>
 <p>本地域名服务器和主机中均会缓存域名信息，主机只在从缓存中找不到欲解析的域名时才向本地域名服务器发送查询请求报文。本地域名服务器和本机的域名信息都会定期更新。</p>
 <p>如果全部迭代查询，上层服务器将长时间保持连接（因为要代替本地域名服务器去查），所以负担大</p>
 <p>参考：<br>《计算机网络教程》 谢钧，谢希仁 人民邮电出版社</p>
 <h2 id="https的流程可以描述一下么？如果没有证书可以么？"><a href="#https的流程可以描述一下么？如果没有证书可以么？" class="headerlink" title="https的流程可以描述一下么？如果没有证书可以么？"></a>https的流程可以描述一下么？如果没有证书可以么？</h2><h3 id="为什么要用https？"><a href="#为什么要用https？" class="headerlink" title="为什么要用https？"></a>为什么要用https？</h3><p>实际使用中，绝大说的网站现在都采用的是https协议，这也是未来互联网发展的趋势。下面是通过wireshark抓取的一个博客网站的登录请求过程。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF.png" srcset="/img/loading.gif" lazyload alt="敏感信息"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF.png" srcset="/img/loading.gif" lazyload alt="敏感信息"></p>
 <p>可以看到访问的账号密码都是明文传输， 这样客户端发出的请求很容易被不法分子截取利用，因此，HTTP协议不适合传输一些敏感信息，比如：各种账号、密码等信息，使用http协议传输隐私信息非常不安全。</p>
 <p>一般http中存在如下问题：<br>请求信息明文传输，容易被窃听截取。<br>数据的完整性未校验，容易被篡改<br>没有验证对方身份，存在冒充危险</p>
 <h3 id="什么是HTTPS"><a href="#什么是HTTPS" class="headerlink" title="什么是HTTPS?"></a>什么是HTTPS?</h3><p>为了解决上述HTTP存在的问题，就用到了HTTPS。</p>
@@ -557,7 +557,7 @@
 <p>TLS（Transport Layer Security，传输层安全）：其前身是 SSL，它最初的几个版本（SSL 1.0、SSL 2.0、SSL 3.0）由网景公司开发，1999年从 3.1 开始被 IETF 标准化并改名，发展至今已经有 TLS 1.0、TLS 1.1、TLS 1.2 三个版本。SSL3.0和TLS1.0由于存在安全漏洞，已经很少被使用到。TLS 1.3 改动会比较大，目前还在草案阶段，目前使用最广泛的是TLS 1.1、TLS 1.2。</p>
 <p>SSL发展史（互联网加密通信）</p>
 <p>1994年NetSpace公司设计SSL协议（Secure Sockets Layout）1.0版本，但未发布。<br>1995年NetSpace发布SSL&#x2F;2.0版本，很快发现有严重漏洞<br>1996年发布SSL&#x2F;3.0版本，得到大规模应用<br>1999年，发布了SSL升级版TLS&#x2F;1.0版本，目前应用最广泛的版本<br>2006年和2008年，发布了TLS&#x2F;1.1版本和TLS&#x2F;1.2版本</p>
-<h3 id="浏览器在使用HTTPS传输数据的流程是什么？"><a href="#浏览器在使用HTTPS传输数据的流程是什么？" class="headerlink" title="浏览器在使用HTTPS传输数据的流程是什么？"></a>浏览器在使用HTTPS传输数据的流程是什么？</h3><p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="数据传输流程"></p>
+<h3 id="浏览器在使用HTTPS传输数据的流程是什么？"><a href="#浏览器在使用HTTPS传输数据的流程是什么？" class="headerlink" title="浏览器在使用HTTPS传输数据的流程是什么？"></a>浏览器在使用HTTPS传输数据的流程是什么？</h3><p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="数据传输流程"></p>
 <ul>
 <li>首先客户端通过URL访问服务器建立SSL连接。</li>
 <li>服务端收到客户端请求后，会将网站支持的证书信息（证书中包含公钥）传送一份给客户端。</li>
@@ -592,19 +592,19 @@
 </ul>
 <p>当用户程序执行 read ，线程会被阻塞，一直等到内核数据准备好，并把数据从内核缓冲区拷贝到应用程序的缓冲区中，当拷贝过程完成，read 才会返回。</p>
 <p>注意，阻塞等待的是「内核数据准备好」和「数据从内核态拷贝到用户态」这两个过程。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%98%BB%E5%A1%9EIO.png" srcset="/img/loading.gif" lazyload alt="阻塞IO"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%98%BB%E5%A1%9EIO.png" srcset="/img/loading.gif" lazyload alt="阻塞IO"></p>
 <ul>
 <li>非阻塞I&#x2F;O</li>
 </ul>
 <p>非阻塞的 read 请求在数据未准备好的情况下立即返回，可以继续往下执行，此时应用程序不断轮询内核，直到数据准备好，内核将数据拷贝到应用程序缓冲区，read 调用才可以获取到结果。</p>
 <p>注意，这里最后一次 read 调用，获取数据的过程，是一个同步的过程，是需要等待的过程。这里的同步指的是内核态的数据拷贝到用户程序的缓存区这个过程。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E9%98%BB%E5%A1%9EIO.png" srcset="/img/loading.gif" lazyload alt="非阻塞IO"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E9%98%BB%E5%A1%9EIO.png" srcset="/img/loading.gif" lazyload alt="非阻塞IO"></p>
 <p>如果 socket 设置了 O_NONBLOCK 标志，那么就表示使用的是非阻塞 I&#x2F;O 的方式访问，而不做任何设置的话，默认是阻塞 I&#x2F;O。因此，无论 read 和 send 是阻塞 I&#x2F;O，还是非阻塞 I&#x2F;O 都是同步调用。因为在 read 调用时，内核将数据从内核空间拷贝到用户空间的过程都是需要等待的，也就是说这个过程是同步的，如果内核实现的拷贝效率不高，read 调用就会在这个同步过程中等待比较长的时间。</p>
 <ul>
 <li>异步I&#x2F;O</li>
 </ul>
 <p>真正的异步 I&#x2F;O 是「内核数据准备好」和「数据从内核态拷贝到用户态」这两个过程都不用等待。当我们发起 aio_read （异步 I&#x2F;O） 之后，就立即返回，内核自动将数据从内核空间拷贝到用户空间，这个拷贝过程同样是异步的，内核自动完成的，和前面的同步操作不一样，应用程序并不需要主动发起拷贝动作。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BC%82%E6%AD%A5IO.png" srcset="/img/loading.gif" lazyload alt="异步IO"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BC%82%E6%AD%A5IO.png" srcset="/img/loading.gif" lazyload alt="异步IO"></p>
 <ul>
 <li>对比</li>
 </ul>
@@ -618,30 +618,30 @@
 <ul>
 <li>单 Reactor 单进程 &#x2F; 线程处理资源池；</li>
 </ul>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%8D%95%E7%BA%BF%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="单r单线程"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%8D%95%E7%BA%BF%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="单r单线程"></p>
 <p>可以看到进程里有 Reactor、Acceptor、Handler 这三个对象：Reactor 对象的作用是监听和分发事件；Acceptor 对象的作用是获取连接；Handler 对象的作用是处理业务；对象里的 select、accept、read、send 是系统调用函数，dispatch 和 「业务处理」是需要完成的操作，其中 dispatch 是分发事件操作。</p>
 <p>Reactor 对象通过 select （IO 多路复用接口） 监听事件，收到事件后通过 dispatch 进行分发，具体分发给 Acceptor 对象还是 Handler 对象，还要看收到的事件类型；如果是连接建立的事件，则交由 Acceptor 对象进行处理，Acceptor 对象会通过 accept 方法 获取连接，并创建一个 Handler 对象来处理后续的响应事件；如果不是连接建立事件， 则交由当前连接对应的 Handler 对象来进行响应；Handler 对象通过 read -&gt; 业务处理 -&gt; send 的流程来完成完整的业务流程。</p>
 <p>单 Reactor 单进程的方案因为全部工作都在同一个进程内完成，所以实现起来比较简单，不需要考虑进程间通信，也不用担心多进程竞争。但是，这种方案存在 2 个缺点：第一个缺点，因为只有一个进程，无法充分利用 多核 CPU 的性能；第二个缺点，Handler 对象在业务处理时，整个进程是无法处理其他连接的事件的，如果业务处理耗时比较长，那么就造成响应的延迟；所以，单 Reactor 单进程的方案不适用计算机密集型的场景，只适用于业务处理非常快速的场景。Redis 是由 C 语言实现的，它采用的正是「单 Reactor 单进程」的方案，因为 Redis 业务处理主要是在内存中完成，操作的速度是很快的，性能瓶颈不在 CPU 上，所以 Redis 对于命令的处理是单进程的方案。</p>
 <ul>
 <li>单 Reactor 多线程 &#x2F; 进程处理资源池；</li>
 </ul>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="单r多线程"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="单r多线程"></p>
 <p>Reactor 对象通过 select （IO 多路复用接口） 监听事件，收到事件后通过 dispatch 进行分发，具体分发给 Acceptor 对象还是 Handler 对象，还要看收到的事件类型；如果是连接建立的事件，则交由 Acceptor 对象进行处理，Acceptor 对象会通过 accept 方法 获取连接，并创建一个 Handler 对象来处理后续的响应事件；如果不是连接建立事件， 则交由当前连接对应的 Handler 对象来进行响应；上面的三个步骤和单 Reactor 单线程方案是一样的，接下来的步骤就开始不一样了：Handler 对象不再负责业务处理，只负责数据的接收和发送，Handler 对象通过 read 读取到数据后，会将数据发给子线程里的 Processor 对象进行业务处理；子线程里的 Processor 对象就进行业务处理，处理完后，将结果发给主线程中的 Handler 对象，接着由 Handler 通过 send 方法将响应结果发送给 client；</p>
 <p>单 Reator 多线程的方案优势在于能够充分利用多核 CPU 的能，那既然引入多线程，那么自然就带来了多线程竞争资源的问题。「单 Reactor」的模式还有个问题，因为一个 Reactor 对象承担所有事件的监听和响应，而且只在主线程中运行，在面对瞬间高并发的场景时，容易成为性能的瓶颈的地方。</p>
 <p>单 Reactor 多进程相比单 Reactor 多线程实现起来很麻烦，实际应用中也看不到单 Reactor 多进程的模式。</p>
 <ul>
 <li>多 Reactor 多进程 &#x2F; 线程处理资源池；</li>
 </ul>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%A4%9Ar%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="多r多线程"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%A4%9Ar%E5%A4%9A%E7%BA%BF%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="多r多线程"></p>
 <p>主线程中的 MainReactor 对象通过 select 监控连接建立事件，收到事件后通过 Acceptor 对象中的 accept 获取连接，将新的连接分配给某个子线程；子线程中的 SubReactor 对象将 MainReactor 对象分配的连接加入 select 继续进行监听，并创建一个 Handler 用于处理连接的响应事件。如果有新的事件发生时，SubReactor 对象会调用当前连接对应的 Handler 对象来进行响应。Handler 对象通过 read -&gt; 业务处理 -&gt; send 的流程来完成完整的业务流程。</p>
 <p>多 Reactor 多线程的方案虽然看起来复杂的，但是实际实现时比单 Reactor 多线程的方案要简单的多，原因如下：主线程和子线程分工明确，主线程只负责接收新连接，子线程负责完成后续的业务处理。主线程和子线程的交互很简单，主线程只需要把新连接传给子线程，子线程无须返回数据，直接就可以在子线程将处理结果发送给客户端。</p>
 <p>大名鼎鼎的两个开源软件 Netty 和 Memcache 都采用了「多 Reactor 多线程」的方案。</p>
 <h3 id="Proactor"><a href="#Proactor" class="headerlink" title="Proactor"></a>Proactor</h3><p>前面提到的 Reactor 是非阻塞同步网络模式，而 Proactor 是异步网络模式。<br>linux中对于异步I&#x2F;O支持不完善，所以Linux 的高性能网络程序都是使用 Reactor 方案。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/26943938/answer/1856426252">如何深刻理解Reactor和Proactor</a></p>
 <h2 id="NIO的三大件分别是什么"><a href="#NIO的三大件分别是什么" class="headerlink" title="NIO的三大件分别是什么"></a>NIO的三大件分别是什么</h2><p>Java NIO（New IO）是从 Java 1.4 版本开始引入的一个新的 IO API，可以替代标准的 Java IO API。NIO 与原来的 IO 有同样的作用和目的，但是使用方式完全不同，NIO 支持面向缓冲区的、基于通道的 IO 操作。NIO 将以更加高效的方式进行文件的读写操作。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E7%BB%9Fio.png" srcset="/img/loading.gif" lazyload alt="传统io"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E7%BB%9Fio.png" srcset="/img/loading.gif" lazyload alt="传统io"></p>
 <p>传统的 IO 是面向流的（一个个字节数据的流动）,传统的 IO 流是单向的</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/nio.png" srcset="/img/loading.gif" lazyload alt="nio"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/nio.png" srcset="/img/loading.gif" lazyload alt="nio"></p>
 <p>NIO面向缓冲区,缓冲区是双向的。通道Channel可以类比铁路，而缓冲区Buffer可以类比火车。</p>
 <h3 id="Buffer"><a href="#Buffer" class="headerlink" title="Buffer"></a>Buffer</h3><p>缓冲区（Buffer）：一个用于特定基本数据类型的容器。由 java.nio 包定义的，所有缓冲区都是 Buffer 抽象类的子类：ByteBuffer、CharBuffer、ShortBuffer、IntBuffer、LongBuffer、FloatBuffer、DoubleBuffer</p>
 <ul>
@@ -660,11 +660,11 @@
 <p>通过 allocate() 方法分配缓冲区，将缓冲区建立在 JVM 的内存之中。</p>
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs pgsql">String str = &quot;abcde&quot;;<br>//分配一个指定大小的缓冲区<br>ByteBuffer byteBuffer = ByteBuffer.allocate(<span class="hljs-number">1024</span>);<br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(&quot;---------allocate-----------&quot;);<br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(byteBuffer.capacity());   //<span class="hljs-number">1024</span><br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(byteBuffer.<span class="hljs-keyword">limit</span>());      //<span class="hljs-number">1024</span><br><span class="hljs-keyword">System</span>.<span class="hljs-keyword">out</span>.println(byteBuffer.position());   //<span class="hljs-number">0</span><br></code></pre></td></tr></table></figure>
 
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png" srcset="/img/loading.gif" lazyload alt="非直接缓冲"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png" srcset="/img/loading.gif" lazyload alt="非直接缓冲"></p>
 <p>应用程序想从磁盘中读取一个数据，这时候应用程序向操作系统发起一个读请求，那么首先磁盘中的数据会被读取到内核地址空间中，然后会把内核地址空间中的数据拷贝到用户地址空间中（其实就是 JVM 内存中），最后再把这个数据读取到应用程序中来。同样，如果应用程序有数据想要写到磁盘中去，那么它会首先把这个数据写入到用户地址空间中去，然后把数据拷贝到内核地址空间，最后再把这个数据写入到磁盘中去。</p>
 <p>(2)直接缓冲区</p>
 <p>通过 allocateDirect() 方法分配缓冲区，将缓冲区直接建立在物理内存之中，避免无效的复制。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png" srcset="/img/loading.gif" lazyload alt="直接缓冲"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png" srcset="/img/loading.gif" lazyload alt="直接缓冲"></p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">test3</span>()</span> &#123;<br>    <span class="hljs-comment">// 分配直接缓冲区</span><br>    ByteBuffer byteBuffer = ByteBuffer.allocateDirect(<span class="hljs-number">1024</span>);<br>    <span class="hljs-comment">// 判断是直接缓冲区还是非直接缓冲区</span><br>    System.<span class="hljs-keyword">out</span>.println(byteBuffer.isDirect());<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="Channel"><a href="#Channel" class="headerlink" title="Channel"></a>Channel</h3><p>Channel 用于源节点与目标节点的连接， Channel 本身不能直接访问数据，Channel 只能与 Buffer 进行交互。<br>常见Channel：FileChannel、SocketChannel、ServerSocketChannel、DatagramChannel</p>
@@ -687,7 +687,7 @@
 <figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-built_in">public</span> static <span class="hljs-type">void</span> test3() throws <span class="hljs-keyword">Exception</span> &#123;<br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">         * 通道之间的数据传输（直接缓冲区的方式）</span><br><span class="hljs-comment">         * transferFrom</span><br><span class="hljs-comment">         * transferTo</span><br><span class="hljs-comment">         */</span><br>    FileChannel inChannel = FileChannel.<span class="hljs-keyword">open</span>(Paths.<span class="hljs-keyword">get</span>(&quot;a.txt&quot;), StandardOpenOption.<span class="hljs-keyword">READ</span>);<br>    FileChannel outChannel = FileChannel.<span class="hljs-keyword">open</span>(Paths.<span class="hljs-keyword">get</span>(&quot;d.txt&quot;), StandardOpenOption.<span class="hljs-keyword">READ</span>, StandardOpenOption.<span class="hljs-keyword">WRITE</span>,<br>                                              StandardOpenOption.<span class="hljs-keyword">CREATE</span>);<br>    inChannel.transferTo(<span class="hljs-number">0</span>, inChannel.size(), outChannel);<br>    // 或者可以使用下面这种方式<br>    //outChannel.transferFrom(inChannel, <span class="hljs-number">0</span>, inChannel.size());<br>    inChannel.<span class="hljs-keyword">close</span>();<br>    outChannel.<span class="hljs-keyword">close</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <h3 id="Selector"><a href="#Selector" class="headerlink" title="Selector"></a>Selector</h3><p>假设NIO没有这个Selector选择器，那么此时一个客户端连接过来就要对应的一个线程去处理，但是这个客户端可能只是连接一下，并不会立马就会有读写事件，那么此时依然会造成线程的阻塞，导致资源的浪费。有了Selector之后，客户端发送连接请求之后，服务端就把对应的SocketChannle注册到Selector上去。如果这时候该客户端Channle上有读写事件发生，再把请求交给对应的线程处理，如果没有就不做任何处理，这样没有事件的时候线程不会处于阻塞状态，也不会导致系统资源的浪费，只有真正有事件发生的Channel才会交给对应的线程去处理。<br>本质也是在做IO多路复用的事情，底层调用的系统调用的select函数。</p>
-<p><img src="/2023/06/06/2023-06-06-%E5%85%AB%E8%82%A1%E6%96%87-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/selector.png" srcset="/img/loading.gif" lazyload alt="selector"></p>
+<p><img src="/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/selector.png" srcset="/img/loading.gif" lazyload alt="selector"></p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/369062109">Java 中 NIO 看这一篇就够了</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_34626097/article/details/89278943">Java NIO之三 直接缓冲区、非直接缓冲区、区别、及底层实现</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7097020623657893919">NIO三大核心详解</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7032547413764079630">Java NIO（NIO socket网络编程）</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7059400681949495327">Java NIO 中的 Selector 详解</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/150635981">面试系列 深入理解NIO select&amp;epoll</a></p>
 <h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/54_bMeUwjxk-8DHa90heNQ">微信公众号:我的IT技术路</a></p>
 
@@ -735,8 +735,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>八股文-计算机网络</div>
-      <div>http://example.com/2023/06/06/2023-06-06-八股文-计算机网络/</div>
+      <div>学习笔记-计算机网络</div>
+      <div>http://example.com/2023/06/06/2023-06-06-学习笔记-计算机网络/</div>
     </div>
     <div class="license-meta">
       
@@ -802,8 +802,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/05/23/2023-05-23-%E5%85%AB%E8%82%A1%E6%96%87-jvm/" title="八股文--jvm">
-                        <span class="hidden-mobile">八股文--jvm</span>
+                      <a href="/2023/05/23/2023-05-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/" title="学习笔记--jvm">
+                        <span class="hidden-mobile">学习笔记--jvm</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>

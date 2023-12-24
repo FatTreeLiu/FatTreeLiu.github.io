@@ -18,22 +18,22 @@
   
     <meta name="description" content="前言整理spring的相关面试题，题目来源微信公众号。 题目聊聊spring的IOC和AOP？其底层原理分别是什么？IOC没有使用spring，所有的对象均需要手动创建，相当于底层类控制了上层类，例如轮子类控制了汽车类，创建汽车对象的时候需要传入轮子的参数。IOC意思就是控制反转，即上层类控制下层类，上层类的对象只需要指定需要什么类型的下层类对象，由外部容器提前创建好并注入，上层类对象本身不负责下">
 <meta property="og:type" content="article">
-<meta property="og:title" content="八股文-spring">
-<meta property="og:url" content="http://example.com/2023/10/22/2023-10-22-%E5%85%AB%E8%82%A1%E6%96%87-spring/index.html">
+<meta property="og:title" content="学习笔记-spring">
+<meta property="og:url" content="http://example.com/2023/10/22/2023-10-22-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-spring/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="前言整理spring的相关面试题，题目来源微信公众号。 题目聊聊spring的IOC和AOP？其底层原理分别是什么？IOC没有使用spring，所有的对象均需要手动创建，相当于底层类控制了上层类，例如轮子类控制了汽车类，创建汽车对象的时候需要传入轮子的参数。IOC意思就是控制反转，即上层类控制下层类，上层类的对象只需要指定需要什么类型的下层类对象，由外部容器提前创建好并注入，上层类对象本身不负责下">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/10/22/2023-10-22-%E5%85%AB%E8%82%A1%E6%96%87-spring/Springmvc%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="http://example.com/2023/10/22/2023-10-22-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-spring/Springmvc%E6%B5%81%E7%A8%8B.png">
 <meta property="article:published_time" content="2023-10-22T02:17:52.000Z">
-<meta property="article:modified_time" content="2023-12-05T14:35:21.813Z">
+<meta property="article:modified_time" content="2023-12-24T15:04:48.937Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="spring">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/10/22/2023-10-22-%E5%85%AB%E8%82%A1%E6%96%87-spring/Springmvc%E6%B5%81%E7%A8%8B.png">
+<meta name="twitter:image" content="http://example.com/2023/10/22/2023-10-22-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-spring/Springmvc%E6%B5%81%E7%A8%8B.png">
   
   
   
-  <title>八股文-spring - Hexo</title>
+  <title>学习笔记-spring - Hexo</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +199,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="八股文-spring"></span>
+            <span id="subtitle" data-typed-text="学习笔记-spring"></span>
           
         </div>
 
@@ -270,7 +270,7 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">八股文-spring</h1>
+            <h1 id="seo-header">学习笔记-spring</h1>
             
             
               <div class="markdown-body">
@@ -327,7 +327,7 @@
 <h2 id="Spring的事件类型有几种？"><a href="#Spring的事件类型有几种？" class="headerlink" title="Spring的事件类型有几种？"></a>Spring的事件类型有几种？</h2><p>Spring 提供了以下5中标准的事件：</p>
 <p>上下文更新事件（ContextRefreshedEvent）：该事件会在ApplicationContext被初始化或者更新时发布。也可以在调用ConfigurableApplicationContext 接口中的refresh()方法时被触发。<br>上下文开始事件（ContextStartedEvent）：当容器调用ConfigurableApplicationContext的Start()方法开始&#x2F;重新开始容器时触发该事件。<br>上下文停止事件（ContextStoppedEvent）：当容器调用ConfigurableApplicationContext的Stop()方法停止容器时触发该事件。<br>上下文关闭事件（ContextClosedEvent）：当ApplicationContext被关闭时触发该事件。容器被关闭时，其管理的所有单例Bean都被销毁。<br>请求处理事件（RequestHandledEvent）：在Web应用中，当一个http请求（request）结束触发该事件。<br>除了上面介绍的事件以外，还可以通过扩展ApplicationEvent 类来开发自定义的事件。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1532994">经典面试题-Spring框架中有哪些不同类型的事件？</a></p>
-<h2 id="Springmvc的流程？"><a href="#Springmvc的流程？" class="headerlink" title="Springmvc的流程？"></a>Springmvc的流程？</h2><p><img src="/2023/10/22/2023-10-22-%E5%85%AB%E8%82%A1%E6%96%87-spring/Springmvc%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="Springmvc流程"></p>
+<h2 id="Springmvc的流程？"><a href="#Springmvc的流程？" class="headerlink" title="Springmvc的流程？"></a>Springmvc的流程？</h2><p><img src="/2023/10/22/2023-10-22-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-spring/Springmvc%E6%B5%81%E7%A8%8B.png" srcset="/img/loading.gif" lazyload alt="Springmvc流程"></p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1AP411s7D7/?spm_id_from=333.337.search-card.all.click&vd_source=3043528c37081b8aa126b17fd5b4a4c5">赵伟风老师SSM框架实战精讲</a></p>
 <h2 id="SpringMvc的控制器是不是单例模式-如果是-有什么问题-怎么解决？"><a href="#SpringMvc的控制器是不是单例模式-如果是-有什么问题-怎么解决？" class="headerlink" title="SpringMvc的控制器是不是单例模式,如果是,有什么问题,怎么解决？"></a>SpringMvc的控制器是不是单例模式,如果是,有什么问题,怎么解决？</h2><p>单例，实例变量的线程安全问题，可以用@Scope(“prototype”)改为多例的模式，或者实例变量用threadlocal变量。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/xcb425/article/details/104423741">SpringMVC控制器是不是单例模式</a></p>
@@ -392,8 +392,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>八股文-spring</div>
-      <div>http://example.com/2023/10/22/2023-10-22-八股文-spring/</div>
+      <div>学习笔记-spring</div>
+      <div>http://example.com/2023/10/22/2023-10-22-学习笔记-spring/</div>
     </div>
     <div class="license-meta">
       
@@ -449,9 +449,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/05/2023-12-05-%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/" title="算法题目记录">
+                      <a href="/2023/12/05/2023-12-05-%E5%8A%9B%E6%89%A3%E7%83%AD%E9%A2%98100%E5%81%9A%E9%A2%98%E8%AE%B0%E5%BD%95/" title="力扣热题100做题记录">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">算法题目记录</span>
+                        <span class="hidden-mobile">力扣热题100做题记录</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
