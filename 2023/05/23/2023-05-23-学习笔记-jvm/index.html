@@ -39,7 +39,7 @@
 <meta property="og:image" content="http://example.com/2023/05/23/2023-05-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/loadClass.png">
 <meta property="og:image" content="http://example.com/2023/05/23/2023-05-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/tomcat%E7%A0%B4%E5%9D%8F%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png">
 <meta property="article:published_time" content="2023-05-23T13:36:37.000Z">
-<meta property="article:modified_time" content="2023-12-24T15:04:48.945Z">
+<meta property="article:modified_time" content="2023-12-25T11:08:43.477Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary_large_image">
@@ -591,14 +591,14 @@
 <p><strong>Region大小</strong>：用-XX:G1HeapRegionSize来指定，若未指定则默认最多生成2048块，每块的大小需要为2的幂次方，如1,2,4,8,16,32，最大值为32M。Region的大小主要是关系到Humongous Object的判定，当一个对象超过Region大小的一半时，则为巨型对象，那么其会至少独占一个Region，如果一个放不下，会占用连续的多个Region。当一个Humongous Region放入了一个巨型对象，可能还有不少剩余空间，但是不能用于存放其他对象，这些空间就浪费了。所以如果应用里有很多大小差不多的巨型对象，可以适当调整Region的大小，尽量让他们以普通对象的形式分配，合理利用Region空间。</p>
 <p><strong>新生代比例</strong>：新生代比例有两个数值指定，下限：-XX:G1NewSizePercent，默认值5%，上限：-XX:G1MaxNewSizePercent，默认值60%。G1会根据实际的GC情况(主要是暂停时间)来动态的调整新生代的大小，主要是Eden Region的个数。最好是Eden的空间大一点，毕竟Young GC的频率更大，大的Eden空间能够降低Young GC的发生次数。但是Mixed GC是伴随着Young GC一起的，如果暂停时间短，那么需要更加频繁的Young GC，同时也需要平衡好Mixed GC中新生代和老年代的Region，因为新生代的所有Region都会被回收，如果Eden很大，那么留给老年代回收空间就不多了，最后可能会导致Full GC。避免使用 -Xmn 选项或 -XX:NewRatio 等其他相关选项显式设置年轻代大小。固定年轻代的大小会覆盖暂停时间目标。</p>
 <p><strong>并发GC线程数</strong>：通过 -XX:ConcGCThreads来指定，默认是-XX:ParallelGCThreads&#x2F;4，也就是在非STW期间的GC工作线程数，当然其他的线程很多工作在应用上。当并发周期时间过长时，可以尝试调大GC工作线程数，但是这也意味着此期间应用所占的线程数减少，会对吞吐量有一定影响。<br>并行GC线程数：通过 -XX:ParallelGCThreads来指定，也就是在STW阶段工作的GC线程数，其值遵循以下原则：<br>① 如果用户显示指定了ParallelGCThreads，则使用用户指定的值。<br>② 否则，需要根据实际的CPU所能够支持的线程数来计算ParallelGCThreads的值，计算方法见步骤③和步骤④。<br>③ 如果物理CPU所能够支持线程数小于8，则ParallelGCThreads的值为CPU所支持的线程数。这里的阀值为8，是因为JVM中调用nof_parallel_worker_threads接口所传入的switch_pt的值均为8。<br>④ 如果物理CPU所能够支持线程数大于8，则ParallelGCThreads的值为8加上一个调整值，调整值的计算方式为：物理CPU所支持的线程数减去8所得值的5&#x2F;8或者5&#x2F;16，JVM会根据实际的情况来选择具体是乘以5&#x2F;8还是5&#x2F;16。<br>比如，在64线程的x86 CPU上，如果用户未指定ParallelGCThreads的值，则默认的计算方式为：ParallelGCThreads &#x3D; 8 + (64 - 8) * (5&#x2F;8) &#x3D; 8 + 35 &#x3D; 43。</p>
-<p><strong>触发全局并发标记的老年代使用占比</strong>：通过-XX:InitiatingHeapOccupancyPercent指定，默认值45%，也就是老年代占堆的比例超过45%。如果Mixed GC周期结束后老年代使用率还是超过45%,那么会再次触发全局并发标记过程，这样就会导致频繁的老年代GC，影响应用吞吐量。同时老年代空间不大，Mixed GC回收的空间肯定是偏少的。可以适当调高IHOP的值，当然如果此值太高，很容易导致年轻代晋升失败而出发Full GC，所以需要多次调整测试。</p>
+<p><strong>触发全局并发标记的老年代使用占比</strong>：通过-XX:InitiatingHeapOccupancyPercent指定，默认值45%，也就是老年代占堆的比例超过45%。如果Mixed GC周期结束后老年代使用率还是超过45%,那么会再次触发全局并发标记过程，这样就会导致频繁的老年代GC，影响应用吞吐量。同时老年代空间不大，Mixed GC回收的空间肯定是偏少的。可以适当调高IHOP的值，当然如果此值太高，很容易导致年轻代晋升失败而出发Full GC，所以需要多次调整测试。<br>如果使用的JDK版本在8b12之前，XX:InitiatingHeapOccupancyPercent是整个堆使用量与堆总体容量的比值；<br>如果使用的JDK版本在8b12之后（包括大版本9、10、11…），XX:InitiatingHeapOccupancyPercent是老年代大小与堆总体容量的比值。</p>
 <p><strong>被纳入Cset的Region的存活空间占比阈值</strong>：通过 -XX:G1MixedGCLiveThresholdPercent指定，不同版本默认值不同，有65%和85%。在全局并发标记阶段，如果一个Region的存活对象的空间占比低于此值，则会被纳入Cset。此值直接影响到Mixed GC选择回收的区域，当发现GC时间较长时，可以尝试调低此阈值，尽量优先选择回收垃圾占比高的Region，但此举也可能导致垃圾回收的不够彻底，最终触发Full GC。</p>
 <p><strong>触发Mixed GC的堆垃圾占比</strong>：通过-XX:G1HeapWastePercent指定，默认值5%，也就是在全局标记结束后能够统计出所有Cset内可被回收的垃圾占整对的比例值，如果超过5%，那么就会触发之后的多轮Mixed GC，如果不超过，那么会在之后的某次Young GC中重新执行全局并发标记。可以尝试适当的调高此阈值，能够适当的降低Mixed GC的频率。</p>
 <p><strong>每轮Mixed GC回收的Region最大比例</strong>：通过-XX:G1OldCSetRegionThresholdPercent指定，默认10%，也就是每轮Mixed GC附加的Cset的Region不超过全部Region的10%，最多10%，如果暂停时间短，那么可能会少于10%。一般这个值不需要额外调整。</p>
 <p><strong>一个周期内触发Mixed GC最大次数</strong>：通过-XX:G1MixedGCCountTarget指定，默认值8。也就是在一次全局并发标记后，最多接着8此Mixed GC，也就是会把全局并发标记阶段生成的Cset里的Region拆分为最多8部分，然后在每轮Mixed GC里收集一部分。这个值要和上一个参数配合使用，8*10%&#x3D;80%，应该来说会大于每次标记阶段的Cset集合了。一般此参数也不需额外调整。</p>
 <p><strong>G1为分配担保预留的空间比例</strong>：通过-XX:G1ReservePercent指定，默认10%。也就是老年代会预留10%的空间来给新生代的对象晋升，如果经常发生新生代晋升失败而导致Full GC，那么可以适当调高此阈值。但是调高此值同时也意味着降低了老年代的实际可用空间。</p>
 <p><strong>晋升年龄阈值</strong>：通过-XX:MaxTenuringThreshold指定，默认值15。一般新生对象经过15次Young GC会晋升到老年代，巨型对象会直接分配在老年代，同时在Young GC时，如果相同age的对象占Survivors空间的比例超过 -XX:TargetSurvivorRatio的值(默认50%)，则会自动将此次晋升年龄阈值设置为此age的值，所有年龄超过此值的对象都会被晋升到老年代，此举可能会导致老年代需要不少空间应对此种晋升。一般这个值不需要额外调整。</p>
-<p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27529917/article/details/87072130">G1调优常用参数及其作用</a></p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27529917/article/details/87072130">G1调优常用参数及其作用</a><br><a target="_blank" rel="noopener" href="https://heapdump.cn/article/2712390">关于G1参数InitiatingHeapOccupancyPercent的正确认知</a></p>
 <h2 id="Java的四种引用有了解么？引用队列怎么使用？作用是什么？"><a href="#Java的四种引用有了解么？引用队列怎么使用？作用是什么？" class="headerlink" title="Java的四种引用有了解么？引用队列怎么使用？作用是什么？"></a>Java的四种引用有了解么？引用队列怎么使用？作用是什么？</h2><ul>
 <li><p>强引用<br>普通赋值就是强引用</p>
 </li>
