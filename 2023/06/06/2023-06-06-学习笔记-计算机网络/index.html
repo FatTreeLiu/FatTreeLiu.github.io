@@ -48,7 +48,7 @@
 <meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
 <meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/selector.png">
 <meta property="article:published_time" content="2023-06-06T14:15:48.000Z">
-<meta property="article:modified_time" content="2023-12-24T15:04:48.944Z">
+<meta property="article:modified_time" content="2023-12-30T11:39:17.494Z">
 <meta property="article:author" content="John Doe">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
@@ -566,10 +566,11 @@
 <li>服务器利用自己的私钥解密出会话密钥。</li>
 <li>服务器利用会话密钥加密与客户端之间的通信。</li>
 </ul>
+<h3 id="HTTPS的证书认证过程"><a href="#HTTPS的证书认证过程" class="headerlink" title="HTTPS的证书认证过程"></a>HTTPS的证书认证过程</h3><p>具体参考：<br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7027439392557891598">一篇读懂https的本质、证书验证过程以及数据加密</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/887859661be6">HTTPS数字证书与验证</a><br>主要是证书链认证一直到root证书，保障公钥的可信，然后传递对称密钥用于数据加密。</p>
 <h3 id="HTTPS的缺点"><a href="#HTTPS的缺点" class="headerlink" title="HTTPS的缺点"></a>HTTPS的缺点</h3><p>HTTPS协议多次握手，导致页面的加载时间延长近50%；<br>HTTPS连接缓存不如HTTP高效，会增加数据开销和功耗；<br>申请SSL证书需要钱，功能越强大的证书费用越高。<br>SSL涉及到的安全算法会消耗 CPU 资源，对服务器资源消耗较大。</p>
 <h3 id="总结HTTPS和HTTP的区别"><a href="#总结HTTPS和HTTP的区别" class="headerlink" title="总结HTTPS和HTTP的区别"></a>总结HTTPS和HTTP的区别</h3><p>HTTPS是HTTP协议的安全版本，HTTP协议的数据传输是明文的，是不安全的，HTTPS使用了SSL&#x2F;TLS协议进行了加密处理。<br>http和https使用连接方式不同，默认端口也不一样，http是80，https是443。</p>
 <h3 id="如果没有https证书可以访问么"><a href="#如果没有https证书可以访问么" class="headerlink" title="如果没有https证书可以访问么"></a>如果没有https证书可以访问么</h3><p>可以，就当相信对方，但是实际安全无法保障，因为没有权威机构认证身份。一般界面会显示“告诉你对方证书无效，是否继续连接？”，可以无视提示继续连接。</p>
-<p>参考：<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/300285738">如果没有有效的证书，HTTPS连接是否加密的？</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34753269">科普！什么是SSL证书？为什么要买SSL证书？</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/zm/art/72616216">十分钟搞懂HTTP和HTTPS协议？</a></p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://www.zhihu.com/question/300285738">如果没有有效的证书，HTTPS连接是否加密的？</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/34753269">科普！什么是SSL证书？为什么要买SSL证书？</a><br><a target="_blank" rel="noopener" href="https://www.zhihu.com/tardis/zm/art/72616216">十分钟搞懂HTTP和HTTPS协议？</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7027439392557891598">一篇读懂https的本质、证书验证过程以及数据加密</a><br><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/887859661be6">HTTPS数字证书与验证</a></p>
 <h2 id="select，poll，epoll的区别？epoll的ET和LT分别是什么？"><a href="#select，poll，epoll的区别？epoll的ET和LT分别是什么？" class="headerlink" title="select，poll，epoll的区别？epoll的ET和LT分别是什么？"></a>select，poll，epoll的区别？epoll的ET和LT分别是什么？</h2><h3 id="select，poll，epoll"><a href="#select，poll，epoll" class="headerlink" title="select，poll，epoll"></a>select，poll，epoll</h3><p>最基础的 TCP 的 Socket 编程，它是阻塞 I&#x2F;O 模型，基本上只能一对一通信，那为了服务更多的客户端，我们需要改进网络 I&#x2F;O 模型。</p>
 <p>比较传统的方式是使用多进程&#x2F;线程模型，每来一个客户端连接，就分配一个进程&#x2F;线程，然后后续的读写都在对应的进程&#x2F;线程，这种方式处理 100 个客户端没问题，但是当客户端增大到 10000  个时，10000 个进程&#x2F;线程的调度、上下文切换以及它们占用的内存，都会成为瓶颈。</p>
 <p>为了解决上面这个问题，就出现了 I&#x2F;O 的多路复用，可以只在一个进程里处理多个文件的  I&#x2F;O，Linux 下有三种提供 I&#x2F;O 多路复用的 API，分别是：select、poll、epoll。</p>
