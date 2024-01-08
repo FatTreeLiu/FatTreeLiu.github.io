@@ -13,24 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="LiuWei">
+  <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
     <meta name="description" content="前言基于JavaWeb基础知识进行优化，形成了MVC的开发模式。 程序结构优化教程原来案例中的servlet太多了，希望只有一个servlet，把原来多个servlet的合并成一个，根据参数operation判断用哪个方法并用反射调用，都写到了新servlet的service方法中了。引入dispatcherservlet，作为中心控制器，把原来整合后的servlet都换成controller，不">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaWeb学习-MVC">
-<meta property="og:url" content="http://example.com/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/index.html">
+<meta property="og:url" content="https://fattreeliu.github.io/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/index.html">
 <meta property="og:site_name" content="FatTree">
 <meta property="og:description" content="前言基于JavaWeb基础知识进行优化，形成了MVC的开发模式。 程序结构优化教程原来案例中的servlet太多了，希望只有一个servlet，把原来多个servlet的合并成一个，根据参数operation判断用哪个方法并用反射调用，都写到了新servlet的service方法中了。引入dispatcherservlet，作为中心控制器，把原来整合后的servlet都换成controller，不">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/javaweb%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.png">
-<meta property="og:image" content="http://example.com/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/Service%E5%B1%82.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/javaweb%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/Service%E5%B1%82.png">
 <meta property="article:published_time" content="2022-12-31T07:21:56.000Z">
 <meta property="article:modified_time" content="2023-01-14T13:48:14.000Z">
-<meta property="article:author" content="LiuWei">
+<meta property="article:author" content="刘伟">
 <meta property="article:tag" content="web">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/javaweb%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.png">
+<meta name="twitter:image" content="https://fattreeliu.github.io/2022/12/31/2022-12-31-JavaWeb%E5%AD%A6%E4%B9%A0-MVC/javaweb%E4%BC%98%E5%8C%96%E5%9F%BA%E6%9C%AC%E6%80%9D%E8%B7%AF.png">
   
   
   
@@ -72,7 +72,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"fattreeliu.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -355,13 +355,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>JavaWeb学习-MVC</div>
-      <div>http://example.com/2022/12/31/2022-12-31-JavaWeb学习-MVC/</div>
+      <div>https://fattreeliu.github.io/2022/12/31/2022-12-31-JavaWeb学习-MVC/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>LiuWei</div>
+          <div>刘伟</div>
         </div>
       
       

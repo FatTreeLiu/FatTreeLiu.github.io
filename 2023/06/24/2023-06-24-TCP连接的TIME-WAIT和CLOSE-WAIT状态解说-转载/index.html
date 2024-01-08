@@ -13,26 +13,26 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="LiuWei">
+  <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
     <meta name="description" content="前言最近阅读到一篇关于TCP连接的TIME_WAIT和CLOSE_WAIT状态的博客，感觉博主讲的十分通透，怕后续博文失联，特别整理转载一下，博客的原链接是TCP连接的TIME_WAIT和CLOSE_WAIT 状态解说，以下为正文  相信很多运维工程师遇到过这样一个情形: 用户反馈网站访问巨慢, 网络延迟等问题, 然后就迫切地登录服务器,终端输入命令”netstat -anp | grep TIM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TCP连接的TIME_WAIT和CLOSE_WAIT状态解说(转载)">
-<meta property="og:url" content="http://example.com/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/index.html">
+<meta property="og:url" content="https://fattreeliu.github.io/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/index.html">
 <meta property="og:site_name" content="FatTree">
 <meta property="og:description" content="前言最近阅读到一篇关于TCP连接的TIME_WAIT和CLOSE_WAIT状态的博客，感觉博主讲的十分通透，怕后续博文失联，特别整理转载一下，博客的原链接是TCP连接的TIME_WAIT和CLOSE_WAIT 状态解说，以下为正文  相信很多运维工程师遇到过这样一个情形: 用户反馈网站访问巨慢, 网络延迟等问题, 然后就迫切地登录服务器,终端输入命令”netstat -anp | grep TIM">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
-<meta property="og:image" content="http://example.com/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png">
-<meta property="og:image" content="http://example.com/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/RFC793.png">
-<meta property="og:image" content="http://example.com/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wait%E8%B0%83%E4%BC%98%E7%A4%BA%E4%BE%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/RFC793.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wait%E8%B0%83%E4%BC%98%E7%A4%BA%E4%BE%8B.png">
 <meta property="article:published_time" content="2023-06-24T07:10:11.000Z">
 <meta property="article:modified_time" content="2023-07-15T01:41:50.661Z">
-<meta property="article:author" content="LiuWei">
+<meta property="article:author" content="刘伟">
 <meta property="article:tag" content="TCP">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
+<meta name="twitter:image" content="https://fattreeliu.github.io/2023/06/24/2023-06-24-TCP%E8%BF%9E%E6%8E%A5%E7%9A%84TIME-WAIT%E5%92%8CCLOSE-WAIT%E7%8A%B6%E6%80%81%E8%A7%A3%E8%AF%B4-%E8%BD%AC%E8%BD%BD/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
   
   
   
@@ -74,7 +74,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"fattreeliu.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -462,13 +462,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>TCP连接的TIME_WAIT和CLOSE_WAIT状态解说(转载)</div>
-      <div>http://example.com/2023/06/24/2023-06-24-TCP连接的TIME-WAIT和CLOSE-WAIT状态解说-转载/</div>
+      <div>https://fattreeliu.github.io/2023/06/24/2023-06-24-TCP连接的TIME-WAIT和CLOSE-WAIT状态解说-转载/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>LiuWei</div>
+          <div>刘伟</div>
         </div>
       
       

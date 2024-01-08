@@ -13,25 +13,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="LiuWei">
+  <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
     <meta name="description" content="前言java多线程的线程安全、线程管理、线程活性等相关面试题目整理，面经尽量用简短的语句说明问题，详细的信息可以参考每个面经下的参考链接。面经不保证完全正确，欢迎大家邮件联系作者进行相应的修改和交流。 题目Threadlocal使用场景？原理？如何保证内存不泄露？ThreadLocal使用场景不加锁的情况下，多线程安全访问共享变量，每个线程保留共享变量的副本（线程特有对象），每个线程往这个Thre">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记-java多线程-其他">
-<meta property="og:url" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/index.html">
+<meta property="og:url" content="https://fattreeliu.github.io/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/index.html">
 <meta property="og:site_name" content="FatTree">
 <meta property="og:description" content="前言java多线程的线程安全、线程管理、线程活性等相关面试题目整理，面经尽量用简短的语句说明问题，详细的信息可以参考每个面经下的参考链接。面经不保证完全正确，欢迎大家邮件联系作者进行相应的修改和交流。 题目Threadlocal使用场景？原理？如何保证内存不泄露？ThreadLocal使用场景不加锁的情况下，多线程安全访问共享变量，每个线程保留共享变量的副本（线程特有对象），每个线程往这个Thre">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
-<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97%E7%9A%84%E6%96%B9%E6%B3%95.png">
-<meta property="og:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E5%B8%B8%E8%A7%81%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97%E7%9A%84%E6%96%B9%E6%B3%95.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/%E5%B8%B8%E8%A7%81%E9%98%BB%E5%A1%9E%E9%98%9F%E5%88%97.png">
 <meta property="article:published_time" content="2023-02-23T14:13:45.000Z">
 <meta property="article:modified_time" content="2023-12-24T15:04:48.945Z">
-<meta property="article:author" content="LiuWei">
+<meta property="article:author" content="刘伟">
 <meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
+<meta name="twitter:image" content="https://fattreeliu.github.io/2023/02/23/2023-02-23-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%85%B6%E4%BB%96/threadlocal%E7%8E%AF%E5%BD%A2%E5%88%97%E8%A1%A8.png">
   
   
   
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"fattreeliu.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -450,13 +450,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>学习笔记-java多线程-其他</div>
-      <div>http://example.com/2023/02/23/2023-02-23-学习笔记-java多线程-其他/</div>
+      <div>https://fattreeliu.github.io/2023/02/23/2023-02-23-学习笔记-java多线程-其他/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>LiuWei</div>
+          <div>刘伟</div>
         </div>
       
       

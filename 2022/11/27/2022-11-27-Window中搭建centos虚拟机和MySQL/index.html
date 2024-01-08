@@ -13,24 +13,24 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="LiuWei">
+  <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
     <meta name="description" content="背景前一段时间，博主为了在家里搭建学习环境，想模拟一个生产环境，尝试了Windows安装WSL、Vmware workstation player 安装Ubuntu、把Window删了直接装Ubuntu、把Ubuntu删了装回Windows(Windows一直无法安装到SSD，最后拆了电脑拔了机械硬盘才装成功)的多个阶段，发现还是Windows用的习惯，曾经还想过有朝一日试试高贵的Macbook，">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Window中搭建centos虚拟机和MySQL">
-<meta property="og:url" content="http://example.com/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/index.html">
+<meta property="og:url" content="https://fattreeliu.github.io/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/index.html">
 <meta property="og:site_name" content="FatTree">
 <meta property="og:description" content="背景前一段时间，博主为了在家里搭建学习环境，想模拟一个生产环境，尝试了Windows安装WSL、Vmware workstation player 安装Ubuntu、把Window删了直接装Ubuntu、把Ubuntu删了装回Windows(Windows一直无法安装到SSD，最后拆了电脑拔了机械硬盘才装成功)的多个阶段，发现还是Windows用的习惯，曾经还想过有朝一日试试高贵的Macbook，">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/%E9%80%89%E6%8B%A9centos%E9%95%9C%E5%83%8F.png">
-<meta property="og:image" content="http://example.com/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/mysql%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/%E9%80%89%E6%8B%A9centos%E9%95%9C%E5%83%8F.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/mysql%E5%AF%86%E7%A0%81%E9%87%8D%E7%BD%AE.png">
 <meta property="article:published_time" content="2022-11-27T12:20:26.000Z">
 <meta property="article:modified_time" content="2022-12-18T13:12:30.000Z">
-<meta property="article:author" content="LiuWei">
+<meta property="article:author" content="刘伟">
 <meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/%E9%80%89%E6%8B%A9centos%E9%95%9C%E5%83%8F.png">
+<meta name="twitter:image" content="https://fattreeliu.github.io/2022/11/27/2022-11-27-Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/%E9%80%89%E6%8B%A9centos%E9%95%9C%E5%83%8F.png">
   
   
   
@@ -72,7 +72,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"fattreeliu.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -373,13 +373,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>Window中搭建centos虚拟机和MySQL</div>
-      <div>http://example.com/2022/11/27/2022-11-27-Window中搭建centos虚拟机和MySQL/</div>
+      <div>https://fattreeliu.github.io/2022/11/27/2022-11-27-Window中搭建centos虚拟机和MySQL/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>LiuWei</div>
+          <div>刘伟</div>
         </div>
       
       

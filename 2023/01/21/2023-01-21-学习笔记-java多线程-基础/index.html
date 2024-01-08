@@ -13,23 +13,23 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="LiuWei">
+  <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
     <meta name="description" content="前言java多线程基础相关面试题目整理 题目线程和进程的概念？守护线程是干什么的？常见的守护线程有哪些？线程和进程的概念进程是程序的运行实例，是程序向操作系统申请资源的基本单位，线程是进程的一条执行路径。Java的线程分为两种：用户线程和守护线程。守护线程作用是为其他线程提供服务，如果所有的用户线程死亡，后台线程都会死亡。 常见的守护线程有哪些守护线程最典型代表就是GC线程。 参考:Java 守护">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记-java多线程-基础">
-<meta property="og:url" content="http://example.com/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="https://fattreeliu.github.io/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="FatTree">
 <meta property="og:description" content="前言java多线程基础相关面试题目整理 题目线程和进程的概念？守护线程是干什么的？常见的守护线程有哪些？线程和进程的概念进程是程序的运行实例，是程序向操作系统申请资源的基本单位，线程是进程的一条执行路径。Java的线程分为两种：用户线程和守护线程。守护线程作用是为其他线程提供服务，如果所有的用户线程死亡，后台线程都会死亡。 常见的守护线程有哪些守护线程最典型代表就是GC线程。 参考:Java 守护">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
 <meta property="article:published_time" content="2023-01-21T13:41:42.000Z">
 <meta property="article:modified_time" content="2023-12-24T15:04:48.946Z">
-<meta property="article:author" content="LiuWei">
+<meta property="article:author" content="刘伟">
 <meta property="article:tag" content="多线程">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
+<meta name="twitter:image" content="https://fattreeliu.github.io/2023/01/21/2023-01-21-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%A4%9A%E7%BA%BF%E7%A8%8B-%E5%9F%BA%E7%A1%80/java%E7%BA%BF%E7%A8%8B%E7%9A%84%E7%8A%B6%E6%80%81.png">
   
   
   
@@ -71,7 +71,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"fattreeliu.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -397,13 +397,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>学习笔记-java多线程-基础</div>
-      <div>http://example.com/2023/01/21/2023-01-21-学习笔记-java多线程-基础/</div>
+      <div>https://fattreeliu.github.io/2023/01/21/2023-01-21-学习笔记-java多线程-基础/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>LiuWei</div>
+          <div>刘伟</div>
         </div>
       
       

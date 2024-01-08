@@ -13,25 +13,25 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="LiuWei">
+  <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
     <meta name="description" content="前言java基础相关面试题目整理 题目Java创建一个对象的方法有几种？ 使用new关键字 反射 (1)使用Class类的newInstance方法，只能无参构造器 1Employee emp2 &#x3D; (Employee) Class.forName(&quot;org.programming.mitra.exercises.Employee&quot;).newInstance();  或者(目前">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记--java基础">
-<meta property="og:url" content="http://example.com/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/index.html">
+<meta property="og:url" content="https://fattreeliu.github.io/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="FatTree">
 <meta property="og:description" content="前言java基础相关面试题目整理 题目Java创建一个对象的方法有几种？ 使用new关键字 反射 (1)使用Class类的newInstance方法，只能无参构造器 1Employee emp2 &#x3D; (Employee) Class.forName(&quot;org.programming.mitra.exercises.Employee&quot;).newInstance();  或者(目前">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/io%E6%B5%81%E4%BD%93%E7%B3%BB.png">
-<meta property="og:image" content="http://example.com/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E7%9A%84%E8%AF%AD%E6%B3%95%E8%A6%81%E6%B1%82.png">
-<meta property="og:image" content="http://example.com/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6.gif">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/io%E6%B5%81%E4%BD%93%E7%B3%BB.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E8%A7%A3%E7%9A%84%E8%AF%AD%E6%B3%95%E8%A6%81%E6%B1%82.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6.gif">
 <meta property="article:published_time" content="2023-01-14T14:02:42.000Z">
 <meta property="article:modified_time" content="2023-12-24T15:04:48.946Z">
-<meta property="article:author" content="LiuWei">
+<meta property="article:author" content="刘伟">
 <meta property="article:tag" content="java">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/io%E6%B5%81%E4%BD%93%E7%B3%BB.png">
+<meta name="twitter:image" content="https://fattreeliu.github.io/2023/01/14/2023-01-14-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-java%E5%9F%BA%E7%A1%80/io%E6%B5%81%E4%BD%93%E7%B3%BB.png">
   
   
   
@@ -73,7 +73,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"fattreeliu.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -689,13 +689,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>学习笔记--java基础</div>
-      <div>http://example.com/2023/01/14/2023-01-14-学习笔记-java基础/</div>
+      <div>https://fattreeliu.github.io/2023/01/14/2023-01-14-学习笔记-java基础/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>LiuWei</div>
+          <div>刘伟</div>
         </div>
       
       

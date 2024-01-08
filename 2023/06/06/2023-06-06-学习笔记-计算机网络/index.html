@@ -13,46 +13,46 @@
   <meta http-equiv="x-ua-compatible" content="ie=edge">
   
   <meta name="theme-color" content="#2f4154">
-  <meta name="author" content="LiuWei">
+  <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
     <meta name="description" content="前言整理计算机网络的相关面试题，计算机网络在我看来挺复杂的，想要完全精通应该是不可能的，毕竟后端开发的知识点那么多，不过掌握面试的常考知识点是由必要的。建议系统学习计算机网络课本再进行知识点的整理记忆。 题目IOS七层协议有了解么？Ip协议是哪层协议？计算机网络体系结构目前的计算机网络分层结构主流分为三种：OSI协议体系结构、TCP&#x2F;IP协议体系结构、原理体系结构。OSI协议体系结构是国">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记-计算机网络">
-<meta property="og:url" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
+<meta property="og:url" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/index.html">
 <meta property="og:site_name" content="FatTree">
 <meta property="og:description" content="前言整理计算机网络的相关面试题，计算机网络在我看来挺复杂的，想要完全精通应该是不可能的，毕竟后端开发的知识点那么多，不过掌握面试的常考知识点是由必要的。建议系统学习计算机网络课本再进行知识点的整理记忆。 题目IOS七层协议有了解么？Ip协议是哪层协议？计算机网络体系结构目前的计算机网络分层结构主流分为三种：OSI协议体系结构、TCP&#x2F;IP协议体系结构、原理体系结构。OSI协议体系结构是国">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%8A%A5%E6%96%87%E6%AE%B5.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/session%E8%BF%87%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%B5%81%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%98%BB%E5%A1%9EIO.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E9%98%BB%E5%A1%9EIO.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BC%82%E6%AD%A5IO.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%8D%95%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%A4%9Ar%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E7%BB%9Fio.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/nio.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
-<meta property="og:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/selector.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BA%94%E7%94%A8%E5%B1%82%E5%8D%8F%E8%AE%AE.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%B8%89%E6%AC%A1%E6%8F%A1%E6%89%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9B%9B%E6%AC%A1%E6%8C%A5%E6%89%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wiat%E7%BC%BA%E5%A4%B1%E5%AF%BC%E8%87%B4%E9%94%99%E8%AF%AF%E6%8E%A5%E5%8F%97.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/time-wait%E6%9C%AA%E6%AD%A3%E7%A1%AE%E5%85%B3%E9%97%AD.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%8A%A5%E6%96%87%E6%AE%B5.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/tcp%E6%BB%91%E5%8A%A8%E7%AA%97%E5%8F%A3.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/session%E8%BF%87%E7%A8%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E6%9C%8D%E5%8A%A1%E5%99%A8.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%8F%E6%84%9F%E4%BF%A1%E6%81%AF.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E6%95%B0%E6%8D%AE%E4%BC%A0%E8%BE%93%E6%B5%81%E7%A8%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%98%BB%E5%A1%9EIO.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E9%98%BB%E5%A1%9EIO.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%BC%82%E6%AD%A5IO.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%8D%95%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%8D%95r%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E5%A4%9Ar%E5%A4%9A%E7%BA%BF%E7%A8%8B.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E4%BC%A0%E7%BB%9Fio.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/nio.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E9%9D%9E%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E7%9B%B4%E6%8E%A5%E7%BC%93%E5%86%B2.png">
+<meta property="og:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/selector.png">
 <meta property="article:published_time" content="2023-06-06T14:15:48.000Z">
 <meta property="article:modified_time" content="2023-12-30T11:39:17.494Z">
-<meta property="article:author" content="LiuWei">
+<meta property="article:author" content="刘伟">
 <meta property="article:tag" content="计算机网络">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="http://example.com/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
+<meta name="twitter:image" content="https://fattreeliu.github.io/2023/06/06/2023-06-06-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/%E8%AE%A1%E7%BD%91%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84.png">
   
   
   
@@ -94,7 +94,7 @@
   <script id="fluid-configs">
     var Fluid = window.Fluid || {};
     Fluid.ctx = Object.assign({}, Fluid.ctx)
-    var CONFIG = {"hostname":"example.com","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+    var CONFIG = {"hostname":"fattreeliu.github.io","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
 
     if (CONFIG.web_analytics.follow_dnt) {
       var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
@@ -737,13 +737,13 @@
   <div class="license-box my-3">
     <div class="license-title">
       <div>学习笔记-计算机网络</div>
-      <div>http://example.com/2023/06/06/2023-06-06-学习笔记-计算机网络/</div>
+      <div>https://fattreeliu.github.io/2023/06/06/2023-06-06-学习笔记-计算机网络/</div>
     </div>
     <div class="license-meta">
       
         <div class="license-meta-item">
           <div>作者</div>
-          <div>LiuWei</div>
+          <div>刘伟</div>
         </div>
       
       
