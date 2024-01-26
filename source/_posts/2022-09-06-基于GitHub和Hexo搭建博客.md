@@ -2,9 +2,9 @@
 title: Windows环境基于GitHub和Hexo搭建个人博客
 date: 2022-09-06 23:20:03
 categories: 
-- 其他
+  - 其他
 tags: 
-- 博客搭建
+  - 博客搭建
 ---
 
 # 前言
@@ -20,7 +20,7 @@ tags:
 
 基于上面两个网站下载最新的Node.js和Git安装包，基于默认配置一路点下去安装Node.js和Git。安装完成后，在cmd中依次执行 `node -v`、`npm -v` 和 `git --version`，看到类似以下版本号说明安装成功
 
-![](./2022-11-01-基于GitHub和Hexo搭建博客/组件版本.png)
+![](./2022-09-06-基于GitHub和Hexo搭建博客/组件版本.png)
 
 ## 连接 Github
 

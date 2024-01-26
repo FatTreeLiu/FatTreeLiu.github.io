@@ -2,9 +2,9 @@
 title: Win11中WSL2搭配ubuntu使用笔记
 date: 2022-09-17 23:05:49
 categories: 
-- linux
+  - linux
 tags: 
-- ubuntu
+  - ubuntu
 ---
 
 # 背景
