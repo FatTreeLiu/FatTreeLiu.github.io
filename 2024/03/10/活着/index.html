@@ -16,22 +16,22 @@
   <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
-    <meta name="description" content="在linux里，source、sh、bash、.&#x2F;都可以执行shell script文件，那它们有什么不同吗？ 1、source 1source a.sh 在当前shell内去读取、执行a.sh，而a.sh不需要有”执行权限” source命令可以简写为”.” 1. a.sh 注意：中间是有空格的。 2、sh&#x2F;bash 12sh a.shbash a.sh 都是打开一个subs">
+    <meta name="description" content="信息《活着》 余华 作家出版社 摘录 做人还是平常点好，争这个争那个，争来争去赔了自己的命。  家珍说得对，只要一家人天天在一起，也就不在乎什麽福分了。  人是为活着本身而活着的，而不是为活着之外的任何事物所活着。   其他原著比电影好看，推荐看书，篇幅其实不长，很好读。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="linux里source、sh、bash、.&#x2F;有什么区别(转)">
-<meta property="og:url" content="https://fattreeliu.github.io/2024/02/25/linux%E9%87%8Csource%E3%80%81sh%E3%80%81bash%E3%80%81-%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB-%E8%BD%AC/index.html">
+<meta property="og:title" content="活着">
+<meta property="og:url" content="https://fattreeliu.github.io/2024/03/10/%E6%B4%BB%E7%9D%80/index.html">
 <meta property="og:site_name" content="FatTree">
-<meta property="og:description" content="在linux里，source、sh、bash、.&#x2F;都可以执行shell script文件，那它们有什么不同吗？ 1、source 1source a.sh 在当前shell内去读取、执行a.sh，而a.sh不需要有”执行权限” source命令可以简写为”.” 1. a.sh 注意：中间是有空格的。 2、sh&#x2F;bash 12sh a.shbash a.sh 都是打开一个subs">
+<meta property="og:description" content="信息《活着》 余华 作家出版社 摘录 做人还是平常点好，争这个争那个，争来争去赔了自己的命。  家珍说得对，只要一家人天天在一起，也就不在乎什麽福分了。  人是为活着本身而活着的，而不是为活着之外的任何事物所活着。   其他原著比电影好看，推荐看书，篇幅其实不长，很好读。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-02-25T09:23:16.000Z">
-<meta property="article:modified_time" content="2024-02-25T09:25:54.989Z">
+<meta property="article:published_time" content="2024-03-10T04:00:51.000Z">
+<meta property="article:modified_time" content="2024-03-11T13:48:44.751Z">
 <meta property="article:author" content="刘伟">
-<meta property="article:tag" content="历史">
+<meta property="article:tag" content="小说">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>linux里source、sh、bash、./有什么区别(转) - FatTree</title>
+  <title>活着 - FatTree</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="linux里source、sh、bash、./有什么区别(转)"></span>
+            <span id="subtitle" data-typed-text="活着"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-25 17:23" pubdate>
-          2024年2月25日 下午
+        <time datetime="2024-03-10 12:00" pubdate>
+          2024年3月10日 中午
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          544 字
+          111 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          5 分钟
+          1 分钟
         
       </span>
     
@@ -268,40 +268,21 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">linux里source、sh、bash、./有什么区别(转)</h1>
+            <h1 id="seo-header">活着</h1>
             
             
               <div class="markdown-body">
                 
-                <p>在linux里，source、sh、bash、.&#x2F;都可以执行shell script文件，那它们有什么不同吗？</p>
-<p>1、source</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs vim"><span class="hljs-keyword">source</span> <span class="hljs-keyword">a</span>.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
-<p>在当前shell内去读取、执行a.sh，而a.sh不需要有”执行权限”</p>
-<p>source命令可以简写为”.”</p>
-<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-bullet">. </span>a.sh<br></code></pre></td></tr></table></figure>
-<p>注意：中间是有空格的。</p>
-<p>2、sh&#x2F;bash</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs mipsasm"><span class="hljs-keyword">sh </span>a.<span class="hljs-keyword">sh</span><br><span class="hljs-keyword"></span><span class="hljs-keyword">bash </span>a.<span class="hljs-keyword">sh</span><br></code></pre></td></tr></table></figure>
-<p>都是打开一个subshell去读取、执行a.sh，而a.sh不需要有”执行权限”</p>
-<p>通常在subshell里运行的脚本里设置变量，不会影响到父shell的。</p>
-<p>3、.&#x2F;</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs stylus">./<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.sh</span><br><span class="hljs-selector-id">#bash</span>: ./<span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.sh</span>: 权限不够<br>chmod +x <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.sh</span><br>./<span class="hljs-selector-tag">a</span>.sh<br></code></pre></td></tr></table></figure>
-<p>打开一个subshell去读取、执行a.sh，但a.sh需要有”执行权限”</p>
-<p>可以用chmod +x添加执行权限</p>
-<p>另外，使用.&#x2F;来执行的文件里有alias语句的话，shell并不会把alias别名扩展成对应的命令，要解决的话，得使用shopt命令来开启alias扩展选项</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">shopt</span> -s expand_aliases<br></code></pre></td></tr></table></figure>
-
-<p>4、fork、source、exec</p>
-<p>使用fork方式运行script时， 就是让shell(parent process)产生一个child process去执行该script，当child process结束后，会返回parent process，但parent process的环境是不会因child process的改变而改变的。<br>使用source方式运行script时， 就是让script在当前process内执行， 而不是产生一个child process来执行。由于所有执行结果均于当前process内完成，若script的环境有所改变， 当然也会改变当前process环境了。<br>使用exec方式运行script时， 它和source一样，也是让script在当前process内执行，但是process内的原代码剩下部分将被终止。同样，process内的环境随script改变而改变。<br>通常如果我们执行时，都是默认为fork的。</p>
-<p>为了实践下，我们可以先建立2个sh文件，以下代码来自ChinaUnix的網中人：</p>
-<p>1.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br>A=B<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;PID for 1.sh before exec/source/fork:$$&quot;</span><br><span class="hljs-built_in">export</span> A<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1.sh: \$A is <span class="hljs-variable">$A</span>&quot;</span><br><span class="hljs-keyword">case</span> <span class="hljs-variable">$1</span> <span class="hljs-keyword">in</span><br>    <span class="hljs-built_in">exec</span>)<br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;using exec...&quot;</span><br>        <span class="hljs-built_in">exec</span> ./2.sh ;;<br>    <span class="hljs-built_in">source</span>)<br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;using source...&quot;</span><br>        . ./2.sh ;;<br>    *)<br>        <span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;using fork by default...&quot;</span><br>        ./2.sh ;;<br><span class="hljs-keyword">esac</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;PID for 1.sh after exec/source/fork:$$&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;1.sh: \$A is <span class="hljs-variable">$A</span>&quot;</span><br></code></pre></td></tr></table></figure>
-<p>2.sh</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs bash"><span class="hljs-meta">#!/bin/bash</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;PID for 2.sh: $$&quot;</span><br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;2.sh get \$A=<span class="hljs-variable">$A</span> from 1.sh&quot;</span><br>A=C<br><span class="hljs-built_in">export</span> A<br><span class="hljs-built_in">echo</span> <span class="hljs-string">&quot;2.sh: \$A is <span class="hljs-variable">$A</span>&quot;</span><br></code></pre></td></tr></table></figure>
-<p>自己运行下，观看结果吧 :)</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs vim">chmod +<span class="hljs-keyword">x</span> <span class="hljs-number">1</span>.<span class="hljs-keyword">sh</span><br>chmod +<span class="hljs-keyword">x</span> <span class="hljs-number">2</span>.<span class="hljs-keyword">sh</span><br>./<span class="hljs-number">1</span>.<span class="hljs-keyword">sh</span> fork<br>./<span class="hljs-number">1</span>.<span class="hljs-keyword">sh</span> <span class="hljs-keyword">source</span><br>./<span class="hljs-number">1</span>.<span class="hljs-keyword">sh</span> exec<br></code></pre></td></tr></table></figure>
-
-<p>参考：<a target="_blank" rel="noopener" href="https://www.cnblogs.com/pcat/p/5467188.html">linux里source、sh、bash、.&#x2F;有什么区别</a></p>
+                <h1 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h1><p>《活着》 余华 作家出版社</p>
+<h1 id="摘录"><a href="#摘录" class="headerlink" title="摘录"></a>摘录</h1><ul>
+<li><p>做人还是平常点好，争这个争那个，争来争去赔了自己的命。</p>
+</li>
+<li><p>家珍说得对，只要一家人天天在一起，也就不在乎什麽福分了。</p>
+</li>
+<li><p>人是为活着本身而活着的，而不是为活着之外的任何事物所活着。</p>
+</li>
+</ul>
+<h1 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h1><p>原著比电影好看，推荐看书，篇幅其实不长，很好读。</p>
 
                 
               </div>
@@ -335,7 +316,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%8E%86%E5%8F%B2/" class="print-no-link">#历史</a>
+        <a href="/tags/%E5%B0%8F%E8%AF%B4/" class="print-no-link">#小说</a>
       
     </div>
   
@@ -347,8 +328,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>linux里source、sh、bash、./有什么区别(转)</div>
-      <div>https://fattreeliu.github.io/2024/02/25/linux里source、sh、bash、-有什么区别-转/</div>
+      <div>活着</div>
+      <div>https://fattreeliu.github.io/2024/03/10/活着/</div>
     </div>
     <div class="license-meta">
       
@@ -360,7 +341,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月25日</div>
+          <div>2024年3月10日</div>
         </div>
       
       
@@ -404,18 +385,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/03/10/%E6%9C%AA%E6%9D%A5%E4%B8%96%E7%95%8C%E7%9A%84%E5%B9%B8%E5%AD%98%E8%80%85/" title="未来世界的幸存者">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">未来世界的幸存者</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2024/02/21/%E4%B8%AD%E5%9B%BD%E5%8E%86%E4%BB%A3%E6%94%BF%E6%B2%BB%E5%BE%97%E5%A4%B1/" title="中国历代政治得失">
-                        <span class="hidden-mobile">中国历代政治得失</span>
+                      <a href="/2024/03/10/%E6%9D%80%E6%AD%BB%E4%B8%80%E5%8F%AA%E7%9F%A5%E6%9B%B4%E9%B8%9F/" title="杀死一只知更鸟">
+                        <span class="hidden-mobile">杀死一只知更鸟</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
