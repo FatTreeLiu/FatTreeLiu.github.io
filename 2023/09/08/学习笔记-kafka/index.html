@@ -41,7 +41,7 @@
 <meta property="og:image" content="https://fattreeliu.github.io/2023/09/08/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-kafka/%E4%BA%8B%E5%8A%A1%E4%BB%A3%E7%A0%81.png">
 <meta property="og:image" content="https://fattreeliu.github.io/2023/09/08/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-kafka/%E4%B8%BB%E6%B5%81MQ.png">
 <meta property="article:published_time" content="2023-09-08T13:49:46.000Z">
-<meta property="article:modified_time" content="2024-01-18T01:08:46.104Z">
+<meta property="article:modified_time" content="2024-04-13T03:16:25.311Z">
 <meta property="article:author" content="刘伟">
 <meta property="article:tag" content="kafka">
 <meta name="twitter:card" content="summary_large_image">
@@ -238,7 +238,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          15k 字
+          14k 字
         
       </span>
     
@@ -249,7 +249,7 @@
         
         
         
-          123 分钟
+          119 分钟
         
       </span>
     
@@ -539,25 +539,20 @@
 <p>所以如果leader宕机，Controller会从ISR中选择下一个分区Leader，这里还有个问题，ISR是个集合，是可能为空的。</p>
 <p>Unclean 领导者选举<br>既然ISR可以动态调整，那么就会出现ISR为空的情况。ISR为空的情况就代表Leader副本也挂掉了。那么kafka就需要重新选举新的Leader。<br>那么该怎么选举Leader呢？</p>
 <p>kafka把所有不在ISR的存活副本都成为非同步副本。<br>通常来说，非同步副本落后Leader太多，因此，如果选择这些副本为新的Leader，就可能出现数据的丢失。在kafka，选举Leader这种过程被成为Unclean。由Broker端参数unclean.leader.election.enable控制是否允许Unclean领导者选举。<br>开启 Unclean 领导者选举可能会造成数据丢失，但好处是，它使得分区 Leader 副本一直存在，不至于停止对外提供服务，因此提升了高可用性。反之，禁止 Unclean 领导者选举的好处在于维护了数据的一致性，避免了消息丢失，但牺牲了高可用性。<br>可以根据你的实际业务场景决定是否开启 Unclean 领导者选举。不过并不建议开启它，毕竟我们还可以通过其他的方式来提升高可用性。如果为了这点儿高可用性的改善，牺牲了数据一致性，那就非常不值当了。</p>
-<h3 id="群组协调器Coordinator选举"><a href="#群组协调器Coordinator选举" class="headerlink" title="群组协调器Coordinator选举"></a>群组协调器Coordinator选举</h3><p>群组协调器（Coordinator）：群组协调器是一个能够从消费者群组中收到所有消费者发送心跳消息的 broker。群组协调器可以满足 JoinGroup 请求并提供有关消费者组的元数据信息，例如分配和偏移量。群组协调器还有权知道所有消费者的心跳。<br>新版本consumer使用了Kafka内置的一个全新的组协调协议（group coordination protocol）。对于每个组而言，Kafka的某个broker会被选举为组协调者（group coordinator）。coordinator负责对组的状态进行管理，它的主要职责就是当新成员到达时促成组内所有成员达成新的分区分配方案，即coordinator负责对组执行rebalance操作。</p>
+<h3 id="群组协调器Coordinator选举"><a href="#群组协调器Coordinator选举" class="headerlink" title="群组协调器Coordinator选举"></a>群组协调器Coordinator选举</h3><p>群组协调器（Coordinator）：群组协调器是一个能够从消费者群组中收到所有消费者发送心跳消息的 broker。群组协调器可以满足 JoinGroup 请求并提供有关消费者组的元数据信息，例如分配和偏移量。群组协调器还有权知道所有消费者的心跳。<br>新版本consumer使用了Kafka内置的一个全新的组协调协议（group coordination protocol）。对于每个组而言，Kafka的某个broker会被选举为组协调者（group coordinator），选举也是zk选出来的。coordinator负责对组的状态进行管理，它的主要职责就是当新成员到达时促成组内所有成员达成新的分区分配方案，即coordinator负责对组执行rebalance操作。</p>
 <h3 id="消费者leader选举"><a href="#消费者leader选举" class="headerlink" title="消费者leader选举"></a>消费者leader选举</h3><p>消费者领导者： 每个消费者群组中都有一个领导者，负责分区消费策略的选择</p>
 <p>消费者leader的选择比较简单，当重平衡开始时，第一个给协调器发Coordinator请求的就会成为leader</p>
 <p><strong>分区消费策略选择</strong></p>
 <p>每个给协调器发送JoinGroup消息的消费者都会在其中附带自己支持的分区消费策略，协调器在收集后会给消费者leader，并由leaderconsumer进行选择那么具体怎么选择呢？</p>
 <p>1.收集各个消费者所支持的所有分配策略，组成候选集candidates。<br>2.每个消费者从候选集candidates中找出第一个自身所支持的策略，为这个策略投上一票。<br>3.计算候选集中各个策略的选票数，选票数最多的策略即为当前消费组的分配策略。<br>如果某个消费者并不支持所选举出的分配策略，那么就会报错。</p>
-<p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41308860/article/details/119147409">Kafka中涉及的四种选举</a></p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_41308860/article/details/119147409">Kafka中涉及的四种选举</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Mrxiao_bo/article/details/136545584">深度剖析Kafka中Coordinator的奥秘</a></p>
 <h2 id="如何设计保证kakfa中有某个特征的消息的是严格按照顺序消费的？"><a href="#如何设计保证kakfa中有某个特征的消息的是严格按照顺序消费的？" class="headerlink" title="如何设计保证kakfa中有某个特征的消息的是严格按照顺序消费的？"></a>如何设计保证kakfa中有某个特征的消息的是严格按照顺序消费的？</h2><p>在Kafka中，只保证Partition(分区)内有序，不保证Topic所有分区都是有序的。</p>
 <p>所以 Kafka 要保证消息的消费顺序，可以有2种方法：</p>
 <ol>
 <li>1个Topic（主题）只创建1个Partition(分区)，这样生产者的所有数据都发送到了一个Partition(分区)，保证了消息的消费顺序。</li>
 <li>生产者在发送消息的时候指定要发送到哪个Partition(分区)。</li>
 </ol>
-<p><strong>单一partition若碰到如下场景还是需要调整参数</strong></p>
-<p>场景一：设置了retries&gt;0,并且max.in.flight.requests.per.connection&gt;1</p>
-<p>1、retries<br>生产者从服务器收到的错误有可能是临时性的错误（比如分区找不到首领）。在这种情况下，retries参数的值决定了生产者可以重发消息的次数，<br>如果达到这个次数，生产者会放弃重试并返回错误。默认情况下，生产者会在每次重试之间等待 100ms，不过可以通过 retry.backoff.ms 参数来改变这个时间间隔。建议在设置重试次数和重试时间间隔之前，先测试一下恢复一个崩溃节点需要多少时间（比如所有分区选举出首领需要多长时间），让总的重试时间比 Kafka 集群从崩溃中恢复的时间长，否则生产者会过早地放弃重试。不过有些错误不是临时性错误，没办法通过重试来解决（比如“消息太大”错误）。</p>
-<p>2、max.in.flight.requests.per.connection<br>该参数指定了生产者在收到服务器响应之前可以发送多少个消息。它的值越高，就会占用越多的内存，不过也会提升吞吐量。<br>把它设为 1 可以保证消息是按照发送的顺序写入服务器的，即使发生了重试。这种场景下无法保障单一partition的有序，一般来说要保障消息的有序性，对于消息的可靠性也是有要求的，<br>所以一般retries可以设置为大于0，但是max.in.flight.requests.per.connection设置为1即可，不过这样就有一个问题，导致了消息的吞吐量大大降低。</p>
-<p>场景二：需要提升吞吐量max.in.flight.requests.per.connection设置大于1</p>
-<p>此场景下业务要保障消息的吞吐量，那么max.in.flight.requests.per.connection必然就会选择更大的一个阈值，但是此场景还能保障消息有序性吗？答案是肯定的，<br>可以设置enable.idempotence&#x3D;true，开启生产者的幂等生产，可以解决顺序性问题，并且允许max.in.flight.requests.per.connection设置大于1</p>
+<p>另外设置enable.idempotence&#x3D;true，开启生产者的幂等生产，可以解决顺序性问题，并且允许max.in.flight.requests.per.connection设置大于1。新版本kafka设置enable.idempotence&#x3D;true后能够动态调整max-in-flight-request。正常情况下max.in.flight.requests.per.connection大于1。当重试请求到来且时，batch 会根据 seq重新添加到队列的合适位置，并把max.in.flight.requests.per.connection设为1，这样它 前面的 batch序号都比它小，只有前面的都发完了，它才能发。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://www.cnblogs.com/-courage/p/15252760.html">Kafka 如何保证消息的消费顺序一致性</a></p>
 <h2 id="有了解哪些消息队列？能否做下对比？"><a href="#有了解哪些消息队列？能否做下对比？" class="headerlink" title="有了解哪些消息队列？能否做下对比？"></a>有了解哪些消息队列？能否做下对比？</h2><h3 id="消息队列能干什么？"><a href="#消息队列能干什么？" class="headerlink" title="消息队列能干什么？"></a>消息队列能干什么？</h3><p> 消息队列作为高并发系统的核心组件之一，能够帮助业务系统解构提升开发效率和系统稳定性。主要具有以下：作用：提升性能、系统解耦、流量消峰</p>
 <ol>

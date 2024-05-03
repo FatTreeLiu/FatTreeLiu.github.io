@@ -16,12 +16,12 @@
   <meta name="author" content="刘伟">
   <meta name="keywords" content="">
   
-    <meta name="description" content="前言jvm相关面试题目整理 题目JVM 的内存模型描述一下？程序计数器线程私有。可以看作是当前线程做执行的字节码的行号指示器。此内存区域是唯一一个在《JVM规范》中没有规定任何outOfMemoryError情况的区域。 虚拟机栈线程私有。虚拟机栈描述的是java方法执行的线程内存模型：每个方法执行时，jvm会同步创建一个栈帧用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法被调用直">
+    <meta name="description" content="前言jvm相关面试题目整理 题目JVM 的内存模型描述一下？（复习）程序计数器线程私有。可以看作是当前线程做执行的字节码的行号指示器。此内存区域是唯一一个在《JVM规范》中没有规定任何outOfMemoryError情况的区域。 虚拟机栈线程私有。虚拟机栈描述的是java方法执行的线程内存模型：每个方法执行时，jvm会同步创建一个栈帧用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="学习笔记--jvm">
 <meta property="og:url" content="https://fattreeliu.github.io/2023/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/index.html">
 <meta property="og:site_name" content="FatTree">
-<meta property="og:description" content="前言jvm相关面试题目整理 题目JVM 的内存模型描述一下？程序计数器线程私有。可以看作是当前线程做执行的字节码的行号指示器。此内存区域是唯一一个在《JVM规范》中没有规定任何outOfMemoryError情况的区域。 虚拟机栈线程私有。虚拟机栈描述的是java方法执行的线程内存模型：每个方法执行时，jvm会同步创建一个栈帧用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法被调用直">
+<meta property="og:description" content="前言jvm相关面试题目整理 题目JVM 的内存模型描述一下？（复习）程序计数器线程私有。可以看作是当前线程做执行的字节码的行号指示器。此内存区域是唯一一个在《JVM规范》中没有规定任何outOfMemoryError情况的区域。 虚拟机栈线程私有。虚拟机栈描述的是java方法执行的线程内存模型：每个方法执行时，jvm会同步创建一个栈帧用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://fattreeliu.github.io/2023/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/%E7%BA%BF%E7%A8%8B%E5%88%9B%E5%BB%BA%E6%9E%81%E9%99%90.png">
 <meta property="og:image" content="https://fattreeliu.github.io/2023/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/jdk6%E6%96%B9%E6%B3%95%E5%8C%BA.png">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://fattreeliu.github.io/2023/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/loadClass.png">
 <meta property="og:image" content="https://fattreeliu.github.io/2023/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/tomcat%E7%A0%B4%E5%9D%8F%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png">
 <meta property="article:published_time" content="2023-05-23T13:36:37.000Z">
-<meta property="article:modified_time" content="2023-12-25T11:08:43.477Z">
+<meta property="article:modified_time" content="2024-04-08T00:01:07.757Z">
 <meta property="article:author" content="刘伟">
 <meta property="article:tag" content="jvm">
 <meta name="twitter:card" content="summary_large_image">
@@ -247,7 +247,7 @@
         
         
         
-          175 分钟
+          176 分钟
         
       </span>
     
@@ -290,7 +290,7 @@
               <div class="markdown-body">
                 
                 <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>jvm相关面试题目整理</p>
-<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="JVM-的内存模型描述一下？"><a href="#JVM-的内存模型描述一下？" class="headerlink" title="JVM 的内存模型描述一下？"></a>JVM 的内存模型描述一下？</h2><h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>线程私有。可以看作是当前线程做执行的字节码的行号指示器。此内存区域是唯一一个在《JVM规范》中没有规定任何outOfMemoryError情况的区域。</p>
+<h1 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h1><h2 id="JVM-的内存模型描述一下？（复习）"><a href="#JVM-的内存模型描述一下？（复习）" class="headerlink" title="JVM 的内存模型描述一下？（复习）"></a>JVM 的内存模型描述一下？（复习）</h2><h3 id="程序计数器"><a href="#程序计数器" class="headerlink" title="程序计数器"></a>程序计数器</h3><p>线程私有。可以看作是当前线程做执行的字节码的行号指示器。此内存区域是唯一一个在《JVM规范》中没有规定任何outOfMemoryError情况的区域。</p>
 <h3 id="虚拟机栈"><a href="#虚拟机栈" class="headerlink" title="虚拟机栈"></a>虚拟机栈</h3><p>线程私有。虚拟机栈描述的是java方法执行的线程内存模型：每个方法执行时，jvm会同步创建一个栈帧用于存储局部变量表，操作数栈，动态链接，方法出口等信息。每个方法被调用直到执行完毕的过程对应着一个栈帧在虚拟机栈中从入栈到出栈的过程。<br>如果线程请求的栈深度超过了虚拟机允许的深度时会抛出StackOverflowError异常；如果jvm栈容量可以动态扩展，当栈扩展时无法申请到足够的内存会抛出OutOfMemoryError异常（HopSpot不允许栈空间扩展，只有在申请的时候空间不足会抛出该异常，在运行的时候不会出现该异常）。</p>
 <h3 id="本地方法栈"><a href="#本地方法栈" class="headerlink" title="本地方法栈"></a>本地方法栈</h3><p>线程私有。和虚拟机栈类似，只不过本地方法栈服务于本地方法（native方法）。也会抛出StackOverflowError异常和OutOfMemoryError异常。<br>当堆内存超过上限时会抛出OutOfMemoryError异常。</p>
 <h3 id="堆"><a href="#堆" class="headerlink" title="堆"></a>堆</h3><p>线程共享。几乎所有的对象实例及数组都分配在java堆上。</p>
@@ -319,7 +319,7 @@
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs stylus">Exception <span class="hljs-keyword">in</span> thread <span class="hljs-string">&quot;main&quot;</span> java<span class="hljs-selector-class">.lang</span><span class="hljs-selector-class">.outofMemoryError</span><br>at sun<span class="hljs-selector-class">.misc</span><span class="hljs-selector-class">.Unsafe</span><span class="hljs-selector-class">.allocateMemory</span>(Native Method)<br>at org<span class="hljs-selector-class">.fenixsoft</span><span class="hljs-selector-class">.oom</span>. DMOOM<span class="hljs-selector-class">.main</span>(DMOOM<span class="hljs-selector-class">.java</span>:<span class="hljs-number">20</span>)<br></code></pre></td></tr></table></figure>
 
 <p>参考：<br>《深入理解java虚拟机：jvm高级特性和最佳实践》<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_42709563/article/details/106234230">一个程序最多可以使用多少内存？</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7058375922235211790">深刻理解运行时常量池、字符串常量池</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/wangyili002/article/details/105584663">JVM参数-XX:MatespaceSize的含义</a></p>
-<h2 id="java对象状态判定"><a href="#java对象状态判定" class="headerlink" title="java对象状态判定"></a>java对象状态判定</h2><h3 id="判断对象存活的方法"><a href="#判断对象存活的方法" class="headerlink" title="判断对象存活的方法"></a>判断对象存活的方法</h3><ul>
+<h2 id="java对象状态判定（复习）"><a href="#java对象状态判定（复习）" class="headerlink" title="java对象状态判定（复习）"></a>java对象状态判定（复习）</h2><h3 id="判断对象存活的方法"><a href="#判断对象存活的方法" class="headerlink" title="判断对象存活的方法"></a>判断对象存活的方法</h3><ul>
 <li>引用计数法</li>
 </ul>
 <p>在对象中添加一个引用计数器，每有一个地方引用就加一，每有一个引用失效就减一，减到0时认为对象已死。<br>优点：判别效率高，原理简单<br>缺点：占用额外内存空间，需要考虑大量的例外情况，例如相互循环引用的问题。</p>
@@ -346,12 +346,12 @@
 <li>加载该类的类加载器已经被回收，这个条件除非是经过精心设计的可替换类加载器的场景，如OSGi、JSP的重加载等，否则通常是很难达成的。</li>
 <li>该类对应的java.lang.Class对象没有在任何地方被引用，无法在任何地方通过反射访问该类的方法。<br>Java虚拟机被允许对满足上述三个条件的无用类进行回收，这里说的仅仅是“被允许”，而并不是和对象一样，没有引用了就必然会回收。关于是否要对类型进行回收，HotSpot虚拟机提供了-Xnoclassgc参数进行控制。</li>
 </ul>
-<h2 id="JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？"><a href="#JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？" class="headerlink" title="JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？"></a>JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？</h2><h3 id="为何分代"><a href="#为何分代" class="headerlink" title="为何分代"></a>为何分代</h3><p>分代收集理论<br>1）弱分代假说（WeakGenerationalHypothesis）：绝大多数对象都是朝生夕灭的。<br>2）强分代假说（StrongGenerationalHypothesis）：熬过越多次垃圾收集过程的对象就越难以消亡。<br>3）跨代引用假说（IntergenerationalReferenceHypothesis）：跨代引用相对于同代引用来说仅占极少数。<br>jdk8之前采用永久代实现方法区，认为该空间一般不需要进行垃圾回收，jdk8开始使用叫做元空间的本地内存实现方法区，会进行垃圾回收；分代主要是为了让不同代的对象按照不同的频率回收，减少不必要的垃圾回收开销，这里考虑了弱分代假说和强分代假说。</p>
+<h2 id="JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？（复习）"><a href="#JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？（复习）" class="headerlink" title="JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？（复习）"></a>JVM堆内存为什么要分成新生代，老年代，持久代？新生代中为什么要分为Eden和Survivor？（复习）</h2><h3 id="为何分代"><a href="#为何分代" class="headerlink" title="为何分代"></a>为何分代</h3><p>分代收集理论<br>1）弱分代假说（WeakGenerationalHypothesis）：绝大多数对象都是朝生夕灭的。<br>2）强分代假说（StrongGenerationalHypothesis）：熬过越多次垃圾收集过程的对象就越难以消亡。<br>3）跨代引用假说（IntergenerationalReferenceHypothesis）：跨代引用相对于同代引用来说仅占极少数。<br>jdk8之前采用永久代实现方法区，认为该空间一般不需要进行垃圾回收，jdk8开始使用叫做元空间的本地内存实现方法区，会进行垃圾回收；分代主要是为了让不同代的对象按照不同的频率回收，减少不必要的垃圾回收开销，这里考虑了弱分代假说和强分代假说。</p>
 <p>不用为了少量的跨代引用去扫描整个老年代，也不必浪费空间专门记录每一个对象是否存在及存在哪些跨代引用，只需在新生代上建立一个全局的数据结构（该结构被称为“记忆集”，RememberedSet），这个结构把老年代划分成若干小块，标识出老年代的哪一块内存会存在跨代引用。此后当发生MinorGC时，只有包含了跨代引用的小块内存里的对象才会被加入到GCRoots进行扫描。虽然这种方法需要在对象改变引用关系（如将自己或者某个属性赋值）时维护记录数据的正确性，会增加一些运行时的开销，但比起收集时扫描整个老年代来说仍然是划算的。</p>
 <h3 id="新生代中为什么要分为Eden和Survivor"><a href="#新生代中为什么要分为Eden和Survivor" class="headerlink" title="新生代中为什么要分为Eden和Survivor"></a>新生代中为什么要分为Eden和Survivor</h3><p>新生代采用标记-复制算法，但是半区的标记-复制只能使用一般的区域。IBM公司曾有一项专门研究对新生代“朝生夕灭”的特点做了更量化的诠释——新生代中的对象有98%熬不过第一轮收集。因此并不需要按照1∶1的比例来划分新生代的内存空间。所以产生了Appel式回收，将存活的新生代放到Survivor中，如果Survivor0、Survivor1、Eden的比例为1：1：8，则可以有效利用新生代90的空间。</p>
 <p>任何人都没有办法百分百保证每次回收都只有不多于10%的对象存活，因此Appel式回收还有一个充当罕见情况的“逃生门”的安全设计，当Survivor空间不足以容纳一次MinorGC之后存活的对象时，就需要依赖其他内存区域（实际上大多就是老年代）进行分配担保（HandlePromotion）。</p>
 <p>参考：<br>《深入理解java虚拟机：jvm高级特性和最佳实践》</p>
-<h2 id="简述下垃圾回收算法？为什么新生代使用复制算法？"><a href="#简述下垃圾回收算法？为什么新生代使用复制算法？" class="headerlink" title="简述下垃圾回收算法？为什么新生代使用复制算法？"></a>简述下垃圾回收算法？为什么新生代使用复制算法？</h2><h3 id="垃圾回收算法"><a href="#垃圾回收算法" class="headerlink" title="垃圾回收算法"></a>垃圾回收算法</h3><ul>
+<h2 id="简述下垃圾回收算法？为什么新生代使用复制算法？（复习）"><a href="#简述下垃圾回收算法？为什么新生代使用复制算法？（复习）" class="headerlink" title="简述下垃圾回收算法？为什么新生代使用复制算法？（复习）"></a>简述下垃圾回收算法？为什么新生代使用复制算法？（复习）</h2><h3 id="垃圾回收算法"><a href="#垃圾回收算法" class="headerlink" title="垃圾回收算法"></a>垃圾回收算法</h3><ul>
 <li>标记-清除算法</li>
 </ul>
 <p>先标记（可能标记存活的对象，也可能标记死亡的对象），标记完成后在清除。<br>优点：标记清除速度快；<br>缺点：标记清除操作效率随着对象的增长而降低，内存碎片化导致大对象无法分配导致再次触发GC；</p>
@@ -372,7 +372,7 @@
 <p>CMS收集器平时采用标记清除算法，当内存的碎片化程度较高影响对象分配时，采用标记整理算法整理一次内存空间。</p>
 <h3 id="为什么新生代使用复制算法"><a href="#为什么新生代使用复制算法" class="headerlink" title="为什么新生代使用复制算法"></a>为什么新生代使用复制算法</h3><p>复制算法效率会高于整理算法，新生代使用复制算法每次只需要复制少量的对象，且没有碎片内存空间，另外存在担保空间，所以可以使用；老年代没有担保，所以无法使用复制算法。</p>
 <p>参考：<br>《深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）》</p>
-<h2 id="简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？"><a href="#简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？" class="headerlink" title="简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？"></a>简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？</h2><h3 id="GC术语"><a href="#GC术语" class="headerlink" title="GC术语"></a>GC术语</h3><p>Partial GC:目标不是完整收集整个java堆的垃圾收集<br>Minor GC&#x2F;Young GC(收集新生代),Major GC&#x2F;Old GC（收集老年代，目前只有CMS会有单独回收老年代的行为）,Mixed GC（收集整个新生代和部分老年代）<br>Full GC:收集整个堆和方法区。</p>
+<h2 id="简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？（复习）"><a href="#简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？（复习）" class="headerlink" title="简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？（复习）"></a>简述一下垃圾回收器？说下各自的优缺点？有了解过cms和G1么？能详细说明一下么？（复习）</h2><h3 id="GC术语"><a href="#GC术语" class="headerlink" title="GC术语"></a>GC术语</h3><p>Partial GC:目标不是完整收集整个java堆的垃圾收集<br>Minor GC&#x2F;Young GC(收集新生代),Major GC&#x2F;Old GC（收集老年代，目前只有CMS会有单独回收老年代的行为）,Mixed GC（收集整个新生代和部分老年代）<br>Full GC:收集整个堆和方法区。</p>
 <h3 id="HotSpot垃圾回收相关概念"><a href="#HotSpot垃圾回收相关概念" class="headerlink" title="HotSpot垃圾回收相关概念"></a>HotSpot垃圾回收相关概念</h3><ul>
 <li>根节点枚举</li>
 </ul>
@@ -433,7 +433,7 @@
 <h3 id="垃圾收集器应用场景"><a href="#垃圾收集器应用场景" class="headerlink" title="垃圾收集器应用场景"></a>垃圾收集器应用场景</h3><p>Serial+Serial Old：单核处理器,轻量化客户端(jdk9-jdk19)<br>CMS+parNew:6GB以下堆内存，关注延迟，cpu核数最好大于4<br>Parallel Scavenge+Parallel Old:关注吞吐（jdk7-jdk8）<br>Parallel Scavenge+Serial Old：鸡肋，不考虑(jdk5-jdk7)<br>G1：6GB以上的堆内存<br>ZGC：jdk15及之后，极低延迟<br>Shenandoah：openjdk12及之后，极低延迟</p>
 <h3 id="jdk默认垃圾收集器"><a href="#jdk默认垃圾收集器" class="headerlink" title="jdk默认垃圾收集器"></a>jdk默认垃圾收集器</h3><p>jdk7-jdk8:Parallel Scavenge+Parallel Old<br>jdk9-jdk19:G1<br>注意，有时将Serial Old和Parallel Old统称为PS MarkSweep。故有时jdk5-jdk8都显示为PS Scavenge + PS MarkSweep.</p>
 <p>参考：<br>《深入理解Java虚拟机：JVM高级特性与最佳实践（第3版）》<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/baidu_38083619/article/details/105752830">ZGC都出来了，你还不懂G1？</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/lovejj1994/article/details/109620239">G1调优实践日记</a><br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/181305087">G1垃圾回收参数优化</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7001406102621388831">G1垃圾回收参数优化</a></p>
-<h2 id="JVM-是怎么从新生代到老年代？一个完整的GC流程是怎样的？"><a href="#JVM-是怎么从新生代到老年代？一个完整的GC流程是怎样的？" class="headerlink" title="JVM 是怎么从新生代到老年代？一个完整的GC流程是怎样的？"></a>JVM 是怎么从新生代到老年代？一个完整的GC流程是怎样的？</h2><h3 id="JVM-是怎么从新生代到老年代？"><a href="#JVM-是怎么从新生代到老年代？" class="headerlink" title="JVM 是怎么从新生代到老年代？"></a>JVM 是怎么从新生代到老年代？</h3><p>（1）新创建的对象进入eden区，经过一次young GC后如果没有被清理掉将进入某个Survivor空间，同时这个对象的代数增长一个，当代数增长到某一个阈值的时候将进入老年代；<br>（2）也可能大对象直接进入老年代；<br>（3）也可能是某次young GC后一个Survivor空间容不下剩下的新生代对象，一部分对象直接通过担保机制进入老年代，<br>（4）也可能在Survivor空间中有相同年龄所有对象大小的总和大于Survivor空间的一半，年龄大于或等于该年龄的对象就可以直接进入老年代，无须等到-XX：MaxTenuringThreshold中要求的年龄。</p>
+<h2 id="JVM-是怎么从新生代到老年代？一个完整的GC流程是怎样的？（复习）"><a href="#JVM-是怎么从新生代到老年代？一个完整的GC流程是怎样的？（复习）" class="headerlink" title="JVM 是怎么从新生代到老年代？一个完整的GC流程是怎样的？（复习）"></a>JVM 是怎么从新生代到老年代？一个完整的GC流程是怎样的？（复习）</h2><h3 id="JVM-是怎么从新生代到老年代？"><a href="#JVM-是怎么从新生代到老年代？" class="headerlink" title="JVM 是怎么从新生代到老年代？"></a>JVM 是怎么从新生代到老年代？</h3><p>（1）新创建的对象进入eden区，经过一次young GC后如果没有被清理掉将进入某个Survivor空间，同时这个对象的代数增长一个，当代数增长到某一个阈值的时候将进入老年代；<br>（2）也可能大对象直接进入老年代；<br>（3）也可能是某次young GC后一个Survivor空间容不下剩下的新生代对象，一部分对象直接通过担保机制进入老年代，<br>（4）也可能在Survivor空间中有相同年龄所有对象大小的总和大于Survivor空间的一半，年龄大于或等于该年龄的对象就可以直接进入老年代，无须等到-XX：MaxTenuringThreshold中要求的年龄。</p>
 <h3 id="一个完整的GC流程是怎样的？"><a href="#一个完整的GC流程是怎样的？" class="headerlink" title="一个完整的GC流程是怎样的？"></a>一个完整的GC流程是怎样的？</h3><ul>
 <li>非G1版本</li>
 </ul>
@@ -452,7 +452,7 @@
 <p><img src="/2023/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/G1%E6%B4%BB%E5%8A%A8%E6%B1%87%E6%80%BB.png" srcset="/img/loading.gif" lazyload alt="G1活动汇总"></p>
 <p>年轻代收集和混合收集周期，是G1回收空间的主要活动。当应用运行开始时，堆内存可用空间还比较大，只会在年轻代满时，触发年轻代收集；随着老年代内存增长，当到达IHOP阔值-XX：InitiatingHeapOccupancyPercent时，G1开始着手准备收集老年代空间。<br>首先经历并发标记周期，识别出高收益的老年代分区，前文已述。但随后G1并不会马上开始一次混合收集，而是让应用线程先运行一段时间，等待触发一次年轻代收集(Young Collection Following Concurrent Marking Cycle)，在这次STW中，G1将整理混合收集周期。接看再次让应用线程运行，当接下来的几次年轻代收集时，将会有老年代分区加入到CSet中，即触发混合收集，这些连续多次的混合收集称为混合收集周期(Mxed Colection Cycle)。G1会计算每次加入到CSet中的分区数量、混合收集进行次数，并且确定是否结束混合收集周期。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/coderlius/article/details/79272773">详解 JVM Garbage First(G1) 垃圾收集器</a><br><a target="_blank" rel="noopener" href="https://juejin.cn/post/7025212933428740110">看完这篇G1垃圾收集器的总结就足以吊打面试官了</a></p>
-<h2 id="简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？"><a href="#简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？" class="headerlink" title="简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？"></a>简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？</h2><h3 id="类加载时机"><a href="#类加载时机" class="headerlink" title="类加载时机"></a>类加载时机</h3><p>《规范》中没有规定加载的时机，但是规定了必须立即对类进行初始化的情况（而加载、验证、准备自然需要在此之前开始）：</p>
+<h2 id="简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？（复习）"><a href="#简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？（复习）" class="headerlink" title="简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？（复习）"></a>简述一下类加载过程，重点说明一下双亲委派模型，怎么破坏双亲委派模型？（复习）</h2><h3 id="类加载时机"><a href="#类加载时机" class="headerlink" title="类加载时机"></a>类加载时机</h3><p>《规范》中没有规定加载的时机，但是规定了必须立即对类进行初始化的情况（而加载、验证、准备自然需要在此之前开始）：</p>
 <ul>
 <li>遇到new、getstatic、putstatic或invokestatic这四条字节码指令时（·使用new关键字实例化对象的时候。·读取或设置一个类型的静态字段（被final修饰、已在编译期把结果放入常量池的静态字段除外）的时候。·调用一个类型的静态方法的时候。）</li>
 <li>使用java.lang.reflect包的方法对类型进行反射调用的时候</li>
@@ -577,7 +577,7 @@
 <p>总体是先上部分类加载器加载（ExtClassLoader），再下部分类加载器加载（findClass），最终用app类加载器进行中间部分类加载器加载（通过调用Class.forName）。</p>
 <p><img src="/2023/05/23/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-jvm/tomcat%E7%A0%B4%E5%9D%8F%E5%8F%8C%E4%BA%B2%E5%A7%94%E6%B4%BE.png" srcset="/img/loading.gif" lazyload alt="tomcat破坏双亲委派"></p>
 <p>参考：<br>《深入理解java虚拟机》<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/51374915https://zhuanlan.zhihu.com/p/51374915">老大难的 Java ClassLoader 再不理解就老了</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Miiiiiiiiiii/article/details/119324305">【Tomcat框架】Tomcat如何打破双亲委派机制？</a><br><a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/9mojzm8URjNRBg3r8BamdQ">《对线面试官》双亲委派机制</a></p>
-<h2 id="说说你了解的jvm参数和其作用？"><a href="#说说你了解的jvm参数和其作用？" class="headerlink" title="说说你了解的jvm参数和其作用？"></a>说说你了解的jvm参数和其作用？</h2><h3 id="经典垃圾收集器参数"><a href="#经典垃圾收集器参数" class="headerlink" title="经典垃圾收集器参数"></a>经典垃圾收集器参数</h3><p>-Xms:初始大小内存，默认为物理内存的1&#x2F;64，等价于-XX:InitialHeapSize</p>
+<h2 id="说说你了解的jvm参数和其作用？（复习）"><a href="#说说你了解的jvm参数和其作用？（复习）" class="headerlink" title="说说你了解的jvm参数和其作用？（复习）"></a>说说你了解的jvm参数和其作用？（复习）</h2><h3 id="经典垃圾收集器参数"><a href="#经典垃圾收集器参数" class="headerlink" title="经典垃圾收集器参数"></a>经典垃圾收集器参数</h3><p>-Xms:初始大小内存，默认为物理内存的1&#x2F;64，等价于-XX:InitialHeapSize</p>
 <p>-Xmx:最大分配内存，默认为物理内存的1&#x2F;4，等价于-XX:MaxHeapSize</p>
 <p>-Xss:设置单个线程栈的大小，一般默认为512k~1024k，等价于-XX:ThreadStackSize<br>当值等于0的时候，代表使用得是默认大小</p>
 <p>-Xmn：设置年轻代大小</p>
@@ -599,7 +599,7 @@
 <p><strong>G1为分配担保预留的空间比例</strong>：通过-XX:G1ReservePercent指定，默认10%。也就是老年代会预留10%的空间来给新生代的对象晋升，如果经常发生新生代晋升失败而导致Full GC，那么可以适当调高此阈值。但是调高此值同时也意味着降低了老年代的实际可用空间。</p>
 <p><strong>晋升年龄阈值</strong>：通过-XX:MaxTenuringThreshold指定，默认值15。一般新生对象经过15次Young GC会晋升到老年代，巨型对象会直接分配在老年代，同时在Young GC时，如果相同age的对象占Survivors空间的比例超过 -XX:TargetSurvivorRatio的值(默认50%)，则会自动将此次晋升年龄阈值设置为此age的值，所有年龄超过此值的对象都会被晋升到老年代，此举可能会导致老年代需要不少空间应对此种晋升。一般这个值不需要额外调整。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_27529917/article/details/87072130">G1调优常用参数及其作用</a><br><a target="_blank" rel="noopener" href="https://heapdump.cn/article/2712390">关于G1参数InitiatingHeapOccupancyPercent的正确认知</a></p>
-<h2 id="Java的四种引用有了解么？引用队列怎么使用？作用是什么？"><a href="#Java的四种引用有了解么？引用队列怎么使用？作用是什么？" class="headerlink" title="Java的四种引用有了解么？引用队列怎么使用？作用是什么？"></a>Java的四种引用有了解么？引用队列怎么使用？作用是什么？</h2><ul>
+<h2 id="Java的四种引用有了解么？引用队列怎么使用？作用是什么？（复习）"><a href="#Java的四种引用有了解么？引用队列怎么使用？作用是什么？（复习）" class="headerlink" title="Java的四种引用有了解么？引用队列怎么使用？作用是什么？（复习）"></a>Java的四种引用有了解么？引用队列怎么使用？作用是什么？（复习）</h2><ul>
 <li><p>强引用<br>普通赋值就是强引用</p>
 </li>
 <li><p>软引用<br>用WeakReference类实现，被软引用关联的对象，当系统要发生OOM异常时，会将软引用关联的对象列进回收范围之中进行第二次回收，如果这次回收后还没有足够资源才抛出OOM异常</p>
@@ -618,7 +618,7 @@
 <figure class="highlight lasso"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs lasso">在队列中有任何弱引用吗? <span class="hljs-literal">false</span><br>现在调用GC<span class="hljs-params">...</span><br>在队列中存在任何弱引用吗 ? <span class="hljs-literal">true</span><br>这个引用和原先的弱引是同一个对象吗 ? <span class="hljs-literal">true</span><br>堆中对象是： <span class="hljs-built_in">null</span><br></code></pre></td></tr></table></figure>
 <p>正如上面输出结果所看到的那样，引用队列实际上只是持有着已经不再引用堆中的要被清除的对象的引用型对象。因此这个弱引用和内存中的对象没有任何关联。调用get会返回null。</p>
 <p>参考：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/477314507">偏僻又热门，引用与引用队列</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/lverniu777fubiwei/article/details/53876211">引用队列（ReferenceQueue）浅析</a></p>
-<h2 id="怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？"><a href="#怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？" class="headerlink" title="怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？"></a>怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？</h2><h3 id="怎么打出一个线程的堆栈信息？"><a href="#怎么打出一个线程的堆栈信息？" class="headerlink" title="怎么打出一个线程的堆栈信息？"></a>怎么打出一个线程的堆栈信息？</h3><p>jstack</p>
+<h2 id="怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？（复习）"><a href="#怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？（复习）" class="headerlink" title="怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？（复习）"></a>怎么打出一个线程的堆栈信息？如果内存过高怎么分析？如果cpu过高怎么定位？（复习）</h2><h3 id="怎么打出一个线程的堆栈信息？"><a href="#怎么打出一个线程的堆栈信息？" class="headerlink" title="怎么打出一个线程的堆栈信息？"></a>怎么打出一个线程的堆栈信息？</h3><p>jstack</p>
 <h3 id="如果cpu过高怎么定位？"><a href="#如果cpu过高怎么定位？" class="headerlink" title="如果cpu过高怎么定位？"></a>如果cpu过高怎么定位？</h3><ol>
 <li>使用 top 找到占用 CPU 最高的 Java 进程。使用 top命令发现占用 CPU 99.7% 的线程是 Java 进程，进程 PID 为 13731。</li>
 <li>用 top -Hp 命令查看占用 CPU 最高的线程。执行top -Hp pid命令，pid 就是前面的 Java 进程。可以看到占用 CPU 最高的那个线程 PID 为 13756。然后将 13756转换为 16 进制的，后面会用到，可以用在线进制转换的网站直接转换，转换结果为 0x35bc</li>
@@ -629,7 +629,7 @@
 <p>参考：<br><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/271783423">高频面试题：Java程序占用 CPU 过高怎么排查</a><br><a target="_blank" rel="noopener" href="https://blog.csdn.net/chihaihai/article/details/108695821">JVM—常规堆内存溢出场景排查方法</a></p>
 <h2 id="内存的哪些部分会参与GC的回收"><a href="#内存的哪些部分会参与GC的回收" class="headerlink" title="内存的哪些部分会参与GC的回收"></a>内存的哪些部分会参与GC的回收</h2><p>堆、方法区、直接内存</p>
 <h2 id="While（true）里一直new-thread-start-会有什么问题"><a href="#While（true）里一直new-thread-start-会有什么问题" class="headerlink" title="While（true）里一直new thread().start()会有什么问题"></a>While（true）里一直new thread().start()会有什么问题</h2><p>线程一直运行的情况会导致CPU被占满，创建线程的速度越来越慢。<br>线程不一直运行的情况会导致创建大量线程对象，导致垃圾收集器频繁young gc。</p>
-<h2 id="jvm调优"><a href="#jvm调优" class="headerlink" title="jvm调优"></a>jvm调优</h2><p>JVM调优不是常规手段，性能问题一般第一选择是优化程序，最后的选择才是进行JVM调优。</p>
+<h2 id="jvm调优（复习）"><a href="#jvm调优（复习）" class="headerlink" title="jvm调优（复习）"></a>jvm调优（复习）</h2><p>JVM调优不是常规手段，性能问题一般第一选择是优化程序，最后的选择才是进行JVM调优。</p>
 <h3 id="jvm调优目标"><a href="#jvm调优目标" class="headerlink" title="jvm调优目标"></a>jvm调优目标</h3><p>吞吐量、延迟、内存占用三者构成了一个不可能三角，只能选择其中两个进行调优，不可三者兼得。</p>
 <p>延迟：GC低停顿和GC低频率；<br>低内存占用；<br>高吞吐量;</p>
 <p>选择了其中两个，必然会会以牺牲另一个为代价。</p>
