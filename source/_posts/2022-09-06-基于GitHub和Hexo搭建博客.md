@@ -2,9 +2,10 @@
 title: Windows环境基于GitHub和Hexo搭建个人博客
 date: 2022-09-06 23:20:03
 categories: 
-  - 其他
+  - 工具
 tags: 
-  - 博客搭建
+  - hexo
+excerpt: 基于GitHub和Hexo搭建个人博客
 ---
 
 # 前言

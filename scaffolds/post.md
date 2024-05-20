@@ -1,10 +1,9 @@
 ---
 title: {{ title }}
 categories:
-  - 读书
-  - 面试
+  - 工具
 tags:
-  - 历史
-  - 数据结构与算法
+  - hexo
 date: {{ date }}
+excerpt: 这是摘要
 ---
