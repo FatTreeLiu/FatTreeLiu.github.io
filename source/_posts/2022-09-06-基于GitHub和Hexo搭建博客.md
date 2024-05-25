@@ -113,7 +113,7 @@ deploy:
 
 ## 博客图片问题处理
 
-本人采用开源软件MarkText软件进行本地博客编辑，该软件可以在GitHub下载。需要在本地编辑博客和上传部署后的博客上都正常阅览图片，需要安装一些插件来实现该需求，具体操作如下：
+本人采用开源软件vscode + Markdown Preview Enhanced进行本地博客编辑。需要在本地编辑博客和上传部署后的博客上都正常阅览图片，需要安装一些插件来实现该需求，具体操作如下：
 
 * 在hexo主目录安装插件，在GitBash中输入：`npm install hexo-asset-image-for-hexo5 --save`  
 
@@ -123,10 +123,7 @@ deploy:
   post_asset_folder: true
   ```
 
-这样在使用`hexo new "article"`创建新博客文章的时候，就会发现在文章的同级目录出现和md文件名相同的文件夹，可以在这个文件夹中放该文章的图片，例如test.png。例：
-
-| 1  <br>2  <br>3 | ├─article  <br>├──test.png  <br>└─article.md |
-| --------------- | -------------------------------------------- |
+这样在使用`hexo new "article"`创建新博客文章的时候，就会发现在文章的同级目录出现和md文件名相同的文件夹，可以在这个文件夹中放该文章的图片，例如test.png。
 
 * 写法：在文章里即可使用`![](./article/test.png)`在本地显示图片`test.png`，同时在静态网页中也可以正常显示。
 
@@ -142,7 +139,7 @@ deploy:
 hexo new "My New Post"
 ```
 
-然后 source 文件夹中会出现一个 My New Post.md 文件，就可以使用MarkText在该文件中撰写文章了。
+然后 source 文件夹中会出现一个 My New Post.md 文件，就可以使用vscode在该文件中撰写文章了。
 
 写完后运行下面代码将文章渲染并部署到 GitHub Pages 上完成发布。**以后每次发布文章都是这三条命令。**
 
@@ -152,36 +149,19 @@ hexo g   # 生成页面
 hexo d   # 部署发布
 ```
 
-也可以不使用命令自己创建 .md 文件，只需在文件开头手动加入如下格式 Front-matter 即可，写完后运行 `hexo clean、hexo g` 和 `hexo d` 发布。
-
-```markdown
----
-title: Hello World # 标题
-date: 2019/3/26 hh:mm:ss # 时间
-categories: # 分类
-- Diary
-tags: # 标签
-- PS3
-- Games
----
-
-摘要
-<!--more-->
-正文
-```
 
 **处理草稿**
 
-输入如下命令新建一个草稿文件，其中<title>替换成草稿标题，实际运行可以知道新建的草稿文件存放在/source/_drafts路径下
+输入如下命令新建一个草稿文件，其中title替换成草稿标题，实际运行可以知道新建的草稿文件存放在/source/_drafts路径下
 
 ```
-$ hexo new draft <title>
+$ hexo new draft title
 ```
 
 输入如下命令将草稿转成正式文章，该命令会把/source/_drafts下的文章移到/source/_posts下
 
 ```
-$ hexo publish <title>
+$ hexo publish title
 ```
 
 ## 更换主题
