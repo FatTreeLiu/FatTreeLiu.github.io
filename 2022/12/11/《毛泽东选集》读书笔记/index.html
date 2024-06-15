@@ -16,24 +16,22 @@
   <meta name="author" content="fattree">
   <meta name="keywords" content="">
   
-    <meta name="description" content="介绍Hexo博客备份经验">
+    <meta name="description" content="《毛泽东选集》读书笔记">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hexo博客备份">
-<meta property="og:url" content="https://fattree.cn/2022/10/08/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD/index.html">
+<meta property="og:title" content="《毛泽东选集》读书笔记">
+<meta property="og:url" content="https://fattree.cn/2022/12/11/%E3%80%8A%E6%AF%9B%E6%B3%BD%E4%B8%9C%E9%80%89%E9%9B%86%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="FatTree">
-<meta property="og:description" content="介绍Hexo博客备份经验">
+<meta property="og:description" content="《毛泽东选集》读书笔记">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://fattree.cn/2022/10/08/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD/git%E6%96%87%E4%BB%B6.png">
-<meta property="article:published_time" content="2022-10-08T14:55:38.000Z">
-<meta property="article:modified_time" content="2024-05-29T14:01:56.414Z">
+<meta property="article:published_time" content="2022-12-11T14:04:26.000Z">
+<meta property="article:modified_time" content="2024-06-15T14:49:49.468Z">
 <meta property="article:author" content="fattree">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="读书笔记">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:image" content="https://fattree.cn/2022/10/08/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD/git%E6%96%87%E4%BB%B6.png">
   
   
   
-  <title>Hexo博客备份 - FatTree</title>
+  <title>《毛泽东选集》读书笔记 - FatTree</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -199,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Hexo博客备份"></span>
+            <span id="subtitle" data-typed-text="《毛泽东选集》读书笔记"></span>
           
         </div>
 
@@ -210,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2022-10-08 22:55" pubdate>
-          2022年10月8日 晚上
+        <time datetime="2022-12-11 22:04" pubdate>
+          2022年12月11日 晚上
         </time>
       </span>
     
@@ -222,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          614 字
+          1.8k 字
         
       </span>
     
@@ -233,7 +231,7 @@
         
         
         
-          6 分钟
+          16 分钟
         
       </span>
     
@@ -270,39 +268,38 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">Hexo博客备份</h1>
+            <h1 id="seo-header">《毛泽东选集》读书笔记</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h1><p>《基于GitHub和Hexo搭建博客》中总结了如何利用github和hexo搭建个人博客，但是github上上传的只是博客网站文件，像markdown笔记之类的源文件并没有备份，如果本地电脑坏了很难恢复以往的markdown笔记，所以需要连同markdown笔记在内的源文件都备份到github上。</p>
-<h1 id="备份步骤"><a href="#备份步骤" class="headerlink" title="备份步骤"></a>备份步骤</h1><h2 id="创建新分支"><a href="#创建新分支" class="headerlink" title="创建新分支"></a>创建新分支</h2><p>在github上的博客所在仓库上创建一个用来备份的分支hexo，并且将其设置为默认分支。<br>创建分支和设置默认分支见<a target="_blank" rel="noopener" href="https://blog.csdn.net/weixin_50486192/article/details/123227246">新建github分支</a>和<a target="_blank" rel="noopener" href="https://docs.github.com/zh/repositories/configuring-branches-and-merges-in-your-repository/managing-branches-in-your-repository/changing-the-default-branch">更改默认分支</a>。</p>
-<h2 id="获取git信息文件"><a href="#获取git信息文件" class="headerlink" title="获取git信息文件"></a>获取git信息文件</h2><p>去桌面或者哪里随便一个地方，把刚刚的hexo分支给clone下来。然后剪切出里面的.git文件夹，复制到现在的博客文件夹中。</p>
-<p>这里.git可能被window隐藏了，可以通过设置显示隐藏文件夹看到，具体百度。</p>
-<p><img src="/2022/10/08/Hexo%E5%8D%9A%E5%AE%A2%E5%A4%87%E4%BB%BD/git%E6%96%87%E4%BB%B6.png" srcset="/img/loading.gif" lazyload></p>
-<h2 id="添加-gitignore"><a href="#添加-gitignore" class="headerlink" title="添加 .gitignore"></a>添加 .<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=gitignore&spm=1001.2101.3001.7020">gitignore</a></h2><p>用来在上传时候忽略一些文件，即不上传<code>.gitignore</code>中忽略的文件。如果有最好，没有的话自己手动添加。</p>
-<figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs x86asm"><span class="hljs-meta">.DS_Store</span><br>Thumbs<span class="hljs-number">.</span><span class="hljs-built_in">db</span><br><span class="hljs-built_in">db</span><span class="hljs-number">.</span>json<br>*.log<br>node_modules/<br><span class="hljs-meta">public</span>/<br><span class="hljs-meta">.deploy</span>*/<br></code></pre></td></tr></table></figure>
-
-<p><strong>注意，如果你之前克隆过theme中的主题文件，那么应该把主题文件中的.git文件夹删掉，因为git不能嵌套上传，最好是显示隐藏文件，检查一下有没有，否则上传的时候会出错，导致你的主题文件无法上传，这样你的配置在别的电脑上就用不了了。</strong></p>
-<h2 id="备份"><a href="#备份" class="headerlink" title="备份"></a>备份</h2><p>在hexo博客的根目录下执行</p>
-<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs elixir"><span class="hljs-variable">$ </span>git add .<br><span class="hljs-variable">$ </span>git commit -m <span class="hljs-string">&quot;Backup&quot;</span><br><span class="hljs-variable">$ </span>git push origin hexo<br></code></pre></td></tr></table></figure>
-
-<p>这样就备份完博客了且在Github上能看到两个分支(main和hexo)。</p>
-<h2 id="备份习惯"><a href="#备份习惯" class="headerlink" title="备份习惯"></a>备份习惯</h2><figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs armasm"><span class="hljs-symbol">hexo</span> clean<br><span class="hljs-symbol">git</span> <span class="hljs-keyword">add</span> .<br><span class="hljs-symbol">git</span> commit -m <span class="hljs-string">&quot;Backup&quot;</span><br><span class="hljs-symbol">git</span> <span class="hljs-keyword">push</span><br><span class="hljs-symbol">hexo</span> g<br><span class="hljs-symbol">hexo</span> d<br></code></pre></td></tr></table></figure>
-
-<h1 id="恢复步骤"><a href="#恢复步骤" class="headerlink" title="恢复步骤"></a>恢复步骤</h1><h2 id="环境准备"><a href="#环境准备" class="headerlink" title="环境准备"></a>环境准备</h2><p>安装git 、nodejs，确保github公钥接入，参考《基于GitHub和Hexo搭建博客》</p>
-<h2 id="克隆项目到本地"><a href="#克隆项目到本地" class="headerlink" title="克隆项目到本地"></a>克隆项目到本地</h2><p>输入下列命令克隆博客必须文件(hexo分支)：</p>
-<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs crmsh">$ git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://xxxxx(详见仓库链接)<br></code></pre></td></tr></table></figure>
-
-<h2 id="博客恢复"><a href="#博客恢复" class="headerlink" title="博客恢复"></a>博客恢复</h2><p>在clone下来的那个文件夹里面执行</p>
-<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs powershell"><span class="hljs-variable">$</span> npm install hexo<span class="hljs-literal">-cli</span><br><span class="hljs-variable">$</span> npm install<br><span class="hljs-variable">$</span> npm install hexo<span class="hljs-literal">-deployer-git</span> –save<br><span class="hljs-variable">$</span> <span class="hljs-built_in">rm</span> <span class="hljs-literal">-rf</span> .deploy_git<br></code></pre></td></tr></table></figure>
-
-<p>然后再去安装原来安装的一些插件。<strong>在此不需要执行hexo init这条指令，因为不是从零搭建起新博客</strong>。</p>
-<p>后续正常写博客，执行以下命令即可</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs excel">hexo <span class="hljs-built_in">n</span> xx<br>hexo <span class="hljs-built_in">clean</span><br>hexo g<br>hexo d<br></code></pre></td></tr></table></figure>
-
-<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/NoMasp/article/details/79504699">【Hexo异常】fatal: in unpopulated submodule ‘.deploy_git’_nomasp的博客-CSDN博客</a></p>
-<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21040559/article/details/109702142"> Hexo博客的备份_fFee-ops的博客-CSDN博客_hexo备份</a></p>
+                <h1 id="信息"><a href="#信息" class="headerlink" title="信息"></a>信息</h1><p>《毛泽东选集》 毛泽东 人民出版社</p>
+<h1 id="摘录"><a href="#摘录" class="headerlink" title="摘录"></a>摘录</h1><h2 id="做事"><a href="#做事" class="headerlink" title="做事"></a>做事</h2><ul>
+<li>谁是我们的敌人？谁是我们的朋友？这个问题是革命的首要问题。中国过去一切革命斗争成效甚少，其基本原因就是因为不能团结真正的朋友，以攻击真正的敌人。</li>
+<li>许多做领导工作的人，遇到困难问题，只是叹气，不能解决。他恼火，请求调动工作，理由是“才力小，干不下”。这是懦夫讲的话。迈开你的两脚，到你的工作范围的各部分各地方去走走，学个孔夫子的“每事问”，任凭什么才力小也能解决问题，因为你未出门时脑子是空的，归来时脑子已经不是空的了，已经载来了解决问题的各种必要材料，问题就是这样子解决了。一定要出门吗？也不一定，可以召集那些明了情况的人来开个调查会，把你所谓困难问题的“来源”找到手，“现状”弄明白，你的这个困难问题也就容易解决了。 调查就像“十月怀胎”，解决问题就像“一朝分娩”。调查就是解决问题。</li>
+<li>任何一级的首长，应当把自己注意的重心，放在那些对于他所指挥的全局说来最重要最有决定意义的问题或动作上，而不应当放在其他的问题或动作上。</li>
+<li>认识情况的过程，不但存在于军事计划建立之前，而且存在于军事计划建立之后。当执行某一计划时，从开始执行起，到战局终结止，这是又一个认识情况的过程，即实行的过程。此时，第一个过程中的东西是否符合于实况，需要重新加以检查。如果计划和情况不符合，或者不完全符合，就必须依照新的认识，构成新的判断，定下新的决心，把已定计划加以改变，使之适合于新的情况。部分地改变的事差不多每一作战都是有的，全部地改变的事也是间或有的。鲁莽家不知改变，或不愿改变，只是一味盲干，结果又非碰壁不可。</li>
+<li>中国古代大军事学家孙武子书上“知彼知己，百战不殆”这句话，是包括学习和使用两个阶段而说的，包括从认识客观实际中的发展规律，并按照这些规律去决定自己行动克服当前敌人而说的；我们不要看轻这句话。</li>
+<li>但是开始准备的时机问题，一般地说来，与其失之过迟，不如失之过早。因为后者的损失较之前者为小，而其利益，则是有备无患，根本上立于不败之地。</li>
+</ul>
+<h2 id="调查分析"><a href="#调查分析" class="headerlink" title="调查分析"></a>调查分析</h2><ul>
+<li>我们看事情必须要看它的实质，而把它的现象只看作入门的向导，一进了门就要抓住它的实质，这才是可靠的科学的分析方法。</li>
+<li>离开实际调查就要产生唯心的阶级估量和唯心的工作指导，那末，它的结果，不是机会主义，便是盲动主义</li>
+<li>不论做什么事，不懂得那件事的情形，它的性质，它和它以外的事情的关联，就不知道那件事的规律，就不知道如何去做，就不能做好那件事。</li>
+<li>列宁说：马克思主义的最本质的东西，马克思主义的活的灵魂，就在于具体地分析具体的情况。就是说的这个意思。我们的教条主义者违背列宁的指示，从来不用脑筋具体地分析任何事物，做起文章或演说来，总是空洞无物的八股调，在我们党内造成了一种极坏的作风。</li>
+<li>经验对于干部是必需的，失败确是成功之母。但是虚心接受别人的经验也属必需，如果样样要待自己经验，否则固执己见拒不接受，这就是十足的“狭隘经验论”。我们的战争吃这种亏是不少的。</li>
+<li>重复地说，论理的认识所以和感性的认识不同，是因为感性的认识是属于事物之片面的、现象的、外部联系的东西，论理的认识则推进了一大步，到达了事物的全体的、本质的、内部联系的东西，到达了暴露周围世界的内在的矛盾，因而能在周围世界的总体上，在周围世界一切方面的内部联系上去把握周围世界的发展。</li>
+<li>由此看来，认识的过程，第一步，是开始接触外界事情，属于感觉的阶段。第二步，是综合感觉的材料加以整理和改造，属于概念、判断和推理的阶段。只有感觉的材料十分丰富（不是零碎不全）和合于实际（不是错觉），才能根据这样的材料造出正确的概念和论理来。</li>
+</ul>
+<h2 id="发展与矛盾"><a href="#发展与矛盾" class="headerlink" title="发展与矛盾"></a>发展与矛盾</h2><ul>
+<li>由此看来，不论研究何种矛盾的特性——各个物质运动形式的矛盾，各个运动形式在各个发展过程中的矛盾，各个发展过程的矛盾的各方面，各个发展过程在其各个发展阶段上的矛盾以及各个发展阶段上的矛盾的各方面，研究所有这些矛盾的特性，都不能带主观随意性，必须对它们实行具体的分析。离开具体的分析，就不能认识任何矛盾的特性。我们必须时刻记得列宁的话：对于具体的事物作具体的分析。</li>
+<li>由此可知，任何过程如果有多数矛盾存在的话，其中必定有一种是主要的，起着领导的、决定的作用，其他则处于次要和服从的地位。因此，研究任何过程，如果是存在着两个以上矛盾的复杂过程的话，就要用全力找出它的主要矛盾。捉住了这个主要矛盾，一切问题就迎刃而解了。这是马克思研究资本主义社会告诉我们的方法。</li>
+</ul>
+<h2 id="作文"><a href="#作文" class="headerlink" title="作文"></a>作文</h2><ul>
+<li>留心各样的事情，多看看，不看到一点就写。</li>
+<li>写完后至少看两遍，竭力将可有可无的字、句、段删去，毫不可惜。宁可将可作小说的材料缩成速写，决不将速写材料拉成小说。</li>
+<li>孔夫子提倡“再思”，韩愈也说“行成于思”，那是古代的事情。现在的事情，问题很复杂，有些事情甚至想三四回还不够。鲁迅说“至少看两遍”，至多呢？他没有说，我看重要的文章不妨看它十多遍，认真地加以删改，然后发表。文章是客观事物的反映，而事物是曲折复杂的，必须反复研究，才能反映恰当；在这里粗心大意，就是不懂得做文章的起码知识。</li>
+</ul>
 
                 
               </div>
@@ -321,7 +318,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E5%B7%A5%E5%85%B7/" class="category-chain-item">工具</a>
+  <a href="/categories/%E8%AF%BB%E4%B9%A6/" class="category-chain-item">读书</a>
   
   
 
@@ -336,7 +333,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/" class="print-no-link">#hexo</a>
+        <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="print-no-link">#读书笔记</a>
       
     </div>
   
@@ -348,8 +345,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Hexo博客备份</div>
-      <div>https://fattree.cn/2022/10/08/Hexo博客备份/</div>
+      <div>《毛泽东选集》读书笔记</div>
+      <div>https://fattree.cn/2022/12/11/《毛泽东选集》读书笔记/</div>
     </div>
     <div class="license-meta">
       
@@ -361,7 +358,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2022年10月8日</div>
+          <div>2022年12月11日</div>
         </div>
       
       
@@ -405,9 +402,9 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2022/11/01/%E3%80%8A%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E4%B8%8E%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《计算机组成原理与汇编语言程序设计》读书笔记">
+                      <a href="/2022/12/22/%E3%80%8A%E6%9B%BE%E5%9B%BD%E8%97%A9%E5%AE%B6%E4%B9%A6%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《曾国藩家书》读书笔记">
                         <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">《计算机组成原理与汇编语言程序设计》读书笔记</span>
+                        <span class="hidden-mobile">《曾国藩家书》读书笔记</span>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
@@ -415,8 +412,8 @@
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2022/09/25/git%E5%AD%A6%E4%B9%A0%E6%95%B4%E7%90%86/" title="git学习整理">
-                        <span class="hidden-mobile">git学习整理</span>
+                      <a href="/2022/11/27/Window%E4%B8%AD%E6%90%AD%E5%BB%BAcentos%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%92%8CMySQL/" title="Windows中搭建centos虚拟机和MySQL">
+                        <span class="hidden-mobile">Windows中搭建centos虚拟机和MySQL</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
