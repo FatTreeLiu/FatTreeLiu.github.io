@@ -1,0 +1,1562 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/cat.jpg">
+  <link rel="icon" href="/img/cat.jpg">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="fattree">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="梳理经典算法题目">
+<meta property="og:type" content="article">
+<meta property="og:title" content="经典算法题目记录">
+<meta property="og:url" content="https://fattree.cn/2024/04/26/%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E9%A2%98%E7%9B%AE%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="FatTree">
+<meta property="og:description" content="梳理经典算法题目">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-04-26T13:50:10.000Z">
+<meta property="article:modified_time" content="2024-09-22T13:22:19.488Z">
+<meta property="article:author" content="fattree">
+<meta property="article:tag" content="刷题">
+<meta name="twitter:card" content="summary_large_image">
+  
+  
+  
+  <title>经典算法题目记录 - FatTree</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"fattree.cn","root":"/","version":"1.9.7","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":true,"baidu":null,"google":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false},"gtag":null},"search_path":"/local-search.xml","include_content_in_search":true};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 7.0.0"></head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>FAT TREE</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/" target="_self">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/" target="_self">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/" target="_self">
+                <i class="iconfont icon-category-fill"></i>
+                <span>分类</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/" target="_self">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/" target="_self">
+                <i class="iconfont icon-user-fill"></i>
+                <span>关于</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/light.JPG') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="经典算法题目记录"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2024-04-26 21:50" pubdate>
+          2024年4月26日 晚上
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          12k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          104 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <h1 id="seo-header">经典算法题目记录</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <h1 id="力扣100"><a href="#力扣100" class="headerlink" title="力扣100"></a>力扣100</h1><h2 id="1-两数之和（复习）"><a href="#1-两数之和（复习）" class="headerlink" title="1. 两数之和（复习）"></a>1. 两数之和（复习）</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个整数数组 nums 和一个整数目标值 target，请你在该数组中找出 和为目标值 target  的那 两个 整数，并返回它们的数组下标。</p>
+<p>你可以假设每种输入只会对应一个答案。但是，数组中同一个元素在答案里不能重复出现。</p>
+<p>你可以按任意顺序返回答案。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] <span class="hljs-built_in">twoSum</span>(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> target) &#123;<br>        Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;<br>            <span class="hljs-keyword">if</span> (map.<span class="hljs-built_in">containsKey</span>(target - nums[i]))&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[]&#123;map.<span class="hljs-built_in">get</span>(target - nums[i]), i&#125;;<br>            &#125;<br>            map.<span class="hljs-built_in">put</span>(nums[i], i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> null;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>略</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/two-sum/description/">两数之和</a></p>
+<h2 id="49-字母异位词分组"><a href="#49-字母异位词分组" class="headerlink" title="49. 字母异位词分组"></a>49. 字母异位词分组</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个字符串数组，请你将 字母异位词 组合在一起。可以按任意顺序返回结果列表。</p>
+<p>字母异位词 是由重新排列源单词的所有字母得到的一个新单词。</p>
+<ul>
+<li><p>题解</p>
+<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs processing"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;<span class="hljs-built_in">String</span>&gt;&gt; <span class="hljs-title function_">groupAnagrams</span>(<span class="hljs-built_in">String</span>[] strs) &#123;<br>        Map&lt;<span class="hljs-built_in">String</span>, List&lt;<span class="hljs-built_in">String</span>&gt;&gt; <span class="hljs-built_in">map</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">String</span> <span class="hljs-built_in">str</span> : strs)&#123;<br>            <span class="hljs-type">char</span>[] chars = <span class="hljs-built_in">str</span>.<span class="hljs-property">toCharArray</span>();<br>            Arrays.<span class="hljs-property">sort</span>(chars);<br>            <span class="hljs-built_in">String</span> <span class="hljs-built_in">key</span> = <span class="hljs-keyword">new </span><span class="hljs-class title_">String</span>(chars);<br>            List&lt;<span class="hljs-built_in">String</span>&gt; list = <span class="hljs-built_in">map</span>.<span class="hljs-property">getOrDefault</span>(<span class="hljs-built_in">key</span>, <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>&lt;&gt;());<br>            list.<span class="hljs-property">add</span>(<span class="hljs-built_in">str</span>);<br>            <span class="hljs-built_in">map</span>.<span class="hljs-property">put</span>(<span class="hljs-built_in">key</span>, list);<br>        &#125;<br>        List&lt;List&lt;<span class="hljs-built_in">String</span>&gt;&gt; list = <span class="hljs-keyword">new </span><span class="hljs-class title_">ArrayList</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (Map.<span class="hljs-property">Entry</span>&lt;<span class="hljs-built_in">String</span>, List&lt;<span class="hljs-built_in">String</span>&gt;&gt; entry : <span class="hljs-built_in">map</span>.<span class="hljs-property">entrySet</span>())&#123;<br>            list.<span class="hljs-property">add</span>(entry.<span class="hljs-property">getValue</span>());<br>        &#125;<br>        <span class="hljs-keyword">return</span> list;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>分析</p>
+</li>
+</ul>
+<p>略</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/group-anagrams/description/?envType=study-plan-v2&envId=top-100-liked">字母异位词分组</a></p>
+<h2 id="128-最长连续序列"><a href="#128-最长连续序列" class="headerlink" title="128. 最长连续序列"></a>128. 最长连续序列</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。</p>
+<p>请你设计并实现时间复杂度为 O(n) 的算法解决此问题。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs dart"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    public <span class="hljs-built_in">int</span> longestConsecutive(<span class="hljs-built_in">int</span>[] nums) &#123;<br>        <span class="hljs-built_in">Set</span>&lt;Integer&gt; <span class="hljs-keyword">set</span> = <span class="hljs-keyword">new</span> HashSet&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> <span class="hljs-built_in">num</span> : nums)&#123;<br>            <span class="hljs-keyword">set</span>.add(<span class="hljs-built_in">num</span>);<br>        &#125;<br>        <span class="hljs-built_in">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> <span class="hljs-built_in">num</span> : nums)&#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">set</span>.contains(<span class="hljs-built_in">num</span> - <span class="hljs-number">1</span>))&#123;<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            <span class="hljs-built_in">int</span> tl = <span class="hljs-number">1</span>;<br>            <span class="hljs-built_in">int</span> t = <span class="hljs-built_in">num</span>;<br>            <span class="hljs-keyword">while</span> (<span class="hljs-keyword">set</span>.contains(t + <span class="hljs-number">1</span>))&#123;<br>                t++;<br>                tl++;<br>            &#125;<br>            res = Math.max(tl, res);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>当Set中有数字小于当前数字时需要剪枝。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-100-liked">最长连续序列</a></p>
+<h2 id="283-移动零"><a href="#283-移动零" class="headerlink" title="283. 移动零"></a>283. 移动零</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。<br>请注意 ，必须在不复制数组的情况下原地对数组进行操作。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> moveZeroes(<span class="hljs-built_in">int</span>[] nums) &#123;<br>        <span class="hljs-built_in">int</span> zs = <span class="hljs-number">-1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;<br>            <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-number">0</span>)&#123;<br>                zs = i;<br>                <span class="hljs-keyword">break</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (zs == <span class="hljs-number">-1</span>)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> e = zs + <span class="hljs-number">1</span>; e &lt; nums.length; e++)&#123;<br>            <span class="hljs-keyword">if</span> (nums[e] == <span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            nums[zs] = nums[e];<br>            zs++;<br>            nums[e] = <span class="hljs-number">0</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>如果找不到第一个0，直接退出</p>
+<p>时间复杂度：O(n)<br>空间复杂度：O(1)</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-consecutive-sequence/description/?envType=study-plan-v2&envId=top-100-liked">最长连续序列</a></p>
+<h2 id="11-盛最多水的容器"><a href="#11-盛最多水的容器" class="headerlink" title="11. 盛最多水的容器"></a>11. 盛最多水的容器</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个长度为 n 的整数数组 height 。有 n 条垂线，第 i 条线的两个端点是 (i, 0) 和 (i, height[i]) 。</p>
+<p>找出其中的两条线，使得它们与 x 轴共同构成的容器可以容纳最多的水。</p>
+<p>返回容器可以储存的最大水量。</p>
+<p>说明：你不能倾斜容器。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title">maxArea</span><span class="hljs-params">(<span class="hljs-type">int</span>[] height)</span> </span>&#123;<br>        <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> j = height.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            res = Math.<span class="hljs-built_in">max</span>(res, Math.<span class="hljs-built_in">min</span>(height[i], height[j]) * (j - i));<br>            <span class="hljs-keyword">if</span> (height[i] &lt; height[j])&#123;<br>                i++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j--;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>移动小的那边</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/container-with-most-water/description/?envType=study-plan-v2&envId=top-100-liked">盛最多水的容器</a></p>
+<h2 id="15-三数之和（复习）"><a href="#15-三数之和（复习）" class="headerlink" title="15. 三数之和（复习）"></a>15. 三数之和（复习）</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数数组 nums ，判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i !&#x3D; j、i !&#x3D; k 且 j !&#x3D; k ，同时还满足 nums[i] + nums[j] + nums[k] &#x3D;&#x3D; 0 。请<br>你返回所有和为 0 且不重复的三元组。<br>注意：答案中不可以包含重复的三元组。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> List&lt;List&lt;<span class="hljs-type">Integer</span>&gt;&gt; threeSum(<span class="hljs-type">int</span>[] nums) &#123;<br>        Arrays.sort(nums);<br>        List&lt;List&lt;<span class="hljs-type">Integer</span>&gt;&gt; res = <span class="hljs-built_in">new</span> ArrayList&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length - <span class="hljs-number">2</span>; i++)&#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &gt; <span class="hljs-number">0</span>)&#123;<br>                <span class="hljs-keyword">return</span> res;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (i != <span class="hljs-number">0</span> &amp;&amp; nums[i] == nums[i - <span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-keyword">continue</span>;<br>            &#125;<br>            <span class="hljs-type">int</span> j = i + <span class="hljs-number">1</span>;<br>            <span class="hljs-type">int</span> k = nums.length - <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">while</span>(j &lt; k)&#123;<br>                <span class="hljs-keyword">if</span> (j != i + <span class="hljs-number">1</span> &amp;&amp; nums[j] == nums[j - <span class="hljs-number">1</span>])&#123;<br>                    j++;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (k != nums.length - <span class="hljs-number">1</span> &amp;&amp; nums[k] == nums[k + <span class="hljs-number">1</span>])&#123;<br>                    k<span class="hljs-comment">--;</span><br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                <span class="hljs-type">int</span> sum = nums[i] + nums[j] + nums[k];<br>                <span class="hljs-keyword">if</span> (sum == <span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-type">Integer</span>[] arr = <span class="hljs-built_in">new</span> <span class="hljs-type">Integer</span>[]&#123;nums[i], nums[j], nums[k]&#125;;<br>                    res.<span class="hljs-keyword">add</span>(Arrays.asList(arr));<br>                    j++;<br>                    k<span class="hljs-comment">--;</span><br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (sum &gt; <span class="hljs-number">0</span>)&#123;<br>                    k<span class="hljs-comment">--;</span><br>                &#125; <span class="hljs-keyword">else</span>&#123;<br>                    j++;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>基本的思路是排序，然后双指针夹逼，需要注意的点是结果不能重复，所以我直接采用了暴力的HashSet进行去重。但是整体流程不是那么的优雅，更加优雅的方案是前面几个值固定时，当前值去重，一但当前值有重复的，很可能导致出现重复结果，所以需要跳过。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/3sum/description/?envType=study-plan-v2&envId=top-100-liked">三数之和</a><br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/3sum/">力扣题解</a></p>
+<h2 id="42-接雨水"><a href="#42-接雨水" class="headerlink" title="42. 接雨水"></a>42. 接雨水</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定 n 个非负整数表示每个宽度为 1 的柱子的高度图，计算按此排列的柱子，下雨之后能接多少雨水。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs maxima">class Solution &#123;<br>    public int trap(int[] <span class="hljs-built_in">height</span>) &#123;<br>        int[] leftMax = <span class="hljs-built_in">new</span> int[<span class="hljs-built_in">height</span>.<span class="hljs-built_in">length</span>];<br>        int[] rightMax = <span class="hljs-built_in">new</span> int[<span class="hljs-built_in">height</span>.<span class="hljs-built_in">length</span>];<br>        leftMax[<span class="hljs-number">0</span>] = <span class="hljs-built_in">height</span>[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">1</span>; i &lt; <span class="hljs-built_in">height</span>.<span class="hljs-built_in">length</span>; i++)&#123;<br>            leftMax[i] = Math.<span class="hljs-built_in">max</span>(<span class="hljs-built_in">height</span>[i], leftMax[i - <span class="hljs-number">1</span>]);<br>        &#125;<br>        rightMax[<span class="hljs-built_in">height</span>.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>] = <span class="hljs-built_in">height</span>[<span class="hljs-built_in">height</span>.<span class="hljs-built_in">length</span> - <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (int i = <span class="hljs-built_in">height</span>.<span class="hljs-built_in">length</span> - <span class="hljs-number">2</span>; i &gt;= <span class="hljs-number">0</span>; i--)&#123;<br>            rightMax[i] = Math.<span class="hljs-built_in">max</span>(<span class="hljs-built_in">height</span>[i], rightMax[i + <span class="hljs-number">1</span>]);<br>        &#125;<br>        int res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (int i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-built_in">height</span>.<span class="hljs-built_in">length</span>; i++)&#123;<br>            res += Math.<span class="hljs-built_in">max</span>(<span class="hljs-number">0</span>, Math.<span class="hljs-built_in">min</span>(leftMax[i], rightMax[i]) - <span class="hljs-built_in">height</span>[i]);<br>        &#125;<br>        <span class="hljs-built_in">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>每个位置所能接的雨水是Math.max(0, Math.min(leftMax[i], rightMax[i]) - height[i])</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/trapping-rain-water/description/?envType=study-plan-v2&envId=top-100-liked">接雨水</a></p>
+<h2 id="3-无重复字符的最长子串"><a href="#3-无重复字符的最长子串" class="headerlink" title="3. 无重复字符的最长子串"></a>3. 无重复字符的最长子串</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个字符串 s ，请你找出其中不含有重复字符的 最长子串的长度。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> lengthOfLongestSubstring(String s) &#123;<br>        <span class="hljs-keyword">if</span> (s.length() == <span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        Map&lt;<span class="hljs-type">Character</span>, <span class="hljs-type">Integer</span>&gt; map = <span class="hljs-built_in">new</span> HashMap&lt;&gt;();<br>        map.put(s.charAt(<span class="hljs-number">0</span>), <span class="hljs-number">0</span>);<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[s.length()];<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; s.length(); i++)&#123;<br>            <span class="hljs-type">char</span> c = s.charAt(i);<br>            <span class="hljs-keyword">if</span> (map.containsKey(c))&#123;<br>                dp[i] = Math.min(dp[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>, i - map.<span class="hljs-keyword">get</span>(c));<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                dp[i] = dp[i - <span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>            &#125;<br>            res = Math.max(res, dp[i]);<br>            map.put(c, i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>动态规划</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-substring-without-repeating-characters/description/?envType=study-plan-v2&envId=top-100-liked">无重复字符的最长子串</a></p>
+<h2 id="560-和为-K-的子数组"><a href="#560-和为-K-的子数组" class="headerlink" title="560. 和为 K 的子数组"></a>560. 和为 K 的子数组</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。</p>
+<p>子数组是数组中元素的连续非空序列。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title">subarraySum</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        Map&lt;Integer, Integer&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        map.<span class="hljs-built_in">put</span>(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);<br>        <span class="hljs-type">int</span> pre = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;<br>            pre += nums[i];<br>            <span class="hljs-keyword">if</span> (map.<span class="hljs-built_in">containsKey</span>(pre - k))&#123;<br>                res += map.<span class="hljs-built_in">get</span>(pre - k);<br>            &#125;<br>            map.<span class="hljs-built_in">put</span>(pre, map.<span class="hljs-built_in">getOrDefault</span>(pre, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>前缀和</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subarray-sum-equals-k/description/?envType=study-plan-v2&envId=top-100-liked">和为 K 的子数组</a></p>
+<h2 id="53-最大子数组和"><a href="#53-最大子数组和" class="headerlink" title="53. 最大子数组和"></a>53. 最大子数组和</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。子数组是数组中的一个连续部分。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> maxSubArray(<span class="hljs-type">int</span>[] nums) &#123;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[nums.length];<br>        <span class="hljs-type">int</span> res = dp[<span class="hljs-number">0</span>];<br>        dp[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;<br>            dp[i] = nums[i] + Math.max(<span class="hljs-number">0</span>, dp[i - <span class="hljs-number">1</span>]);<br>            res = Math.max(res, dp[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>动态规划</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/maximum-subarray/?envType=study-plan-v2&envId=top-100-liked">最大子数组和</a></p>
+<h2 id="56-合并区间"><a href="#56-合并区间" class="headerlink" title="56. 合并区间"></a>56. 合并区间</h2><ul>
+<li>题目</li>
+</ul>
+<p>以数组 intervals 表示若干个区间的集合，其中单个区间为 intervals[i] &#x3D; [starti, endi] 。请你合并所有重叠的区间，并返回 一个不重叠的区间数组，该数组需恰好覆盖输入中的所有区间 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span>[][] merge(<span class="hljs-type">int</span>[][] intervals) &#123;<br>        List&lt;<span class="hljs-type">int</span>[]&gt; list = <span class="hljs-built_in">new</span> ArrayList&lt;&gt;();<br>        Arrays.sort(intervals, (x, y) -&gt; x[<span class="hljs-number">0</span>] - y[<span class="hljs-number">0</span>]);<br>        <span class="hljs-type">int</span> start = intervals[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>        <span class="hljs-type">int</span> end = intervals[<span class="hljs-number">0</span>][<span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; intervals.length; i++)&#123;<br>            <span class="hljs-type">int</span>[] p = intervals[i];<br>            <span class="hljs-keyword">if</span> (p[<span class="hljs-number">0</span>] &lt;= <span class="hljs-keyword">end</span>)&#123;<br>                <span class="hljs-keyword">if</span> (p[<span class="hljs-number">1</span>] &lt;= <span class="hljs-keyword">end</span>)&#123;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    end = p[<span class="hljs-number">1</span>];<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                list.<span class="hljs-keyword">add</span>(<span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[]&#123;<span class="hljs-keyword">start</span>, <span class="hljs-keyword">end</span>&#125;);<br>                start = p[<span class="hljs-number">0</span>];<br>                end = p[<span class="hljs-number">1</span>];<br>            &#125;<br>        &#125;<br>        list.<span class="hljs-keyword">add</span>(<span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[]&#123;<span class="hljs-keyword">start</span>, <span class="hljs-keyword">end</span>&#125;);<br>        <span class="hljs-keyword">return</span> list.toArray(<span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>]);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>动态规划</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/merge-intervals/?envType=study-plan-v2&envId=top-100-liked">合并区间</a></p>
+<h2 id="41-缺失的第一个正数"><a href="#41-缺失的第一个正数" class="headerlink" title="41. 缺失的第一个正数"></a>41. 缺失的第一个正数</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。</p>
+<p>请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs inform7">class Solution &#123;<br>    public int firstMissingPositive(int<span class="hljs-comment">[]</span> nums) &#123;<br>        for (int i = 0; i &lt; nums.length; i++)&#123;<br>            while(nums<span class="hljs-comment">[i]</span> &gt;= 1 &amp;&amp; nums<span class="hljs-comment">[i]</span> &lt;= nums.length &amp;&amp; nums<span class="hljs-comment">[nums<span class="hljs-comment">[i]</span> - 1]</span> != nums<span class="hljs-comment">[i]</span>)&#123;<br>                int t = nums<span class="hljs-comment">[nums<span class="hljs-comment">[i]</span> - 1]</span>;<br>                nums<span class="hljs-comment">[nums<span class="hljs-comment">[i]</span> - 1]</span> = nums<span class="hljs-comment">[i]</span>;<br>                nums<span class="hljs-comment">[i]</span> = t;<br>            &#125;<br>        &#125;<br>        for (int i = 0; i &lt; nums.length; i++)&#123;<br>            if (nums<span class="hljs-comment">[i]</span> != i + 1)&#123;<br>                return i + 1;<br>            &#125;<br>        &#125;<br>        return nums.length + 1;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>通过置换，将数字放到正确的位置，置换并不会改变数字，但是可以确定数字该有的位置，如果一个nums[i] &#x3D; x,则将这个数字和num[x - 1]的位置，循环这样放置后，数组就会呈现1、2、3之类的顺序，第一个错误的位置就是最小的正数。如果每个位置都有正确的数字，说明1~n的数字都是全的，那么结果就是n+1了。<br>每个位置循环置换，如果nums[i] &#x3D; x 大于N或者小于1，说明超出范围，跳到下一位置继续置换，如果出现num[i] &#x3D;&#x3D; num[num[i] - 1],说明num[i] 上的数字已经是正确的数字了，这样也需要跳到下一个位置继续置换。</p>
+<p>这个思路真是想不出来，好好把这个题目给记住吧。注意，本题的数字可能重复，所以这里nums[i] !&#x3D; nums[nums[i] - 1]  而不是 nums[i] !&#x3D; i + 1；</p>
+<p>时间复杂度：O(n)，至多置换n次，每次置换都会把一个数字放到正确的位置或者排除掉一个超限的数字。<br>空间复杂度：O(1)。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/first-missing-positive/?envType=study-plan-v2&envId=top-100-liked">缺失的第一个正数</a></p>
+<h2 id="73-矩阵置零"><a href="#73-矩阵置零" class="headerlink" title="73. 矩阵置零"></a>73. 矩阵置零</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个 m x n 的矩阵，如果一个元素为 0 ，则将其所在行和列的所有元素都设为 0 。请使用 原地 算法。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">void</span> setZeroes(<span class="hljs-type">int</span>[][] matrix) &#123;<br>        <span class="hljs-keyword">Set</span>&lt;<span class="hljs-type">Integer</span>&gt; cs = <span class="hljs-built_in">new</span> HashSet&lt;&gt;();<br>        <span class="hljs-keyword">Set</span>&lt;<span class="hljs-type">Integer</span>&gt; rs = <span class="hljs-built_in">new</span> HashSet&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; matrix.length; i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; matrix[<span class="hljs-number">0</span>].length; j++)&#123;<br>                <span class="hljs-keyword">if</span> (matrix[i][j] == <span class="hljs-number">0</span>)&#123;<br>                    rs.<span class="hljs-keyword">add</span>(i);<br>                    cs.<span class="hljs-keyword">add</span>(j);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; matrix.length; i++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; matrix[<span class="hljs-number">0</span>].length; j++)&#123;<br>                <span class="hljs-keyword">if</span> (rs.contains(i) || cs.contains(j))&#123;<br>                    matrix[i][j] = <span class="hljs-number">0</span>;<br>                &#125;<br>            &#125;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>记录置零的行列，最后遍历</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/set-matrix-zeroes/?envType=study-plan-v2&envId=top-100-liked">矩阵置零</a></p>
+<h2 id="54-螺旋矩阵"><a href="#54-螺旋矩阵" class="headerlink" title="54. 螺旋矩阵"></a>54. 螺旋矩阵</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> List&lt;<span class="hljs-type">Integer</span>&gt; spiralOrder(<span class="hljs-type">int</span>[][] matrix) &#123;<br>        <span class="hljs-type">int</span> t = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> d = matrix.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-type">int</span> l = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> r = matrix[<span class="hljs-number">0</span>].length - <span class="hljs-number">1</span>;<br>        List&lt;<span class="hljs-type">Integer</span>&gt; res = <span class="hljs-built_in">new</span> ArrayList&lt;&gt;();<br>        <span class="hljs-keyword">while</span>(<span class="hljs-keyword">true</span>)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = l; j &lt;= r; j++)&#123;<br>                res.<span class="hljs-keyword">add</span>(matrix[t][j]);<br>            &#125;<br>            t++;<br>            <span class="hljs-keyword">if</span> (t &gt; d)&#123;<br>                break;<br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = t; i &lt;= d; i++)&#123;<br>                res.<span class="hljs-keyword">add</span>(matrix[i][r]);<br>            &#125;<br>            r<span class="hljs-comment">--;</span><br>            <span class="hljs-keyword">if</span> (r &lt; l)&#123;<br>                break;<br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = r; j &gt;= l; j<span class="hljs-comment">--)&#123;</span><br>                res.<span class="hljs-keyword">add</span>(matrix[d][j]);<br>            &#125;<br>            d<span class="hljs-comment">--;</span><br>            <span class="hljs-keyword">if</span> (d &lt; t)&#123;<br>                break;<br>            &#125;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = d; i &gt;= t; i<span class="hljs-comment">--)&#123;</span><br>                res.<span class="hljs-keyword">add</span>(matrix[i][l]);<br>            &#125;<br>            l++;<br>            <span class="hljs-keyword">if</span> (l &gt; r)&#123;<br>                break;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>收缩边界，本体直接用边界的坐标进行遍历即可。</p>
+<p>时间复杂度：O(n*m)。<br>空间复杂度：O(1)。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/spiral-matrix/description/?envType=study-plan-v2&envId=top-100-liked">螺旋矩阵</a></p>
+<h2 id="160-相交链表"><a href="#160-相交链表" class="headerlink" title="160. 相交链表"></a>160. 相交链表</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">public</span> class Solution &#123;<br>    <span class="hljs-attribute">public</span> ListNode getIntersectionNode(ListNode headA, ListNode headB) &#123;<br>        <span class="hljs-attribute">ListNode</span> pa = headA;<br>        <span class="hljs-attribute">ListNode</span> pb = headB;<br>        <span class="hljs-attribute">while</span> (pa != pb)&#123;<br>            <span class="hljs-attribute">if</span> (pa == null)&#123;<br>                <span class="hljs-attribute">pa</span> = headB;<br>            &#125;<br>            <span class="hljs-attribute">if</span> (pb == null)&#123;<br>                <span class="hljs-attribute">pb</span> = headA;<br>            &#125;<br>            <span class="hljs-attribute">if</span> (pa == pb)&#123;<br>                <span class="hljs-attribute">return</span> pa;<br>            &#125;<br>            <span class="hljs-attribute">pa</span> = pa.next;<br>            <span class="hljs-attribute">pb</span> = pb.next;<br>        &#125;<br>        <span class="hljs-attribute">return</span> pa;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>注意在点切换的时候，还需要判断一次相等，否则可能漏掉相交点。</p>
+<p>时间复杂度：O(n+m)。<br>空间复杂度：O(1)。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/intersection-of-two-linked-lists/?envType=study-plan-v2&envId=top-100-liked">相交链表</a></p>
+<h2 id="206-反转链表"><a href="#206-反转链表" class="headerlink" title="206. 反转链表"></a>206. 反转链表</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你单链表的头节点 head ，请你反转链表，并返回反转后的链表。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode reverseList(ListNode head) &#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>        ListNode pre = <span class="hljs-literal">null</span>;<br>        ListNode cur = head;<br>        <span class="hljs-keyword">while</span> (cur.<span class="hljs-keyword">next</span> != <span class="hljs-literal">null</span>)&#123;<br>            ListNode <span class="hljs-keyword">next</span> = cur.<span class="hljs-keyword">next</span>;<br>            cur.<span class="hljs-keyword">next</span> = pre;<br>            pre = cur;<br>            cur = <span class="hljs-keyword">next</span>;<br>        &#125;<br>        cur.<span class="hljs-keyword">next</span> = pre;<br>        <span class="hljs-keyword">return</span> cur;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>经典题目，原来做过，曾经某电商面试原题，没做出来的我尴尬得不行，这次倒是可以很快写出来，记录下用于巩固。</p>
+<p>时间复杂度：O(n)。<br>空间复杂度：O(1)。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/reverse-linked-list/?envType=study-plan-v2&envId=top-100-liked">反转链表</a></p>
+<h2 id="141-环形链表"><a href="#141-环形链表" class="headerlink" title="141. 环形链表"></a>141. 环形链表</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个链表的头节点 head ，判断链表中是否有环。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。注意：pos 不作为参数进行传递 。仅仅是为了标识链表的实际情况。</p>
+<p>如果链表中存在环 ，则返回 true 。 否则，返回 false 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">boolean</span> hasCycle(ListNode head) &#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span> || head.<span class="hljs-keyword">next</span> == <span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>        &#125;<br>        ListNode slow = head.<span class="hljs-keyword">next</span>;<br>        ListNode fast = head.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>;<br>        <span class="hljs-keyword">while</span>(slow != fast)&#123;<br>            <span class="hljs-keyword">if</span> (slow == <span class="hljs-literal">null</span>)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                slow = slow.<span class="hljs-keyword">next</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (fast == <span class="hljs-literal">null</span> || fast.<span class="hljs-keyword">next</span> == <span class="hljs-literal">null</span>)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                fast = fast.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>快慢指针</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle/description/?envType=study-plan-v2&envId=top-100-liked">环形链表</a></p>
+<h2 id="142-环形链表-II"><a href="#142-环形链表-II" class="headerlink" title="142. 环形链表 II"></a>142. 环形链表 II</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个链表的头节点  head ，返回链表开始入环的第一个节点。 如果链表无环，则返回 null。</p>
+<p>如果链表中有某个节点，可以通过连续跟踪 next 指针再次到达，则链表中存在环。 为了表示给定链表中的环，评测系统内部使用整数 pos 来表示链表尾连接到链表中的位置（索引从 0 开始）。如果 pos 是 -1，则在该链表中没有环。注意：pos 不作为参数进行传递，仅仅是为了标识链表的实际情况。</p>
+<p>不允许修改 链表。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">public</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> ListNode detectCycle(ListNode head) &#123;<br>        <span class="hljs-keyword">if</span> (head == <span class="hljs-literal">null</span> || head.<span class="hljs-keyword">next</span> == <span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>        ListNode slow = head.<span class="hljs-keyword">next</span>;<br>        ListNode fast = head.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>;<br>        <span class="hljs-keyword">while</span>(slow != fast)&#123;<br>            <span class="hljs-keyword">if</span> (slow == <span class="hljs-literal">null</span>)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                slow = slow.<span class="hljs-keyword">next</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (fast == <span class="hljs-literal">null</span> || fast.<span class="hljs-keyword">next</span> == <span class="hljs-literal">null</span>)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                fast = fast.<span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>;<br>            &#125;<br>        &#125;<br>        fast = head;<br>        <span class="hljs-keyword">while</span> (fast != slow)&#123;<br>            fast = fast.<span class="hljs-keyword">next</span>;<br>            slow = slow.<span class="hljs-keyword">next</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> fast;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>快慢指针</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/linked-list-cycle-ii/?envType=study-plan-v2&envId=top-100-liked">环形链表2</a></p>
+<h2 id="24-两两交换链表中的节点（复习）"><a href="#24-两两交换链表中的节点（复习）" class="headerlink" title="24. 两两交换链表中的节点（复习）"></a>24. 两两交换链表中的节点（复习）</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs xquery">class Solution &#123;<br>    public ListNode swapPairs(ListNode<span class="hljs-built_in"> head</span>) &#123;<br>        ListNode vh = new ListNode();<br>        ListNode p = vh;<br>        while <span class="hljs-built_in">(head</span> != null)&#123;<br>            <span class="hljs-keyword">if</span> <span class="hljs-built_in">(head</span>.<span class="hljs-keyword">next</span> == null)&#123;<br>                p.<span class="hljs-keyword">next</span> =<span class="hljs-built_in"> head</span>;<br>                <span class="hljs-keyword">return</span> vh.<span class="hljs-keyword">next</span>;<br>            &#125;<br>            ListNode <span class="hljs-keyword">next</span> =<span class="hljs-built_in"> head</span>.<span class="hljs-keyword">next</span>;<br>           <span class="hljs-built_in"> head</span>.<span class="hljs-keyword">next</span> = <span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span>;<br>            <span class="hljs-keyword">next</span>.<span class="hljs-keyword">next</span> =<span class="hljs-built_in"> head</span>;<br>            p.<span class="hljs-keyword">next</span> = <span class="hljs-keyword">next</span>;<br>            p =<span class="hljs-built_in"> head</span>;<br>           <span class="hljs-built_in"> head</span> =<span class="hljs-built_in"> head</span>.<span class="hljs-keyword">next</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> vh.<span class="hljs-keyword">next</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>node1和node2的顺序会改变，直接用这两个指针会有点麻烦，所以直接又创建了指针p，为了方便又创建一个虚拟头节点。</p>
+<p>时间复杂度：O(n)。<br>空间复杂度：O(1)。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/swap-nodes-in-pairs/description/">两两交换链表中的节点</a></p>
+<h2 id="138-随机链表的复制"><a href="#138-随机链表的复制" class="headerlink" title="138. 随机链表的复制"></a>138. 随机链表的复制</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。</p>
+<p>构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs maxima">class Solution &#123;<br>    public Node copyRandomList(Node head) &#123;<br>        Map&lt;Node, Node&gt; <span class="hljs-built_in">map</span> = <span class="hljs-built_in">new</span> HashMap&lt;&gt;();<br>        Node p = head;<br>        <span class="hljs-keyword">while</span> (p != null)&#123;<br>            <span class="hljs-built_in">map</span>.<span class="hljs-built_in">put</span>(p, <span class="hljs-built_in">new</span> Node(p.val));<br>            p = p.next;<br>        &#125;<br>        p = head;<br>        <span class="hljs-keyword">while</span> (p != null)&#123;<br>            Node node = <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(p);<br>            node.next = <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(p.next);<br>            node.<span class="hljs-built_in">random</span> = <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(p.<span class="hljs-built_in">random</span>);<br>            p = p.next;<br>        &#125;<br>        <span class="hljs-built_in">return</span> <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(head);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>先建立副本，然后根据原链表关系建立连结。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/copy-list-with-random-pointer/description/?envType=study-plan-v2&envId=top-100-liked">随机链表的复制</a></p>
+<h2 id="138-随机链表的复制-1"><a href="#138-随机链表的复制-1" class="headerlink" title="138. 随机链表的复制"></a>138. 随机链表的复制</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个长度为 n 的链表，每个节点包含一个额外增加的随机指针 random ，该指针可以指向链表中的任何节点或空节点。</p>
+<p>构造这个链表的 深拷贝。 深拷贝应该正好由 n 个 全新 节点组成，其中每个新节点的值都设为其对应的原节点的值。新节点的 next 指针和 random 指针也都应指向复制链表中的新节点，并使原链表和复制链表中的这些指针能够表示相同的链表状态。复制链表中的指针都不应指向原链表中的节点 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs maxima">class Solution &#123;<br>    public Node copyRandomList(Node head) &#123;<br>        Map&lt;Node, Node&gt; <span class="hljs-built_in">map</span> = <span class="hljs-built_in">new</span> HashMap&lt;&gt;();<br>        Node p = head;<br>        <span class="hljs-keyword">while</span> (p != null)&#123;<br>            <span class="hljs-built_in">map</span>.<span class="hljs-built_in">put</span>(p, <span class="hljs-built_in">new</span> Node(p.val));<br>            p = p.next;<br>        &#125;<br>        p = head;<br>        <span class="hljs-keyword">while</span> (p != null)&#123;<br>            Node node = <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(p);<br>            node.next = <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(p.next);<br>            node.<span class="hljs-built_in">random</span> = <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(p.<span class="hljs-built_in">random</span>);<br>            p = p.next;<br>        &#125;<br>        <span class="hljs-built_in">return</span> <span class="hljs-built_in">map</span>.<span class="hljs-built_in">get</span>(head);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>先建立副本，然后根据原链表关系建立连结。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/copy-list-with-random-pointer/description/?envType=study-plan-v2&envId=top-100-liked">随机链表的复制</a></p>
+<h2 id="543-二叉树的直径"><a href="#543-二叉树的直径" class="headerlink" title="543. 二叉树的直径"></a>543. 二叉树的直径</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一棵二叉树的根节点，返回该树的 直径 。</p>
+<p>二叉树的 直径 是指树中任意两个节点之间最长路径的 长度 。这条路径可能经过也可能不经过根节点 root 。</p>
+<p>两节点之间路径的 长度 由它们之间边数表示。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs aspectj"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">diameterOfBinaryTree</span><span class="hljs-params">(TreeNode root)</span> </span>&#123;<br>        maxDep(root);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">maxDep</span><span class="hljs-params">(TreeNode root)</span></span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> left = maxDep(root.left);<br>        <span class="hljs-keyword">int</span> right = maxDep(root.right);<br>        res = Math.max(res, left + right );<br>        <span class="hljs-keyword">return</span> Math.max(left, right) + <span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>在求最大深度的过程中进行计算，顺带计算的中间变量。</p>
+<p>时间复杂度：O(n)。<br>空间复杂度：O(1)。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/diameter-of-binary-tree/description/?envType=study-plan-v2&envId=top-100-liked">二叉树的直径</a></p>
+<h2 id="108-将有序数组转换为二叉搜索树"><a href="#108-将有序数组转换为二叉搜索树" class="headerlink" title="108. 将有序数组转换为二叉搜索树"></a>108. 将有序数组转换为二叉搜索树</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数数组 nums ，其中元素已经按 升序 排列，请你将其转换为一棵<br>平衡二叉搜索树。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-type">int</span>[] nums;<br>    <span class="hljs-built_in">public</span> TreeNode sortedArrayToBST(<span class="hljs-type">int</span>[] nums) &#123;<br>        this.nums = nums;<br>        <span class="hljs-keyword">return</span> dfs(<span class="hljs-number">0</span>, nums.length - <span class="hljs-number">1</span>);<br>    &#125;<br>    <span class="hljs-built_in">public</span> TreeNode dfs(<span class="hljs-type">int</span> <span class="hljs-keyword">start</span>, <span class="hljs-type">int</span> <span class="hljs-keyword">end</span>)&#123;<br>        <span class="hljs-keyword">if</span> (start == <span class="hljs-keyword">end</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-built_in">new</span> TreeNode(nums[<span class="hljs-keyword">start</span>]);<br>        &#125;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">start</span> &gt; <span class="hljs-keyword">end</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;<br>        &#125;<br>        TreeNode root = <span class="hljs-built_in">new</span> TreeNode(nums[(<span class="hljs-keyword">start</span> + <span class="hljs-keyword">end</span>)/<span class="hljs-number">2</span>]);<br>        TreeNode right = dfs((<span class="hljs-keyword">start</span> + <span class="hljs-keyword">end</span>)/<span class="hljs-number">2</span> + <span class="hljs-number">1</span>, <span class="hljs-keyword">end</span>);<br>        TreeNode left = dfs(<span class="hljs-keyword">start</span>, (<span class="hljs-keyword">start</span> + <span class="hljs-keyword">end</span>)/<span class="hljs-number">2</span> - <span class="hljs-number">1</span>);<br>        root.right = right;<br>        root.left = left;<br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>分治</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/convert-sorted-array-to-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked">将有序数组转换为二叉搜索树</a></p>
+<h2 id="98-验证二叉搜索树"><a href="#98-验证二叉搜索树" class="headerlink" title="98. 验证二叉搜索树"></a>98. 验证二叉搜索树</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个二叉树的根节点 root ，判断其是否是一个有效的二叉搜索树。<br>有效 二叉搜索树定义如下：<br>节点的左子树只包含 小于 当前节点的数。<br>节点的右子树只包含 大于 当前节点的数。<br>所有左子树和右子树自身必须也是二叉搜索树。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs typescript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-built_in">boolean</span> res = <span class="hljs-literal">true</span>;<br>    <span class="hljs-title class_">Integer</span> pre = <span class="hljs-literal">null</span>;<br>    <span class="hljs-built_in">boolean</span> stop = <span class="hljs-literal">false</span>;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">boolean</span> <span class="hljs-title function_">isValidBST</span>(<span class="hljs-params">TreeNode root</span>) &#123;<br>        <span class="hljs-title function_">dfs</span>(root);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">void</span> <span class="hljs-title function_">dfs</span>(<span class="hljs-params">TreeNode root</span>)&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span> || stop)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-title function_">dfs</span>(root.<span class="hljs-property">left</span>);<br>        <span class="hljs-keyword">if</span> (stop)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (pre == <span class="hljs-literal">null</span> || pre &lt; root.<span class="hljs-property">val</span>)&#123;<br>            pre = root.<span class="hljs-property">val</span>;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            res = <span class="hljs-literal">false</span>;<br>            stop = <span class="hljs-literal">true</span>;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-title function_">dfs</span>(root.<span class="hljs-property">right</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>中根遍历，用包装类解决初始化的问题，增加停止标识进行剪枝。注意每段开始都要做一下剪枝检查。</p>
+<p>时间复杂度：O(n)。<br>空间复杂度：方法1:栈深度O(n)</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/validate-binary-search-tree/description/?envType=study-plan-v2&envId=top-100-liked">验证二叉搜索树</a></p>
+<h2 id="114-二叉树展开为链表"><a href="#114-二叉树展开为链表" class="headerlink" title="114. 二叉树展开为链表"></a>114. 二叉树展开为链表</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你二叉树的根结点 root ，请你将它展开为一个单链表：</p>
+<p>展开后的单链表应该同样使用 TreeNode ，其中 right 子指针指向链表中下一个结点，而左子指针始终为 null 。<br>展开后的单链表应该与二叉树 先序遍历 顺序相同。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title function_">flatten</span><span class="hljs-params">(TreeNode root)</span> &#123;<br>        dfs(root);<br>    &#125;<br>    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">dfs</span><span class="hljs-params">(TreeNode root)</span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>        <span class="hljs-type">TreeNode</span> <span class="hljs-variable">left</span> <span class="hljs-operator">=</span> dfs(root.left);<br>        <span class="hljs-type">TreeNode</span> <span class="hljs-variable">right</span> <span class="hljs-operator">=</span> dfs(root.right);<br>        <span class="hljs-type">TreeNode</span> <span class="hljs-variable">p</span> <span class="hljs-operator">=</span> root;<br>        p.right = left;<br>        <span class="hljs-keyword">while</span> (p.right != <span class="hljs-literal">null</span>)&#123;<br>            p = p.right;<br>        &#125;<br>        p.right = right;<br>        root.left = <span class="hljs-literal">null</span>;<br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>技巧题</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/flatten-binary-tree-to-linked-list/description/?envType=study-plan-v2&envId=top-100-liked">二叉树展开为链表</a></p>
+<h2 id="105-从前序与中序遍历序列构造二叉树"><a href="#105-从前序与中序遍历序列构造二叉树" class="headerlink" title="105. 从前序与中序遍历序列构造二叉树"></a>105. 从前序与中序遍历序列构造二叉树</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定两个整数数组 preorder 和 inorder ，其中 preorder 是二叉树的先序遍历， inorder 是同一棵树的中序遍历，请构造二叉树并返回其根节点。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-type">int</span>[] preorder;<br>    <span class="hljs-type">int</span>[] inorder;<br>    Map&lt;Integer, Integer&gt; iMap;<br>    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">buildTree</span><span class="hljs-params">(<span class="hljs-type">int</span>[] preorder, <span class="hljs-type">int</span>[] inorder)</span> &#123;<br>        <span class="hljs-built_in">this</span>.preorder = preorder;<br>        <span class="hljs-built_in">this</span>.inorder = inorder;<br>        iMap = <span class="hljs-keyword">new</span> <span class="hljs-title class_">HashMap</span>&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> <span class="hljs-variable">i</span> <span class="hljs-operator">=</span> <span class="hljs-number">0</span>; i &lt; inorder.length; i++)&#123;<br>            iMap.put(inorder[i], i);<br>        &#125;<br>        <span class="hljs-keyword">return</span> dfs(<span class="hljs-number">0</span>, preorder.length - <span class="hljs-number">1</span>, <span class="hljs-number">0</span>, inorder.length - <span class="hljs-number">1</span>);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> TreeNode <span class="hljs-title function_">dfs</span><span class="hljs-params">(<span class="hljs-type">int</span> pl, <span class="hljs-type">int</span> pr, <span class="hljs-type">int</span> il, <span class="hljs-type">int</span> ir)</span>&#123;<br>        <span class="hljs-keyword">if</span> (pl &gt; pr || il &gt; ir)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>        <span class="hljs-type">TreeNode</span> <span class="hljs-variable">root</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">TreeNode</span>(preorder[pl]);<br>        <span class="hljs-type">int</span> <span class="hljs-variable">iri</span> <span class="hljs-operator">=</span> iMap.get(preorder[pl]);<br>        root.left = dfs(pl + <span class="hljs-number">1</span>, pl + iri - il, il, iri - <span class="hljs-number">1</span>);<br>        root.right = dfs(pl + iri - il + <span class="hljs-number">1</span>, pr, iri + <span class="hljs-number">1</span>, ir);<br>        <span class="hljs-keyword">return</span> root;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>一个map加速定位根坐标，四个坐标确定边界，通过子树长度辅助确定边界。</p>
+<p>时间复杂度：O(n)<br>空间复杂度：O(n)</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/construct-binary-tree-from-preorder-and-inorder-traversal/description/?envType=study-plan-v2&envId=top-100-liked">从前序与中序遍历序列构造二叉树</a></p>
+<h2 id="437-路径总和-III"><a href="#437-路径总和-III" class="headerlink" title="437. 路径总和 III"></a>437. 路径总和 III</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个二叉树的根节点 root ，和一个整数 targetSum ，求该二叉树里节点值之和等于 targetSum 的 路径 的数目。</p>
+<p>路径 不需要从根节点开始，也不需要在叶子节点结束，但是路径方向必须是向下的（只能从父节点到子节点）。</p>
+<ul>
+<li>题解</li>
+</ul>
+<p>前缀和</p>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs aspectj"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">int</span> targetSum = <span class="hljs-number">0</span>;<br>    Map&lt;Long, Integer&gt; preMap = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">pathSum</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">int</span> targetSum)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.targetSum = targetSum;<br>        preMap.put(<span class="hljs-number">0</span>L, <span class="hljs-number">1</span>);<br>        dfs(root, <span class="hljs-number">0</span>L);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">dfs</span><span class="hljs-params">(TreeNode root, <span class="hljs-keyword">long</span> pre)</span></span>&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        pre += root.val;<br>        res += preMap.getOrDefault(pre - targetSum, <span class="hljs-number">0</span>);<br>        preMap.put(pre, preMap.getOrDefault(pre, <span class="hljs-number">0</span>) + <span class="hljs-number">1</span>);<br>        dfs(root.left, pre);<br>        dfs(root.right, pre);<br>        preMap.put(pre, preMap.getOrDefault(pre, <span class="hljs-number">0</span>) - <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>枚举法：<br>时间复杂度：O(n^2)<br>空间复杂度：O(n)，二叉树最坏的情况，树深度等于n</p>
+<p>前缀和：<br>时间复杂度：O(n)<br>空间复杂度：O(n)</p>
+<p>枚举法是以某个节点出发，分别有多少个目标路径，然后求和，这样对每个节点均需要再便利一次，时间复杂度较高<br>前缀和是计算以某个节点为结尾，分别有多少个目标路径，因为用了前缀和，对于每个点可以以O(1)的复杂度获取路径数，整体时间复杂度较低。前缀和加回溯掉的一批。大数的那个用例略撒比。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/path-sum-iii/description/?envType=study-plan-v2&envId=top-100-liked">路径总和 III</a></p>
+<h2 id="236-二叉树的最近公共祖先"><a href="#236-二叉树的最近公共祖先" class="headerlink" title="236. 二叉树的最近公共祖先"></a>236. 二叉树的最近公共祖先</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。</p>
+<p>百度百科中最近公共祖先的定义为：“对于有根树 T 的两个节点 p、q，最近公共祖先表示为一个节点 x，满足 x 是 p、q 的祖先且 x 的深度尽可能大（一个节点也可以是它自己的祖先）。”</p>
+<ul>
+<li>题解</li>
+</ul>
+<p>前缀和</p>
+<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs kotlin"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) &#123;<br>        <span class="hljs-keyword">return</span> dfs(root, p, q);<br>    &#125;<br><br>    <span class="hljs-keyword">public</span> TreeNode dfs(TreeNode root, TreeNode p, TreeNode q)&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;<br>        &#125;<br>        TreeNode left = dfs(root.left, p, q);<br>        TreeNode right = dfs(root.right, p, q);<br>        <span class="hljs-keyword">if</span> (left != <span class="hljs-literal">null</span> &amp;&amp; right != <span class="hljs-literal">null</span> || root.<span class="hljs-keyword">val</span> == p.<span class="hljs-keyword">val</span> || root.<span class="hljs-keyword">val</span> == q.<span class="hljs-keyword">val</span>)&#123;<br>            <span class="hljs-keyword">return</span> root;<br>        &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(left == <span class="hljs-literal">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> right;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> left;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>技巧题</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/?envType=study-plan-v2&envId=top-100-liked">二叉树的最近公共祖先</a></p>
+<h2 id="124-二叉树中的最大路径和"><a href="#124-二叉树中的最大路径和" class="headerlink" title="124. 二叉树中的最大路径和"></a>124. 二叉树中的最大路径和</h2><ul>
+<li>题目</li>
+</ul>
+<p>二叉树中的 路径 被定义为一条节点序列，序列中每对相邻节点之间都存在一条边。同一个节点在一条路径序列中 至多出现一次 。该路径 至少包含一个 节点，且不一定经过根节点。</p>
+<p>路径和 是路径中各节点值的总和。</p>
+<p>给你一个二叉树的根节点 root ，返回其 最大路径和 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-type">int</span> res = <span class="hljs-type">Integer</span>.MIN_VALUE;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> maxPathSum(TreeNode root) &#123;<br>        dfs(root);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> dfs(TreeNode root)&#123;<br>        <span class="hljs-keyword">if</span> (root == <span class="hljs-keyword">null</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-type">int</span> left =  Math.max(dfs(root.left), <span class="hljs-number">0</span>);<br>        <span class="hljs-type">int</span> right = Math.max(dfs(root.right), <span class="hljs-number">0</span>);<br>        res = Math.max(res, left + right + root.val);<br>        <span class="hljs-keyword">return</span> Math.max(left, right) + root.val;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>时间复杂度：O(n)<br>空间复杂度：O(n)</p>
+<p>路径为节点值加左边加右边，贡献值G是节点值加左边或右边的贡献值，贡献值最低为0</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/binary-tree-maximum-path-sum/description/?envType=study-plan-v2&envId=top-100-liked">二叉树中的最大路径和</a></p>
+<h2 id="46-全排列"><a href="#46-全排列" class="headerlink" title="46. 全排列"></a>46. 全排列</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><code class="hljs abnf">class Solution &#123;<br>    List&lt;List&lt;Integer&gt;&gt; res <span class="hljs-operator">=</span> new ArrayList&lt;&gt;()<span class="hljs-comment">;</span><br>    int[] nums<span class="hljs-comment">;</span><br>    boolean[] flags<span class="hljs-comment">;</span><br>    public List&lt;List&lt;Integer&gt;&gt; permute(int[] nums) &#123;<br>        this.nums <span class="hljs-operator">=</span> nums<span class="hljs-comment">;</span><br>        this.flags <span class="hljs-operator">=</span> new boolean[nums.length]<span class="hljs-comment">;</span><br>        dfs(new ArrayList&lt;&gt;())<span class="hljs-comment">;</span><br>        return res<span class="hljs-comment">;</span><br>    &#125;<br>    public void dfs(List&lt;Integer&gt; list)&#123;<br>        if (list.size() <span class="hljs-operator">=</span><span class="hljs-operator">=</span> nums.length)&#123;<br>            res.add(new ArrayList&lt;Integer&gt;(list))<span class="hljs-comment">;</span><br>            return<span class="hljs-comment">;</span><br>        &#125;<br>        for (int i <span class="hljs-operator">=</span> <span class="hljs-number">0</span><span class="hljs-comment">; i &lt; nums.length; i++)&#123;</span><br>            if (flags[i])&#123;<br>                continue<span class="hljs-comment">;</span><br>            &#125;<br>            list.add(nums[i])<span class="hljs-comment">;</span><br>            flags[i] <span class="hljs-operator">=</span> true<span class="hljs-comment">;</span><br>            dfs(list)<span class="hljs-comment">;</span><br>            flags[i] <span class="hljs-operator">=</span> false<span class="hljs-comment">;</span><br>            list.remove(list.size() - <span class="hljs-number">1</span>)<span class="hljs-comment">;</span><br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>做到最后都靠直觉了。。。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/permutations/description/?envType=study-plan-v2&envId=top-100-liked">全排列</a></p>
+<h2 id="78-子集"><a href="#78-子集" class="headerlink" title="78. 子集"></a>78. 子集</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数数组 nums ，数组中的元素 互不相同 。返回该数组所有可能的子集（幂集）。</p>
+<p>解集 不能 包含重复的子集。你可以按 任意顺序 返回解集。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    List&lt;List&lt;<span class="hljs-type">Integer</span>&gt;&gt; res = <span class="hljs-built_in">new</span> ArrayList&lt;&gt;();<br>    <span class="hljs-type">int</span>[] nums;<br>    <span class="hljs-built_in">public</span> List&lt;List&lt;<span class="hljs-type">Integer</span>&gt;&gt; subsets(<span class="hljs-type">int</span>[] nums) &#123;<br>        this.nums = nums;<br>        dfs(<span class="hljs-built_in">new</span> ArrayList&lt;&gt;(), <span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">void</span> dfs(List&lt;<span class="hljs-type">Integer</span>&gt; list, <span class="hljs-type">int</span> ix)&#123;<br>        <span class="hljs-keyword">if</span> (ix == nums.length)&#123;<br>            res.<span class="hljs-keyword">add</span>(<span class="hljs-built_in">new</span> ArrayList&lt;<span class="hljs-type">Integer</span>&gt;(list));<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        list.<span class="hljs-keyword">add</span>(nums[ix]);<br>        dfs(list, ix + <span class="hljs-number">1</span>);<br>        list.remove(list.size() - <span class="hljs-number">1</span>);<br>        dfs(list, ix + <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>按照顺序，加入或者不加入dfs，可以得到所有的子集，回溯</p>
+<p>时间复杂度：O(n·2^n)。共有2^n个状态，每个状态构造过程为O(n)<br>空间复杂度：O(n)，栈深度和临时数组的长度。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/subsets/description/?envType=study-plan-v2&envId=top-100-liked">子集</a></p>
+<h2 id="39-组合总和"><a href="#39-组合总和" class="headerlink" title="39. 组合总和"></a>39. 组合总和</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个 无重复元素 的整数数组 candidates 和一个目标整数 target ，找出 candidates 中可以使数字和为目标数 target 的 所有 不同组合 ，并以列表形式返回。你可以按 任意顺序 返回这些组合。</p>
+<p>candidates 中的 同一个 数字可以 无限制重复被选取 。如果至少一个数字的被选数量不同，则两种组合是不同的。 </p>
+<p>对于给定的输入，保证和为 target 的不同组合数少于 150 个。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs fortran"><span class="hljs-keyword">class</span> Solution &#123;<br>    List&lt;List&lt;<span class="hljs-keyword">Integer</span>&gt;&gt; res = new ArrayList&lt;&gt;();<br>    <span class="hljs-built_in">int</span>[] candidates;<br>    <span class="hljs-built_in">int</span> <span class="hljs-keyword">target</span>;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;<span class="hljs-keyword">Integer</span>&gt;&gt; combinationSum(<span class="hljs-built_in">int</span>[] candidates, <span class="hljs-built_in">int</span> <span class="hljs-keyword">target</span>) &#123;<br>        this.candidates = candidates;<br>        this.<span class="hljs-keyword">target</span> = <span class="hljs-keyword">target</span>;<br>        dfs(new ArrayList&lt;&gt;(), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-keyword">public</span> void dfs(List&lt;<span class="hljs-keyword">Integer</span>&gt; list, <span class="hljs-built_in">int</span> ix, <span class="hljs-built_in">int</span> <span class="hljs-built_in">sum</span>)&#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">sum</span> == <span class="hljs-keyword">target</span>)&#123;<br>            res.add(new ArrayList&lt;&gt;(list));<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (ix == candidates.length || <span class="hljs-built_in">sum</span> &gt; <span class="hljs-keyword">target</span>)&#123;<br>            <span class="hljs-keyword">return</span>;<br>        &#125;<br>        list.add(candidates[ix]);<br>        dfs(list, ix, <span class="hljs-built_in">sum</span> + candidates[ix]);<br>        list.remove(list.<span class="hljs-built_in">size</span>() - <span class="hljs-number">1</span>);<br>        dfs(list, ix + <span class="hljs-number">1</span>, <span class="hljs-built_in">sum</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>一个分支一只加当前元素，一个分支跳过当前元素</p>
+<p>复杂度不太好算，懒了，不算了</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/combination-sum/description/?envType=study-plan-v2&envId=top-100-liked">组合总和</a></p>
+<h2 id="22-括号生成"><a href="#22-括号生成" class="headerlink" title="22. 括号生成"></a>22. 括号生成</h2><ul>
+<li>题目</li>
+</ul>
+<p>数字 n 代表生成括号的对数，请你设计一个函数，用于能够生成所有可能的并且 有效的 括号组合。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs excel">class Solution &#123;<br>    List&lt;String&gt; res = new ArrayList&lt;&gt;();<br>    <span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span>;<br>    public List&lt;String&gt; generateParenthesis(<span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span>) &#123;<br>        this.n = <span class="hljs-built_in">n</span>;<br>        dfs(new StringBuilder(), <span class="hljs-number">0</span>, <span class="hljs-number">0</span>);<br>        return res;<br>    &#125;<br>    public void dfs(StringBuilder sb, <span class="hljs-built_in">int</span> <span class="hljs-built_in">left</span>, <span class="hljs-built_in">int</span> <span class="hljs-built_in">right</span>)&#123;<br>        <span class="hljs-built_in">if</span> (<span class="hljs-built_in">right</span> &gt; <span class="hljs-built_in">left</span> || <span class="hljs-built_in">right</span> + <span class="hljs-built_in">left</span> &gt; <span class="hljs-number">2</span> * <span class="hljs-built_in">n</span>)&#123;<br>            return;<br>        &#125;<br>        <span class="hljs-built_in">if</span> (<span class="hljs-built_in">right</span> == <span class="hljs-built_in">left</span> &amp;&amp; <span class="hljs-built_in">left</span> + <span class="hljs-built_in">right</span> == <span class="hljs-number">2</span> * <span class="hljs-built_in">n</span>)&#123;<br>            res.add(sb.toString());<br>            return;<br>        &#125;<br>        sb.append(&#x27;(&#x27;);<br>        dfs(sb, <span class="hljs-built_in">left</span> + <span class="hljs-number">1</span>, <span class="hljs-built_in">right</span>);<br>        sb.deleteCharAt(sb.length() - <span class="hljs-number">1</span>);<br>        sb.append(&#x27;)&#x27;);<br>        dfs(sb, <span class="hljs-built_in">left</span>, <span class="hljs-built_in">right</span> + <span class="hljs-number">1</span>);<br>        sb.deleteCharAt(sb.length() - <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>就回溯的方法而言，这个题目不算难，这个题目难在对于括号终止条件的判断，有三个情况会终止，right &gt; left 、 (right + left) &gt; 2 * n 、 (left + right) &#x3D;&#x3D; 2 * n &amp;&amp; left &#x3D;&#x3D; right。<br>这个终止条件的总结类似于业务知识，如果没有独到的分析能力，业务知识还是好好背背吧。</p>
+<p>回溯问题的复杂度太难想了，放弃思考了。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/generate-parentheses/description/?envType=study-plan-v2&envId=top-100-liked">括号生成</a></p>
+<h2 id="131-分割回文串"><a href="#131-分割回文串" class="headerlink" title="131. 分割回文串"></a>131. 分割回文串</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个字符串 s，请你将 s 分割成一些子串，使每个子串都是 回文串 。返回 s 所有可能的分割方案。</p>
+<p>回文串 是正着读和反着读都一样的字符串。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    List&lt;List&lt;String&gt;&gt; res = <span class="hljs-built_in">new</span> ArrayList&lt;&gt;();<br>    String s;<br>    <span class="hljs-built_in">public</span> List&lt;List&lt;String&gt;&gt; <span class="hljs-keyword">partition</span>(String s) &#123;<br>        this.s = s;<br>        dfs(<span class="hljs-number">0</span>, <span class="hljs-built_in">new</span> ArrayList&lt;&gt;());<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">void</span> dfs(<span class="hljs-type">int</span> <span class="hljs-keyword">start</span>, List&lt;String&gt; list)&#123;<br>        <span class="hljs-keyword">if</span> (start == s.length())&#123;<br>            res.<span class="hljs-keyword">add</span>(<span class="hljs-built_in">new</span> ArrayList&lt;String&gt;(list));<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> end = <span class="hljs-keyword">start</span>; <span class="hljs-keyword">end</span> &lt; s.length(); <span class="hljs-keyword">end</span>++)&#123;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">check</span>(<span class="hljs-keyword">start</span>, <span class="hljs-keyword">end</span>))&#123;<br>                list.<span class="hljs-keyword">add</span>(s.substring(<span class="hljs-keyword">start</span>, <span class="hljs-keyword">end</span> + <span class="hljs-number">1</span>));<br>                dfs(<span class="hljs-keyword">end</span> + <span class="hljs-number">1</span>, list);<br>                list.remove(list.size() - <span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>    &#125;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">boolean</span> <span class="hljs-keyword">check</span>(<span class="hljs-type">int</span> <span class="hljs-keyword">start</span>, <span class="hljs-type">int</span> <span class="hljs-keyword">end</span>)&#123;<br>        <span class="hljs-keyword">while</span> (<span class="hljs-keyword">start</span> &lt; <span class="hljs-keyword">end</span>)&#123;<br>            <span class="hljs-keyword">if</span> (s.charAt(<span class="hljs-keyword">start</span>) != s.charAt(<span class="hljs-keyword">end</span>))&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">start</span>++;<br>            <span class="hljs-keyword">end</span><span class="hljs-comment">--;</span><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>从头开始，找到每个回文字符串加入列表中迭代寻找，另外需要回溯</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/palindrome-partitioning/description/?envType=study-plan-v2&envId=top-100-liked">分割回文串</a></p>
+<h2 id="35-搜索插入位置"><a href="#35-搜索插入位置" class="headerlink" title="35. 搜索插入位置"></a>35. 搜索插入位置</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个排序数组和一个目标值，在数组中找到目标值，并返回其索引。如果目标值不存在于数组中，返回它将会被按顺序插入的位置。</p>
+<p>请必须使用时间复杂度为 O(log n) 的算法。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs aspectj"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">searchInsert</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> <span class="hljs-keyword">target</span>)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">target</span> &gt; nums[nums.length - <span class="hljs-number">1</span>])&#123;<br>            <span class="hljs-keyword">return</span> nums.length;<br>        &#125;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> j = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            <span class="hljs-keyword">int</span> mid = (i + j) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] == <span class="hljs-keyword">target</span>)&#123;<br>                <span class="hljs-keyword">return</span> mid;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (nums[mid] &lt; <span class="hljs-keyword">target</span>)&#123;<br>                i = mid + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> i;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>取大于等于target的第一个数，如果nums[mid] &lt; target，则mid绝不可能成为解，所以left&#x3D;mid+1，如果nums[mid] &gt;&#x3D; target，mid可能成为解，所以right&#x3D;mid，因为推出条件为right &#x3D;&#x3D; left，所以返回任意一个都可以。注意超界的特例判断。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-insert-position/description/?envType=study-plan-v2&envId=top-100-liked">搜索插入位置</a></p>
+<h2 id="74-搜索二维矩阵"><a href="#74-搜索二维矩阵" class="headerlink" title="74. 搜索二维矩阵"></a>74. 搜索二维矩阵</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个满足下述两条属性的 m x n 整数矩阵：</p>
+<p>每行中的整数从左到右按非严格递增顺序排列。<br>每行的第一个整数大于前一行的最后一个整数。<br>给你一个整数 target ，如果 target 在矩阵中，返回 true ；否则，返回 false 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight stan"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs stan">class Solution &#123;<br>    public boolean searchMatrix(<span class="hljs-type">int</span>[][] <span class="hljs-type">matrix</span>, <span class="hljs-type">int</span> <span class="hljs-built_in">target</span>) &#123;<br>        <span class="hljs-type">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> j = <span class="hljs-type">matrix</span>.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            <span class="hljs-type">int</span> mid = (i + j + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-type">matrix</span>[mid][<span class="hljs-number">0</span>] &gt; <span class="hljs-built_in">target</span>)&#123;<br>                j = mid - <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                i = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-type">int</span> <span class="hljs-built_in">row</span> = i;<br>        i = <span class="hljs-number">0</span>;<br>        j = <span class="hljs-type">matrix</span>[<span class="hljs-number">0</span>].length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            <span class="hljs-type">int</span> mid = (i + j) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (<span class="hljs-type">matrix</span>[<span class="hljs-built_in">row</span>][mid] == <span class="hljs-built_in">target</span>)&#123;<br>                <span class="hljs-keyword">return</span> true;<br>            &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-type">matrix</span>[<span class="hljs-built_in">row</span>][mid] &lt; <span class="hljs-built_in">target</span>)&#123;<br>                i = mid + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j = mid - <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (<span class="hljs-type">matrix</span>[<span class="hljs-built_in">row</span>][i] == <span class="hljs-built_in">target</span>)&#123;<br>            <span class="hljs-keyword">return</span> true;<br>        &#125; <span class="hljs-keyword">else</span>&#123;<br>            <span class="hljs-keyword">return</span> false;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>有点长了，感觉不会考的题目，思路其实挺简单，注意点是因为要从前向后逼近，所以前面int mid &#x3D; (i + j + 1) &#x2F; 2;</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-a-2d-matrix/description/?envType=study-plan-v2&envId=top-100-liked">搜索二维矩阵</a></p>
+<h2 id="34-在排序数组中查找元素的第一个和最后一个位置"><a href="#34-在排序数组中查找元素的第一个和最后一个位置" class="headerlink" title="34. 在排序数组中查找元素的第一个和最后一个位置"></a>34. 在排序数组中查找元素的第一个和最后一个位置</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个按照非递减顺序排列的整数数组 nums，和一个目标值 target。请你找出给定目标值在数组中的开始位置和结束位置。</p>
+<p>如果数组中不存在目标值 target，返回 [-1, -1]。</p>
+<p>你必须设计并实现时间复杂度为 O(log n) 的算法解决此问题。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><code class="hljs aspectj"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span>[] searchRange(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> <span class="hljs-keyword">target</span>) &#123;<br>        <span class="hljs-keyword">if</span> (nums.length == <span class="hljs-number">0</span> || nums[<span class="hljs-number">0</span>] &gt; <span class="hljs-keyword">target</span> || nums[nums.length - <span class="hljs-number">1</span>] &lt; <span class="hljs-keyword">target</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>&#125;;<br>        &#125;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> j = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            <span class="hljs-keyword">int</span> mid = (i + j) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] &lt; <span class="hljs-keyword">target</span>)&#123;<br>                i = mid + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (nums[i] != <span class="hljs-keyword">target</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;<span class="hljs-number">-1</span>, <span class="hljs-number">-1</span>&#125;;<br>        &#125;<br>        <span class="hljs-keyword">int</span> start = i;<br>        i = <span class="hljs-number">0</span>; <br>        j = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            <span class="hljs-keyword">int</span> mid = (i + j + <span class="hljs-number">1</span>) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] &gt; <span class="hljs-keyword">target</span>)&#123;<br>                j = mid - <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                i = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;start, i&#125;;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>找大于等于某数的第一个数字索引，用int mid &#x3D; (i + j) &#x2F; 2，找小于等于某数的第一个数字索引，用int mid &#x3D; (i + j + 1) &#x2F; 2，否则会死循环，另外找到后判断下是否是等于目标值，如果不等说明找不到。要形成一个夹逼的趋势。</p>
+<p>时间复杂度：O(log n)<br>空间复杂度：O(1)</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-first-and-last-position-of-element-in-sorted-array/description/?envType=study-plan-v2&envId=top-100-liked">在排序数组中查找元素的第一个和最后一个位置</a></p>
+<h2 id="33-搜索旋转排序数组"><a href="#33-搜索旋转排序数组" class="headerlink" title="33. 搜索旋转排序数组"></a>33. 搜索旋转排序数组</h2><ul>
+<li>题目</li>
+</ul>
+<p>整数数组 nums 按升序排列，数组中的值 互不相同 。</p>
+<p>在传递给函数之前，nums 在预先未知的某个下标 k（0 &lt;&#x3D; k &lt; nums.length）上进行了 旋转，使数组变为 [nums[k], nums[k+1], …, nums[n-1], nums[0], nums[1], …, nums[k-1]]（下标 从 0 开始 计数）。例如， [0,1,2,4,5,6,7] 在下标 3 处经旋转后可能变为 [4,5,6,7,0,1,2] 。</p>
+<p>给你 旋转后 的数组 nums 和一个整数 target ，如果 nums 中存在这个目标值 target ，则返回它的下标，否则返回 -1 。</p>
+<p>你必须设计一个时间复杂度为 O(log n) 的算法解决此问题。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight aspectj"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><code class="hljs aspectj"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">search</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums, <span class="hljs-keyword">int</span> <span class="hljs-keyword">target</span>)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> j = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            <span class="hljs-keyword">int</span> mid = (i + j) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] == <span class="hljs-keyword">target</span>)&#123;<br>                <span class="hljs-keyword">return</span> mid;<br>            &#125;<br>            <span class="hljs-keyword">if</span> (nums[mid] &gt; nums[j])&#123;<br>                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">target</span> &gt; nums[j])&#123;<br>                    <span class="hljs-keyword">if</span> (nums[mid] &gt; <span class="hljs-keyword">target</span>)&#123;<br>                        j = mid - <span class="hljs-number">1</span>;<br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        i = mid + <span class="hljs-number">1</span>;<br>                    &#125;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    i = mid + <span class="hljs-number">1</span>;<br>                &#125;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">target</span> &gt; nums[j])&#123;<br>                    j = mid - <span class="hljs-number">1</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-keyword">if</span> (nums[mid] &gt; <span class="hljs-keyword">target</span>)&#123;<br>                        j = mid - <span class="hljs-number">1</span>;<br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        i = mid + <span class="hljs-number">1</span>;<br>                    &#125;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span> (nums[i] == <span class="hljs-keyword">target</span>)&#123;<br>            <span class="hljs-keyword">return</span> i;<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">-1</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>首先观察数组，最小的数字始终在右半边，所以可以认定右半边一直存在，所以每次mid都和nums[j]比较，确定mid在左半边还是右半边，同理target也是和nums[j]比较，如果mid和target在异侧，直接确定i或者j即可，如果在同侧，继续比较nums[mid]和target，然后再确定i或者j。最后需要看nums[i]是否和target相等，如不等说明没找到。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/search-in-rotated-sorted-array/?envType=study-plan-v2&envId=top-100-liked">搜索旋转排序数组</a></p>
+<h2 id="153-寻找旋转排序数组中的最小值"><a href="#153-寻找旋转排序数组中的最小值" class="headerlink" title="153. 寻找旋转排序数组中的最小值"></a>153. 寻找旋转排序数组中的最小值</h2><ul>
+<li>题目</li>
+</ul>
+<p>已知一个长度为 n 的数组，预先按照升序排列，经由 1 到 n 次 旋转 后，得到输入数组。例如，原数组 nums &#x3D; [0,1,2,4,5,6,7] 在变化后可能得到：<br>若旋转 4 次，则可以得到 [4,5,6,7,0,1,2]<br>若旋转 7 次，则可以得到 [0,1,2,4,5,6,7]<br>注意，数组 [a[0], a[1], a[2], …, a[n-1]] 旋转一次 的结果为数组 [a[n-1], a[0], a[1], a[2], …, a[n-2]] 。</p>
+<p>给你一个元素值 互不相同 的数组 nums ，它原来是一个升序排列的数组，并按上述情形进行了多次旋转。请你找出并返回数组中的 最小元素 。</p>
+<p>你必须设计一个时间复杂度为 O(log n) 的算法解决此问题。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> findMin(<span class="hljs-built_in">int</span>[] nums) &#123;<br>        <span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>;<br>        <span class="hljs-built_in">int</span> j = nums.length - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span> (i &lt; j)&#123;<br>            <span class="hljs-built_in">int</span> mid = (i + j) / <span class="hljs-number">2</span>;<br>            <span class="hljs-keyword">if</span> (nums[mid] &gt; nums[j])&#123;<br>                i = mid + <span class="hljs-number">1</span>;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                j = mid;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[i];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>因为找最小的数字，可以认为右边的数组是一直存在的</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/find-minimum-in-rotated-sorted-array/?envType=study-plan-v2&envId=top-100-liked">寻找旋转排序数组中的最小值</a></p>
+<h2 id="20-有效的括号"><a href="#20-有效的括号" class="headerlink" title="20. 有效的括号"></a>20. 有效的括号</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个只包括 ‘(‘，’)’，’{‘，’}’，’[‘，’]’ 的字符串 s ，判断字符串是否有效。</p>
+<p>有效字符串需满足：</p>
+<p>左括号必须用相同类型的右括号闭合。<br>左括号必须以正确的顺序闭合。<br>每个右括号都有一个对应的相同类型的左括号。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title">isValid</span><span class="hljs-params">(<span class="hljs-type">String</span> s)</span> </span>&#123;<br>        Map&lt;Character, Character&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        map.<span class="hljs-built_in">put</span>(<span class="hljs-string">&#x27;)&#x27;</span>,<span class="hljs-string">&#x27;(&#x27;</span>);<br>        map.<span class="hljs-built_in">put</span>(<span class="hljs-string">&#x27;]&#x27;</span>,<span class="hljs-string">&#x27;[&#x27;</span>);<br>        map.<span class="hljs-built_in">put</span>(<span class="hljs-string">&#x27;&#125;&#x27;</span>,<span class="hljs-string">&#x27;&#123;&#x27;</span>);<br>        Deque&lt;Character&gt; stack = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">char</span> c : s.<span class="hljs-built_in">toCharArray</span>())&#123;<br>            <span class="hljs-keyword">if</span> (!map.<span class="hljs-built_in">containsKey</span>(c))&#123;<br>                stack.<span class="hljs-built_in">addLast</span>(c);<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (stack.<span class="hljs-built_in">size</span>() == <span class="hljs-number">0</span> || map.<span class="hljs-built_in">get</span>(c) != stack.<span class="hljs-built_in">peekLast</span>())&#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    stack.<span class="hljs-built_in">removeLast</span>();<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> stack.<span class="hljs-built_in">size</span>() == <span class="hljs-number">0</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>map需要将后半括号作为key.</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/valid-parentheses/?envType=study-plan-v2&envId=top-100-liked">有效的括号</a></p>
+<h2 id="155-最小栈"><a href="#155-最小栈" class="headerlink" title="155. 最小栈"></a>155. 最小栈</h2><ul>
+<li>题目</li>
+</ul>
+<p>设计一个支持 push ，pop ，top 操作，并能在常数时间内检索到最小元素的栈。</p>
+<p>实现 MinStack 类:</p>
+<p>MinStack() 初始化堆栈对象。<br>void push(int val) 将元素val推入堆栈。<br>void pop() 删除堆栈顶部的元素。<br>int top() 获取堆栈顶部的元素。<br>int getMin() 获取堆栈中的最小元素。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs csharp"><span class="hljs-keyword">class</span> <span class="hljs-title">MinStack</span> &#123;<br>    Deque&lt;Integer&gt; stack = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>    Deque&lt;Integer&gt; minStack = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">MinStack</span>()</span> &#123;<br><br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">push</span>(<span class="hljs-params"><span class="hljs-built_in">int</span> val</span>)</span> &#123;<br>        stack.addLast(val);<br>        <span class="hljs-keyword">if</span> (minStack.isEmpty() || minStack.peekLast() &gt;= val)&#123;<br>            minStack.addLast(val);<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">pop</span>()</span> &#123;<br>        <span class="hljs-keyword">if</span> (minStack.peekLast().<span class="hljs-keyword">equals</span>(stack.removeLast()))&#123;<br>            minStack.removeLast();<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">top</span>()</span> &#123;<br>        <span class="hljs-keyword">return</span> stack.peekLast();<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> <span class="hljs-title">getMin</span>()</span> &#123;<br>        <span class="hljs-keyword">return</span> minStack.peekLast();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>有两个需要注意的点，一个是最小栈的放入逻辑，一个是包装类的比较。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/min-stack/description/?envType=study-plan-v2&envId=top-100-liked">最小栈</a></p>
+<h2 id="739-每日温度"><a href="#739-每日温度" class="headerlink" title="739. 每日温度"></a>739. 每日温度</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-type">int</span>[] <span class="hljs-built_in">dailyTemperatures</span>(<span class="hljs-type">int</span>[] temperatures) &#123;<br>        <span class="hljs-type">int</span>[] res = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[temperatures.length];<br>        Deque&lt;<span class="hljs-type">int</span>[]&gt; stack = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; temperatures.length; i++)&#123;<br>          <br>            <span class="hljs-keyword">while</span>(stack.<span class="hljs-built_in">size</span>() != <span class="hljs-number">0</span> &amp;&amp; stack.<span class="hljs-built_in">peekLast</span>()[<span class="hljs-number">0</span>] &lt; temperatures[i])&#123;<br>                <span class="hljs-type">int</span>[] e = stack.<span class="hljs-built_in">removeLast</span>();<br>                res[e[<span class="hljs-number">1</span>]] = i - e[<span class="hljs-number">1</span>];<br>            &#125;<br>            stack.<span class="hljs-built_in">addLast</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[]&#123;temperatures[i], i&#125;);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>单调栈法，栈元素为索引和值的数组，如果栈顶元素的值小于当前元素，说明温度第一次上升了，通过索引差值可以得到结果，然后栈顶出栈，直到栈顶元素大于当前元素或者栈为空时再将当前元素入栈。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/daily-temperatures/description/?envType=study-plan-v2&envId=top-100-liked">每日温度</a></p>
+<h2 id="84-柱状图中最大的矩形"><a href="#84-柱状图中最大的矩形" class="headerlink" title="84. 柱状图中最大的矩形"></a>84. 柱状图中最大的矩形</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。</p>
+<p>求在该柱状图中，能够勾勒出来的矩形的最大面积。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title">largestRectangleArea</span><span class="hljs-params">(<span class="hljs-type">int</span>[] heights)</span> </span>&#123;<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span>[] nh = <span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[heights.length + <span class="hljs-number">2</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; heights.length; i++)&#123;<br>            nh[i + <span class="hljs-number">1</span>] = heights[i];<br>        &#125;<br>        Deque&lt;<span class="hljs-type">int</span>[]&gt; stack = <span class="hljs-keyword">new</span> LinkedList&lt;&gt;();<br>        stack.<span class="hljs-built_in">addLast</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[]&#123;<span class="hljs-number">0</span>, <span class="hljs-number">0</span>&#125;);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; nh.length; i++)&#123;<br>            <span class="hljs-keyword">while</span>(stack.<span class="hljs-built_in">peekLast</span>()[<span class="hljs-number">1</span>] &gt; nh[i])&#123;<br>                <span class="hljs-type">int</span>[] e = stack.<span class="hljs-built_in">removeLast</span>();<br>                <span class="hljs-type">int</span> w = i - stack.<span class="hljs-built_in">peekLast</span>()[<span class="hljs-number">0</span>] - <span class="hljs-number">1</span>;<br>                <span class="hljs-type">int</span> h = e[<span class="hljs-number">1</span>];<br>                res = Math.<span class="hljs-built_in">max</span>(res, w * h);<br>                <br>            &#125;<br>            stack.<span class="hljs-built_in">addLast</span>(<span class="hljs-keyword">new</span> <span class="hljs-type">int</span>[]&#123;i, nh[i]&#125;);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>哨兵加单调栈，这个题解的第一个精髓是哨兵，可以免去边界值的考虑，极大降低解题的复杂程度，第二重点是矩形的宽度考虑，为什么是i - stack.peekLast()[0] - 1而不是i-出栈的索引，因为在出栈的索引前可能还有几个早就出栈的竖条，这些竖条的高度肯定不比当前出栈的高度低，所以当前出栈的高度对应的左边界应该在栈顶，所以为i - stack.peekLast()[0] - 1。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/largest-rectangle-in-histogram/description/?envType=study-plan-v2&envId=top-100-liked">柱状图中最大的矩形</a></p>
+<h2 id="215-数组中的第K个最大元素"><a href="#215-数组中的第K个最大元素" class="headerlink" title="215. 数组中的第K个最大元素"></a>215. 数组中的第K个最大元素</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。</p>
+<p>请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。</p>
+<p>你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">int</span> <span class="hljs-title">findKthLargest</span><span class="hljs-params">(<span class="hljs-type">int</span>[] nums, <span class="hljs-type">int</span> k)</span> </span>&#123;<br>        PriorityQueue&lt;Integer&gt; queue = <span class="hljs-keyword">new</span> PriorityQueue&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> num : nums)&#123;<br>            queue.<span class="hljs-built_in">add</span>(num);<br>            <span class="hljs-keyword">if</span> (queue.<span class="hljs-built_in">size</span>() &gt; k)&#123;<br>                queue.<span class="hljs-built_in">poll</span>();<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> queue.<span class="hljs-built_in">peek</span>();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>优先队列</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/kth-largest-element-in-an-array/description/?envType=study-plan-v2&envId=top-100-liked">数组中的第K个最大元素</a></p>
+<h2 id="121-买卖股票的最佳时机"><a href="#121-买卖股票的最佳时机" class="headerlink" title="121. 买卖股票的最佳时机"></a>121. 买卖股票的最佳时机</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。</p>
+<p>你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。</p>
+<p>返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs fortran"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> maxProfit(<span class="hljs-built_in">int</span>[] prices) &#123;<br>        <span class="hljs-built_in">int</span> <span class="hljs-built_in">min</span> = prices[<span class="hljs-number">0</span>];<br>        <span class="hljs-built_in">int</span> res = <span class="hljs-number">0</span>;<br>        for (<span class="hljs-built_in">int</span> i = <span class="hljs-number">1</span>; i &lt; prices.length; i++)&#123;<br>            <span class="hljs-built_in">min</span> = Math.<span class="hljs-built_in">min</span>(<span class="hljs-built_in">min</span>, prices[i]);<br>            res = Math.<span class="hljs-built_in">max</span>(res, prices[i] - <span class="hljs-built_in">min</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>贪心</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/best-time-to-buy-and-sell-stock/?envType=study-plan-v2&envId=top-100-liked">买卖股票的最佳时机</a></p>
+<h2 id="55-跳跃游戏"><a href="#55-跳跃游戏" class="headerlink" title="55. 跳跃游戏"></a>55. 跳跃游戏</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个非负整数数组 nums ，你最初位于数组的 第一个下标 。数组中的每个元素代表你在该位置可以跳跃的最大长度。</p>
+<p>判断你是否能够到达最后一个下标，如果可以，返回 true ；否则，返回 false 。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">bool</span>ean canJump(<span class="hljs-built_in">int</span>[] nums) &#123;<br>        <span class="hljs-built_in">int</span> maxid = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;<br>            <span class="hljs-keyword">if</span> (i &gt; maxid)&#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>            &#125;<br>            maxid = Math.max(maxid, i + nums[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>贪心</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/jump-game/description/?envType=study-plan-v2&envId=top-100-liked">跳跃游戏</a></p>
+<h2 id="45-跳跃游戏-II"><a href="#45-跳跃游戏-II" class="headerlink" title="45. 跳跃游戏 II"></a>45. 跳跃游戏 II</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个长度为 n 的 0 索引整数数组 nums。初始位置为 nums[0]。</p>
+<p>每个元素 nums[i] 表示从索引 i 向前跳转的最大长度。换句话说，如果你在 nums[i] 处，你可以跳转到任意 nums[i + j] 处:</p>
+<p>0 &lt;&#x3D; j &lt;&#x3D; nums[i]<br>i + j &lt; n<br>返回到达 nums[n - 1] 的最小跳跃次数。生成的测试用例可以到达 nums[n - 1]。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> jump(<span class="hljs-type">int</span>[] nums) &#123;<br>        <span class="hljs-type">int</span> start = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> end = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> last = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">while</span>(last &lt; nums.length - <span class="hljs-number">1</span>)&#123;<br>            res++;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-keyword">start</span>; i &lt;= <span class="hljs-keyword">end</span>; i++)&#123;<br>                last = Math.max(last, i + nums[i]);<br>            &#125;<br>            start = <span class="hljs-keyword">end</span> + <span class="hljs-number">1</span>;<br>            end = last;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>贪心</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/jump-game-ii/description/?envType=study-plan-v2&envId=top-100-liked">跳跃游戏 II</a></p>
+<h2 id="763-划分字母区间"><a href="#763-划分字母区间" class="headerlink" title="763. 划分字母区间"></a>763. 划分字母区间</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个字符串 s 。我们要把这个字符串划分为尽可能多的片段，同一字母最多出现在一个片段中。</p>
+<p>注意，划分结果需要满足：将所有划分结果按顺序连接，得到的字符串仍然是 s 。</p>
+<p>返回一个表示每个字符串片段的长度的列表。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> List&lt;<span class="hljs-type">Integer</span>&gt; partitionLabels(String s) &#123;<br>        <span class="hljs-type">int</span>[] last = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.length(); i++)&#123;<br>            last[s.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>] = i;<br>        &#125;<br>        <span class="hljs-type">int</span> start = <span class="hljs-number">0</span>;<br>        <span class="hljs-type">int</span> end = <span class="hljs-number">0</span>;<br>        List&lt;<span class="hljs-type">Integer</span>&gt; res = <span class="hljs-built_in">new</span> ArrayList&lt;&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.length(); i++)&#123;<br>            end = Math.max(last[s.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>], <span class="hljs-keyword">end</span>);<br>            <span class="hljs-keyword">if</span> (i == <span class="hljs-keyword">end</span>)&#123;<br>                res.<span class="hljs-keyword">add</span>(<span class="hljs-keyword">end</span> - <span class="hljs-keyword">start</span> + <span class="hljs-number">1</span>);<br>                start = <span class="hljs-keyword">end</span> + <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>也是类似一层一层的找，思路类似上题</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/partition-labels/?envType=study-plan-v2&envId=top-100-liked">划分字母区间</a></p>
+<h2 id="198-打家劫舍"><a href="#198-打家劫舍" class="headerlink" title="198. 打家劫舍"></a>198. 打家劫舍</h2><ul>
+<li>题目</li>
+</ul>
+<p>你是一个专业的小偷，计划偷窃沿街的房屋。每间房内都藏有一定的现金，影响你偷窃的唯一制约因素就是相邻的房屋装有相互连通的防盗系统，如果两间相邻的房屋在同一晚上被小偷闯入，系统会自动报警。</p>
+<p>给定一个代表每个房屋存放金额的非负整数数组，计算你 不触动警报装置的情况下 ，一夜之内能够偷窃到的最高金额。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs inform7">class Solution &#123;<br>    public int rob(int<span class="hljs-comment">[]</span> nums) &#123;<br>        int<span class="hljs-comment">[]</span> dp = new int<span class="hljs-comment">[nums.length]</span>;<br>        dp<span class="hljs-comment">[0]</span> = nums<span class="hljs-comment">[0]</span>;<br>        if (nums.length == 1)&#123;<br>            return dp<span class="hljs-comment">[0]</span>;<br>        &#125;<br>        dp<span class="hljs-comment">[1]</span> =  Math.max(dp<span class="hljs-comment">[0]</span>, nums<span class="hljs-comment">[1]</span>);<br>        if (nums.length == 2)&#123;<br>            return dp<span class="hljs-comment">[1]</span>;<br>        &#125;<br>        dp<span class="hljs-comment">[2]</span> = Math.max(dp<span class="hljs-comment">[0]</span> + nums<span class="hljs-comment">[2]</span>, dp<span class="hljs-comment">[1]</span>);<br>        if (nums.length == 3)&#123;<br>            return dp<span class="hljs-comment">[2]</span>;<br>        &#125;<br>        int res = dp<span class="hljs-comment">[2]</span>;<br>        for (int i = 3; i &lt; nums.length; i++)&#123;<br>            dp<span class="hljs-comment">[i]</span> = Math.max(Math.max(dp<span class="hljs-comment">[i - 1]</span>, dp<span class="hljs-comment">[i - 2]</span> + nums<span class="hljs-comment">[i]</span>), dp<span class="hljs-comment">[i - 3]</span> + nums<span class="hljs-comment">[i]</span>);<br>        &#125;<br>        return dp<span class="hljs-comment">[nums.length - 1]</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>转移方程中极易漏掉的一点，dp[i] &#x3D; Math.max(dp[i - 1], Math.max(dp[i - 2] + nums[i],dp[i - 3] + nums[i]))，有可能隔两个再加。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/house-robber/description/?envType=study-plan-v2&envId=top-100-liked">打家劫舍</a></p>
+<h2 id="279-完全平方数"><a href="#279-完全平方数" class="headerlink" title="279. 完全平方数"></a>279. 完全平方数</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数 n ，返回 和为 n 的完全平方数的最少数量 。</p>
+<p>完全平方数 是一个整数，其值等于另一个整数的平方；换句话说，其值等于一个整数自乘的积。例如，1、4、9 和 16 都是完全平方数，而 3 和 11 不是。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs excel">class Solution &#123;<br>    public <span class="hljs-built_in">int</span> numSquares(<span class="hljs-built_in">int</span> <span class="hljs-built_in">n</span>) &#123;<br>        <span class="hljs-built_in">int</span>[] dp = new <span class="hljs-built_in">int</span>[<span class="hljs-built_in">n</span> + <span class="hljs-number">1</span>];<br>        for (<span class="hljs-built_in">int</span> i = <span class="hljs-number">1</span>; i &lt;= <span class="hljs-built_in">n</span>; i++)&#123;<br>            <span class="hljs-built_in">int</span> <span class="hljs-built_in">t</span> = Integer.MAX_VALUE;<br>            for (<span class="hljs-built_in">int</span> j = <span class="hljs-number">1</span>; j * j &lt;= i; j++)&#123;<br>                <span class="hljs-built_in">t</span> = Math.min(dp[i - j * j] + <span class="hljs-number">1</span>, <span class="hljs-built_in">t</span>);<br>            &#125;<br>            dp[i] = <span class="hljs-built_in">t</span>;<br>        &#125;<br>        return dp[<span class="hljs-built_in">n</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>在内层遍历的时候直接从完全平方数数着手，效率高很多</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/perfect-squares/description/?envType=study-plan-v2&envId=top-100-liked">完全平方数</a></p>
+<h2 id="322-零钱兑换"><a href="#322-零钱兑换" class="headerlink" title="322. 零钱兑换"></a>322. 零钱兑换</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数数组 coins ，表示不同面额的硬币；以及一个整数 amount ，表示总金额。</p>
+<p>计算并返回可以凑成总金额所需的 最少的硬币个数 。如果没有任何一种硬币组合能组成总金额，返回 -1 。</p>
+<p>你可以认为每种硬币的数量是无限的。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> coinChange(<span class="hljs-type">int</span>[] coins, <span class="hljs-type">int</span> amount) &#123;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[amount + <span class="hljs-number">1</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt;= amount; i++)&#123;<br>            <span class="hljs-type">int</span> t = <span class="hljs-type">Integer</span>.MAX_VALUE;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> coin : coins)&#123;<br>                <span class="hljs-keyword">if</span> (i - coin &lt; <span class="hljs-number">0</span> || dp[i - coin] == <span class="hljs-number">-1</span>)&#123;<br>                    <span class="hljs-keyword">continue</span>;<br>                &#125;<br>                t = Math.min(t, dp[i - coin] + <span class="hljs-number">1</span>);<br>            &#125;<br>            dp[i] = t == <span class="hljs-type">Integer</span>.MAX_VALUE ? <span class="hljs-number">-1</span> : t;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[amount];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>和上一题差不多了，麻了。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/coin-change/description/?envType=study-plan-v2&envId=top-100-liked">零钱兑换</a></p>
+<h2 id="139-单词拆分"><a href="#139-单词拆分" class="headerlink" title="139. 单词拆分"></a>139. 单词拆分</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个字符串 s 和一个字符串列表 wordDict 作为字典。如果可以利用字典中出现的一个或多个单词拼接出 s 则返回 true。</p>
+<p>注意：不要求字典中出现的单词全部都使用，并且字典中的单词可以重复使用。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs arduino"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-type">boolean</span> <span class="hljs-title">wordBreak</span><span class="hljs-params">(<span class="hljs-type">String</span> s, List&lt;<span class="hljs-type">String</span>&gt; wordDict)</span> </span>&#123;<br>        <span class="hljs-type">boolean</span>[] dp = <span class="hljs-keyword">new</span> <span class="hljs-type">boolean</span>[s.<span class="hljs-built_in">length</span>() + <span class="hljs-number">1</span>];<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-literal">true</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">1</span>; i &lt; dp.length; i++)&#123;<br>            <span class="hljs-type">boolean</span> f = <span class="hljs-literal">false</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">String</span> <span class="hljs-type">word</span> : wordDict)&#123;<br>                <span class="hljs-keyword">if</span> (i - <span class="hljs-type">word</span>.<span class="hljs-built_in">length</span>() &gt;= <span class="hljs-number">0</span> &amp;&amp; dp[i - <span class="hljs-type">word</span>.<span class="hljs-built_in">length</span>()] == <span class="hljs-literal">true</span> &amp;&amp; <span class="hljs-type">word</span>.<span class="hljs-built_in">equals</span>(s.<span class="hljs-built_in">substring</span>(i - <span class="hljs-type">word</span>.<span class="hljs-built_in">length</span>(),i)))&#123;<br>                    f = <span class="hljs-literal">true</span>;<br>                    <span class="hljs-keyword">break</span>;<br>                &#125;<br>            &#125;<br>            dp[i] = f;<br>        &#125;<br>        <span class="hljs-keyword">return</span> dp[dp.length - <span class="hljs-number">1</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>好像和上题还是差不多</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/word-break/solutions/?envType=study-plan-v2&envId=top-100-liked">单词拆分</a></p>
+<h2 id="300-最长递增子序列"><a href="#300-最长递增子序列" class="headerlink" title="300. 最长递增子序列"></a>300. 最长递增子序列</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。</p>
+<p>子序列 是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> <span class="hljs-type">int</span> lengthOfLIS(<span class="hljs-type">int</span>[] nums) &#123;<br>        <span class="hljs-type">int</span>[] dp = <span class="hljs-built_in">new</span> <span class="hljs-type">int</span>[nums.length];<br>        <span class="hljs-type">int</span> res = <span class="hljs-number">1</span>;<br>        dp[<span class="hljs-number">0</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;<br>            <span class="hljs-type">int</span> t = <span class="hljs-number">1</span>;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++)&#123;<br>                <span class="hljs-keyword">if</span> (nums[i] &gt; nums[j])&#123;<br>                    t = Math.max(t, dp[j] + <span class="hljs-number">1</span>);<br>                &#125;<br>            &#125;<br>            dp[i] = t;<br>            res = Math.max(res, dp[i]);<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>动态规划，有的状态基于前面一两个就行，还有的是要遍历前面所有状态的，背包问题就是这样的，这个题目也是这样的。</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-increasing-subsequence/description/?envType=study-plan-v2&envId=top-100-liked">最长递增子序列</a></p>
+<h2 id="62-不同路径"><a href="#62-不同路径" class="headerlink" title="62. 不同路径"></a>62. 不同路径</h2><ul>
+<li>题目</li>
+</ul>
+<p>一个机器人位于一个 m x n 网格的左上角 （起始点在下图中标记为 “Start” ）。</p>
+<p>机器人每次只能向下或者向右移动一步。机器人试图达到网格的右下角（在下图中标记为 “Finish” ）。</p>
+<p>问总共有多少条不同的路径？</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs inform7">class Solution &#123;<br>    public int uniquePaths(int m, int n) &#123;<br>        int<span class="hljs-comment">[]</span><span class="hljs-comment">[]</span> dp = new int<span class="hljs-comment">[m]</span><span class="hljs-comment">[n]</span>;<br>        for (int i = 0; i &lt; m; i++)&#123;<br>            dp<span class="hljs-comment">[i]</span><span class="hljs-comment">[0]</span>  = 1;<br>        &#125;<br>        for (int i = 0; i &lt; n; i++)&#123;<br>            dp<span class="hljs-comment">[0]</span><span class="hljs-comment">[i]</span> = 1;<br>        &#125;<br>        for (int i = 1; i &lt; m; i++)&#123;<br>            for (int j = 1; j &lt; n; j++)&#123;<br>                dp<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span> = dp<span class="hljs-comment">[i - 1]</span><span class="hljs-comment">[j]</span> + dp<span class="hljs-comment">[i]</span><span class="hljs-comment">[j - 1]</span>;<br>            &#125;<br>        &#125;<br>        return dp<span class="hljs-comment">[m - 1]</span><span class="hljs-comment">[n - 1]</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>动态规划.</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/unique-paths/description/?envType=study-plan-v2&envId=top-100-liked">不同路径</a></p>
+<h2 id="64-最小路径和"><a href="#64-最小路径和" class="headerlink" title="64. 最小路径和"></a>64. 最小路径和</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个包含非负整数的 m x n 网格 grid ，请找出一条从左上角到右下角的路径，使得路径上的数字总和为最小。</p>
+<p>说明：每次只能向下或者向右移动一步。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs inform7">class Solution &#123;<br>    public int minPathSum(int<span class="hljs-comment">[]</span><span class="hljs-comment">[]</span> grid) &#123;<br>        int<span class="hljs-comment">[]</span><span class="hljs-comment">[]</span> dp = new int<span class="hljs-comment">[grid.length]</span><span class="hljs-comment">[grid<span class="hljs-comment">[0]</span>.length]</span>;<br>        dp<span class="hljs-comment">[0]</span><span class="hljs-comment">[0]</span> = grid<span class="hljs-comment">[0]</span><span class="hljs-comment">[0]</span>;<br>        for (int i = 1; i &lt; grid.length; i++)&#123;<br>            dp<span class="hljs-comment">[i]</span><span class="hljs-comment">[0]</span> = dp<span class="hljs-comment">[i - 1]</span><span class="hljs-comment">[0]</span> + grid<span class="hljs-comment">[i]</span><span class="hljs-comment">[0]</span>;<br>        &#125;<br>        for (int i = 1; i &lt; grid<span class="hljs-comment">[0]</span>.length; i++)&#123;<br>            dp<span class="hljs-comment">[0]</span><span class="hljs-comment">[i]</span> = dp<span class="hljs-comment">[0]</span><span class="hljs-comment">[i - 1]</span> + grid<span class="hljs-comment">[0]</span><span class="hljs-comment">[i]</span>;<br>        &#125;<br>        for (int i = 1; i &lt; grid.length; i++)&#123;<br>            for (int j = 1; j &lt; grid<span class="hljs-comment">[0]</span>.length; j++)&#123;<br>                dp<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span> = Math.min(dp<span class="hljs-comment">[i - 1]</span><span class="hljs-comment">[j]</span>, dp<span class="hljs-comment">[i]</span><span class="hljs-comment">[j - 1]</span>) + grid<span class="hljs-comment">[i]</span><span class="hljs-comment">[j]</span>;<br>            &#125;<br>        &#125;<br>        return dp<span class="hljs-comment">[grid.length - 1]</span><span class="hljs-comment">[grid<span class="hljs-comment">[0]</span>.length - 1]</span>;<br><br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>动态规划.</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/minimum-path-sum/description/?envType=study-plan-v2&envId=top-100-liked">最小路径和</a></p>
+<h2 id="136-只出现一次的数字"><a href="#136-只出现一次的数字" class="headerlink" title="136. 只出现一次的数字"></a>136. 只出现一次的数字</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个 非空 整数数组 nums ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> singleNumber(<span class="hljs-built_in">int</span>[] nums) &#123;<br>        <span class="hljs-built_in">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> num : nums)&#123;<br>            res ^= num;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>异或</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number/description/?envType=study-plan-v2&envId=top-100-liked">只出现一次的数字</a></p>
+<h2 id="136-只出现一次的数字-1"><a href="#136-只出现一次的数字-1" class="headerlink" title="136. 只出现一次的数字"></a>136. 只出现一次的数字</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个 非空 整数数组 nums ，除了某个元素只出现一次以外，其余每个元素均出现两次。找出那个只出现了一次的元素。</p>
+<p>你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs angelscript"><span class="hljs-keyword">class</span> <span class="hljs-symbol">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> singleNumber(<span class="hljs-built_in">int</span>[] nums) &#123;<br>        <span class="hljs-built_in">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> num : nums)&#123;<br>            res ^= num;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>异或</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/single-number/description/?envType=study-plan-v2&envId=top-100-liked">只出现一次的数字</a></p>
+<h2 id="169-多数元素"><a href="#169-多数元素" class="headerlink" title="169. 多数元素"></a>169. 多数元素</h2><ul>
+<li>题目</li>
+</ul>
+<p>给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于 ⌊ n&#x2F;2 ⌋ 的元素。</p>
+<p>你可以假设数组是非空的，并且给定的数组总是存在多数元素。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight axapta"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs axapta"><span class="hljs-keyword">class</span> <span class="hljs-title class_">Solution</span> &#123;<br>    <span class="hljs-keyword">public</span> <span class="hljs-built_in">int</span> majorityElement(<span class="hljs-built_in">int</span>[] nums) &#123;<br>        <span class="hljs-built_in">int</span> res = nums[<span class="hljs-number">0</span>];<br>        <span class="hljs-built_in">int</span> <span class="hljs-keyword">count</span> = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-built_in">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;<br>            <span class="hljs-built_in">int</span> num = nums[i];<br>            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">count</span> == <span class="hljs-number">0</span>)&#123;<br>                res = nums[i];<br>                <span class="hljs-keyword">count</span>++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (res == nums[i])&#123;<br>                    <span class="hljs-keyword">count</span>++;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    <span class="hljs-keyword">count</span>--;<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>数字相消</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/majority-element/description/?envType=study-plan-v2&envId=top-100-liked">多数元素</a></p>
+<h2 id="5-最长回文子串"><a href="#5-最长回文子串" class="headerlink" title="5. 最长回文子串"></a>5. 最长回文子串</h2><ul>
+<li>题目</li>
+</ul>
+<p>给你一个字符串 s，找到 s 中最长的回文子串。<br>如果字符串的反序与原始字符串相同，则该字符串称为回文字符串。</p>
+<ul>
+<li>题解</li>
+</ul>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">class</span> Solution &#123;<br>    <span class="hljs-built_in">public</span> String longestPalindrome(String s) &#123;<br>        String res = s.substring(<span class="hljs-number">0</span>, <span class="hljs-number">1</span>);<br>        <span class="hljs-type">boolean</span>[][] dp = <span class="hljs-built_in">new</span> <span class="hljs-type">boolean</span>[s.length()][s.length()];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; s.length(); i++)&#123;<br>            dp[i][i] = <span class="hljs-keyword">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> j = <span class="hljs-number">1</span>; j &lt; s.length(); j++)&#123;<br>            <span class="hljs-keyword">for</span> (<span class="hljs-type">int</span> i = <span class="hljs-number">0</span>; i &lt; j; i++)&#123;<br>                <span class="hljs-keyword">if</span> (s.charAt(i) == s.charAt(j))&#123;<br>                    <span class="hljs-keyword">if</span> (j - i &lt;= <span class="hljs-number">2</span>)&#123;<br>                        dp[i][j] = <span class="hljs-keyword">true</span>;<br>                    &#125; <span class="hljs-keyword">else</span> &#123;<br>                        dp[i][j] = dp[i + <span class="hljs-number">1</span>][j - <span class="hljs-number">1</span>];<br>                    &#125;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (dp[i][j] &amp;&amp; j - i + <span class="hljs-number">1</span> &gt; res.length())&#123;<br>                    res = s.substring(i ,j + <span class="hljs-number">1</span>);<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<ul>
+<li>分析</li>
+</ul>
+<p>多维dp</p>
+<p>参考：<br><a target="_blank" rel="noopener" href="https://leetcode.cn/problems/longest-palindromic-substring/description/?envType=study-plan-v2&envId=top-100-liked">最长回文子串</a></p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" class="category-chain-item">数据结构与算法</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E5%88%B7%E9%A2%98/" class="print-no-link">#刷题</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>经典算法题目记录</div>
+      <div>https://fattree.cn/2024/04/26/经典算法题目记录/</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>fattree</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2024年4月26日</div>
+        </div>
+      
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="NC - 非商业性使用">
+                    <i class="iconfont icon-nc"></i>
+                  </span>
+                </a>
+              
+                <a class="print-no-link" target="_blank" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="SA - 相同方式共享">
+                    <i class="iconfont icon-sa"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2024/09/22/test/" title="test">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">test</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2024/03/10/%E3%80%8A%E6%B4%BB%E7%9D%80%E3%80%8B%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" title="《活着》读书笔记">
+                        <span class="hidden-mobile">《活着》读书笔记</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+    </div>
+  
+  
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.10/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
